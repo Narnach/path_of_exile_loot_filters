@@ -1,12 +1,7 @@
 # Narnach's Loot filter for Maps
+# Last updated on 7 December 2017
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
-#
-# Changelog:
-# - 3 September 2017: Removed some debug outlines of low level items
-# - 2 September 2017: Added gem drop color based on cost tier
-# - 2 September 2017: Removed item-class specific rules, and everything aimed at item level < 68
-# - 2 September 2017: Copied from non-maps version
 #
 # This loot filter has its home here: https://github.com/Narnach/path_of_exile_loot_filters
 # Remember to check it out for updates (espeically at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
@@ -395,7 +390,11 @@ Show
 Show
   Class Wands
   # Most endgame wands have something going for them, so show all of them
-  DropLevel >= 56
+  # Opal Wand: highest max spell damage
+  # Tornado: best balanced (attack speed, dps, spell damage)
+  # Prophecy Wand: crit bonus
+  # Profane: cast speed bonus
+  BaseType "Profane Wand" "Opal Wand" "Prophecy Wand" "Tornado Wand"
   Rarity = Normal Rare
 
 Show

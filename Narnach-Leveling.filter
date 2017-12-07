@@ -1,33 +1,7 @@
 # Narnach's Loot filter for Leveling
+# Last updated on 7 December 2017
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
-#
-# Changelog:
-# - 27 August 2017: Don't show red font for 5-link
-# - 26 August 2017: Highlight Divine Vessel
-# - 12 August 2017: Harbinger Shards have varying highlights
-# - 7 August 2017: Harbinger League Updates, positional custom orb sounds
-# - 18 July 2017: Show 4-socketed items until maps, instead of until level 40.
-# - 18 July 2017: Shuffled currency tiers around and changed their look to stand out a bit less.
-# - 16 July 2017: Show all 4-links until level 40 (up from 35). Makes gearing in Dried Lake easier.
-# - 4 July 2017: Remove 3.0 gem highlights, make regular gems more visible
-# - 10 June 2017: Highlight new 3.0 gems
-# - 28 April 2017: Show rares when mapping (Orbs of Alteration are obtained from selling rares)
-# - 2 April 2017: Highlight Orb of Augmentation
-# - 1 April 2017: Currencies of different tiers get different sounds and colours.
-# - 1 April 2017: Highlight quality flasks + 20% quality items. Removed border from low level jewelry.
-# - 19 March 2017: Remove chaos/regal rare highlights, show all endgame base items when normal/rare
-# - 5 March 2017: Hide rare items that are more than 10-15 levels below you. Legacy League spams rares!
-# - 5 March 2017: Talismans are larger so they are easier to pickup in combat.
-# - 4 March 2017: Make scrolls stand out a bit more - initial tuning was for maps, not leveling
-# - 3 March 2017: Added Legacy League support & added more sounds to important drops
-#
-# - Sceptres: elemental damage trumps physical damage. It's a caster tool, not a melee weapon.
-# - Thrusting Swords
-# - 1h Axes
-# - Str armour
-# - Int armour
-# - Armour shields
 #
 # This loot filter has its home here: https://github.com/Narnach/path_of_exile_loot_filters
 # Remember to check it out for updates (espeically at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
@@ -441,7 +415,11 @@ Show
 Show
   Class Wands
   # Most endgame wands have something going for them, so show all of them
-  DropLevel >= 56
+  # Opal Wand: highest max spell damage
+  # Tornado: best balanced (attack speed, dps, spell damage)
+  # Prophecy Wand: crit bonus
+  # Profane: cast speed bonus
+  BaseType "Profane Wand" "Opal Wand" "Prophecy Wand" "Tornado Wand"
   Rarity = Normal Rare
 
 Show

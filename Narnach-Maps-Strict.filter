@@ -1,13 +1,7 @@
 # Narnach's Loot filter for Maps (Strict version)
+# Last updated on 7 December 2017
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
-#
-# Changelog:
-# - 28 September 2017: Top-end wands are mentioned by name now, color-coded uniques below lvl 40 and over 60
-# - 22 September 2017: Hide non-utilty flasks without quality
-# - 21 September 2017: Hide gems without quality that you can buy from vendors
-# - 21 September 2017: Don't show white weapons/armour/jewelry
-# - 21 September 2017: Copied from Maps version
 #
 # This loot filter has its home here: https://github.com/Narnach/path_of_exile_loot_filters
 # Remember to check it out for updates (espeically at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
