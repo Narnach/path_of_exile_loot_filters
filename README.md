@@ -1,5 +1,7 @@
 # Narnach's Loot filters for Path of Exile
 
+(Last major patch update: 3.0 / Fall of Oriath / Harbinger League)
+
 These are the Path of Exile loot filters I use in my recordings over at [youtube.com/narnach](https://www.youtube.com/narnach)
 It keeps evolving over time, as my needs keep changing.
 My biases are towards my playstyle and my needs. Yours may be different.
