@@ -551,7 +551,7 @@ Hide
   SetBorderColor 255 215 127
 
 # Costs: Orb of Alchemy
-Show
+Hide
   Class Gem
   DropLevel > 34
   SetBorderColor 255 215 0
