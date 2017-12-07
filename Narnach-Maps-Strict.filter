@@ -9,38 +9,8 @@
 # - 21 September 2017: Don't show white weapons/armour/jewelry
 # - 21 September 2017: Copied from Maps version
 #
-# Author: wes@narnach.com
-#         https://www.youtube.com/narnach
-#         https://www.twitter.com/narnach
-#         http://www.twitch.tv/narnach
-#         https://gist.github.com/Narnach/79e57e9846851e69eb01
-#
-# This is the Path of Exile loot filter I use in my recordings.
-# It keeps evolving over time, as my needs keep changing.
-#
-# My biases are towards my playstyle and my needs. Yours may be different.
-#
-# When making changes, it is very useful to use the wiki page as a reference:
-#
-#   http://pathofexile.gamepedia.com/Item_filter_guide
-#
-# A big shout out to Quill18, whose loot filter I used as a sane starting point for my own.
-# I've made so many changes that it's very different now, but credit is due anyway.
-# If you think my filter has too many colors, Quill18's filter is simpler.
-#
-# Quill18's Simple LootFilter
-#   Author: quill18@quill18.com
-#           youtube.com/quill18
-#           https://gist.github.com/quill18/d811f616d577bed035b4
-#
-#  **Installation**
-#
-#  Copy to:  C:\Users\<USERNAME>\Documents\My Games\Path of Exile\
-#     NOTE:  The file MUST have the ".filter" extension.
-#
-#  In Path of Exile, go to Options -> UI -> <Scroll down to the bottom> ->
-#       Select the filter from the pulldown -> Click "Reload".
-#
+# This loot filter has its home here: https://github.com/Narnach/path_of_exile_loot_filters
+# Remember to check it out for updates (espeically at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 
 ################################################################################
 # League specific items for 3.0 / Harbinger League

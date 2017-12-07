@@ -35,7 +35,7 @@ A very handy page to bookmark is the [Wiki Guide](https://pathofexile.gamepedia.
 
 A loot filter is rarely finished. Below is a list of things I still intend to change.
 
-* Merge the conditional gem highlighting from my Strict filter into the Leveling filter, and double check the changelog in each filter for other things to merge. After that, clear the individual changelogs and give them all a short pointer to this repository.
+* Merge the conditional gem highlighting from my Strict filter into the Leveling filter, and double check the changelog in each filter for other things to merge.
 * Add initial support for the [filter changes](https://www.pathofexile.com/forum/view-thread/2036673) in patch 3.1 / Abyss League
 
 ## Attribution
