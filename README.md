@@ -1,6 +1,6 @@
 # Narnach's Loot filters for Path of Exile
 
-(Last major patch update: 3.0 / Fall of Oriath / Harbinger League)
+(Last major patch update: 3.1 / War for the Atlas / Abyss League)
 
 These are the [Path of Exile](https://www.pathofexile.com/) loot filters I use in my recordings over at [youtube.com/narnach](https://www.youtube.com/narnach)
 It keeps evolving over time, as my needs keep changing.
@@ -35,9 +35,9 @@ A very handy page to bookmark is the [Wiki Guide](https://pathofexile.gamepedia.
 
 ## TODO
 
-A loot filter is rarely finished. Below is a list of things I still intend to change.
+A loot filter is rarely finished. Here is a list of things I still intend to change.
 
-* Add initial support for the [filter changes](https://www.pathofexile.com/forum/view-thread/2036673) in patch 3.1 / Abyss League
+* See if I can simplify some rules and re-think the layout of the filter files. With three files, it'd be nice to have some sections that are always the same, and clearly marked sections that are different.
 
 ## Attribution
 

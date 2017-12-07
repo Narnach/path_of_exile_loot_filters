@@ -7,6 +7,48 @@
 # Remember to check it out for updates (espeically at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 
 ################################################################################
+# New League items in 3.1 / War for the Atlas / Abyss League
+################################################################################
+
+# Orb of Annulment remains from 3.0, so it's already in the filter from before.
+# Divination Cards always get shown, so I'm not highlighting the new ones.
+# All new skill gems will be obtainable from Lily Roth, so no need to highlight them in a special way.
+# Shaped maps (filter: ShapedMap True) will be shown according to their usual classification, no need to highlight them.
+
+# Stygian Vise is a new kind of belt, which allows Abyss Jewels to be socketed into them
+Show
+  Class Belt
+  BaseType "Stygian Vise"
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 7 300
+
+# Abyss Jewels drop around Abysses, the central mechanic from Abyss League
+Show
+  Class "Abyss Jewel"
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 7 300
+
+# Abyss Jewels drop around Abysses, the central mechanic from Abyss League
+Show
+  Class "Abyss Jewel"
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 7 300
+
+# Elder items only drop in maps that have been corrupted by the Elder
+Show
+  ElderItem True
+  SetFontSize 42
+  SetBorderColor 0 220 220 255
+  PlayAlertSoundPositional 7 300
+
+# Shaper items only drop in maps that have been corrupted by the Shaper
+Show
+  ShaperItemItem True
+  SetFontSize 42
+  SetBorderColor 135 0 220 255
+  PlayAlertSoundPositional 7 300
+
+################################################################################
 # League specific items for 3.0 / Harbinger League
 ################################################################################
 Show

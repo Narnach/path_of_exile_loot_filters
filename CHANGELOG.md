@@ -6,3 +6,4 @@
   * Backported tiered gem highlighting from Maps to Leveling filter, but actually show all gems while Leveling.
   * Backported top-end wand highlighting from Strict to Maps and Leveling filters.
   * Removed individual changelogs, and added a last changed date to each instead.
+  * Added lines to highlight the [Abyss League items](https://www.pathofexile.com/forum/view-thread/2036673)
