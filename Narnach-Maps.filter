@@ -1,0 +1,706 @@
+# Narnach's Loot filter for Maps
+#
+# This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
+#
+# Changelog:
+# - 3 September 2017: Removed some debug outlines of low level items
+# - 2 September 2017: Added gem drop color based on cost tier
+# - 2 September 2017: Removed item-class specific rules, and everything aimed at item level < 68
+# - 2 September 2017: Copied from non-maps version
+#
+# Author: wes@narnach.com
+#         https://www.youtube.com/narnach
+#         https://www.twitter.com/narnach
+#         http://www.twitch.tv/narnach
+#         https://gist.github.com/Narnach/79e57e9846851e69eb01
+#
+# This is the Path of Exile loot filter I use in my recordings.
+# It keeps evolving over time, as my needs keep changing.
+#
+# My biases are towards my playstyle and my needs. Yours may be different.
+#
+# When making changes, it is very useful to use the wiki page as a reference:
+#
+#   http://pathofexile.gamepedia.com/Item_filter_guide
+#
+# A big shout out to Quill18, whose loot filter I used as a sane starting point for my own.
+# I've made so many changes that it's very different now, but credit is due anyway.
+# If you think my filter has too many colors, Quill18's filter is simpler.
+#
+# Quill18's Simple LootFilter
+#   Author: quill18@quill18.com
+#           youtube.com/quill18
+#           https://gist.github.com/quill18/d811f616d577bed035b4
+#
+#  **Installation**
+#
+#  Copy to:  C:\Users\<USERNAME>\Documents\My Games\Path of Exile\
+#     NOTE:  The file MUST have the ".filter" extension.
+#
+#  In Path of Exile, go to Options -> UI -> <Scroll down to the bottom> ->
+#       Select the filter from the pulldown -> Click "Reload".
+#
+
+################################################################################
+# League specific items for 3.0 / Harbinger League
+################################################################################
+Show
+  Class Piece "Pantheon Soul"
+  SetFontSize 45
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 7 300
+
+Show
+  BaseType "Divine Vessel"
+  Class Map
+  SetFontSize 45
+  SetBorderColor 255 215 0
+  SetBackgroundColor 255 0 0
+  PlayAlertSoundPositional 7 300
+
+################################################################################
+# League specific items for 2.6 Legacy League
+################################################################################
+#Show
+#  Class Leaguestone
+#  SetFontSize 45
+#  SetBorderColor 255 0 255
+#  PlayAlertSoundPositional 7 300
+
+# Breachstones and Ancient Reliquary Keys are all one category
+#Show
+#  Class "Misc Map Items"
+#  SetFontSize 45
+#  SetBorderColor 255 0 255
+#  PlayAlertSoundPositional 7 300
+
+################################################################################
+# League specific items for 2.5 Breach League
+################################################################################
+
+Show
+  Class "Stackable Currency"
+  BaseType Splinter Blessing
+  SetFontSize 45
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 7 300
+
+Show
+  Class Rings
+  BaseType "Breach Ring"
+  SetBorderColor 255 0 255
+
+# Breachstones used to have their own category, but in 2.6 they have been moved
+# to the "Misc Map Items" Class, presumably so they can add new league items to
+# this and we don't have to update filters anymore.
+
+################################################################################
+# New base items in patch 2.4, exclusive to specific maps
+################################################################################
+
+Show
+    BaseType "Steel Ring" "Opal Ring" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Crystal Belt" "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
+    SetFontSize 40
+    SetBorderColor 127 255 255
+    PlayAlertSoundPositional 4 300
+
+################################################################################
+# Talisman League
+################################################################################
+
+Show
+  Class Amulet
+  BaseType Talisman
+  SetFontSize 45
+  SetBorderColor 255 0 0
+  PlayAlertSoundPositional 4 300
+
+################################################################################
+# Items that are always useful
+################################################################################
+
+# Show all jewels
+Show
+    Class Jewel
+    SetBackgroundColor 0 63 63
+
+# Always show uniques
+Show
+    Rarity >= Unique
+    SetFontSize 40
+    SetBorderColor 255 127 0
+    PlayAlertSoundPositional 8 300
+
+################################################################################
+# High socket items with intrinsic value
+################################################################################
+
+# 6 Linked sockets. Always pick these up!
+Show
+  LinkedSockets 6
+  SetTextColor 255 0 0
+  SetBorderColor 255 255 255
+  SetFontSize 45
+  PlayAlertSoundPositional 7 300
+
+# Anything with 6 sockets, connected or not.
+Show
+  Sockets 6
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  PlayAlertSoundPositional 4 300
+
+# 5 Linked sockets. These _can_ be really useful early in a league.
+Show
+  LinkedSockets 5
+  SetBorderColor 255 255 127
+  SetFontSize 35
+
+################################################################################
+# Currency items, arguably the most important drops
+################################################################################
+
+# "Cartographer's Chisel" recipe items.
+# Only show white ones, because you need to apply 20% quality to them.
+Show
+    BaseType "Stone Hammer" "Rock Breaker" "Gavel"
+    Rarity = Normal
+    SetBorderColor 127 255 0
+
+Show
+    BaseType "Stone Hammer" "Rock Breaker" "Gavel"
+    # 4 chisels adds 8% quality to a magic item
+    Rarity = Magic
+    Quality >= 12
+    SetBorderColor 127 255 0
+
+Show
+    BaseType "Stone Hammer" "Rock Breaker" "Gavel"
+    # 4 chisels adds 4% quality to a rare item
+    Quality >= 16
+    SetBorderColor 127 255 0
+
+# "Chromatic" items: only show them when 3x2 or smaller (ignores bows, tower shields, stabby swords)
+Show
+    SocketGroup RGB
+    ItemLevel >= 60
+    Height <= 3
+    Width <= 2
+    SetBorderColor 0 255 0
+    SetBackgroundColor 0 168 0 63
+
+# Chromatic Stabby swords
+Show
+    SocketGroup RGB
+    ItemLevel >= 60
+    Height = 4
+    Width = 1
+    SetBorderColor 0 255 0
+    SetBackgroundColor 0 168 0 63
+
+# Special
+Show
+    BaseType "Key" "Remnant of Corruption"
+    SetBorderColor 255 0 255
+    PlayAlertSoundPositional 7 300
+    SetFontSize 45
+
+# High-tier currency with custom audio
+Show
+    BaseType "Orb of Alchemy"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShAlchemy 300
+    SetFontSize 42
+
+Show
+    BaseType "Blessed Orb"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShBlessed 300
+    SetFontSize 42
+
+Show
+    BaseType "Chaos Orb"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShChaos 300
+    SetFontSize 42
+
+Show
+    BaseType "Divine Orb"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShDivine 300
+    SetFontSize 42
+
+Show
+    BaseType "Exalted Orb"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShExalted 300
+    SetFontSize 42
+
+Show
+    BaseType "Orb of Fusing"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShFusing 300
+    SetFontSize 42
+
+Show
+    BaseType "Mirror of Kalandra"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShMirror 300
+    SetFontSize 42
+
+Show
+    BaseType "Regal Orb"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShRegal 300
+    SetFontSize 42
+
+Show
+    BaseType "Vaal Orb"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShVaal 300
+    SetFontSize 42
+
+Show
+    BaseType "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Cartographer's Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional ShGeneral 300
+    SetFontSize 42
+
+# Top-tier shards
+Show
+    BaseType "Exalted Shard" "Mirror Shard"
+    SetTextColor 255 50 0
+    SetBorderColor 255 50 0
+    PlayAlertSoundPositional 9 300
+    SetFontSize 42
+
+# Mid-tier Harbinger Orbs
+Show
+    BaseType "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb"
+    SetTextColor 255 50 0
+    SetBorderColor 255 100 0
+    PlayAlertSoundPositional ShGeneral 250
+    SetFontSize 39
+
+# Mid-tier shards of Harbinger Orbs
+Show
+    BaseType "Harbinger's Shard" "Horizon Shard" "Ancient Shard" "Binding Shard" "Annulment Shard" "Regal Shard" "Chaos Shard" "Alchemy Shard" "Engineer's Shard"
+    SetTextColor 255 100 0
+    SetBorderColor 255 150 0
+    PlayAlertSoundPositional 8 200
+    SetFontSize 36
+
+# Mid-tier currency
+Show
+    BaseType "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Silver Coin" "Chromatic Orb"
+    SetTextColor 255 100 0
+    SetBorderColor 255 100 0
+    PlayAlertSoundPositional 8 200
+    SetFontSize 39
+
+# Low tier currency
+Show
+    BaseType "Orb of Transmutation" "Orb of Alteration" "Blacksmith's Whetstone" "Orb of Augmentation" "Armourer's Scrap"
+    #SetTextColor 255 215 0
+    SetBorderColor 255 215 0
+    PlayAlertSoundPositional 9 150
+    SetFontSize 36
+
+# Not to be confused with the Essence Drain gem :-)
+Show
+  BaseType "Essence"
+  Class Currency
+  SetFontSize 45
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 7 300
+
+# The worst shards
+Show
+    BaseType "Transmutation Shard" "Alteration Shard"
+#    SetTextColor 255 215 0
+#    SetBorderColor 255 215 0
+    SetFontSize 30
+
+# Scrolls: ID & Portal
+# They are meant to blend into the background, so we de-emphasise them.
+Show
+    BaseType "Scroll"
+    #SetBackgroundColor 0 0 0 63
+    SetFontSize 30
+
+# Other currency
+Show
+    Class Currency
+    SetBorderColor 255 215 0
+    SetFontSize 45
+
+# Outline level 75+ items for the regal recipe
+# Rings and amulets are the most elusive
+Show
+  Class Ring Amulet Belt
+  Rarity = Rare
+  ItemLevel >= 75
+  SetBorderColor 255 63 0
+
+# Outline level 60+ items for the chaos recipe
+# I tend to grab two handed weapons for the hand slots, so I ignore bows, quivers and one handed weapons.
+Show
+  Class Ring Amulet Belt
+  Rarity = Rare
+  ItemLevel >= 60
+  SetBorderColor 255 255 0
+
+################################################################################
+# Endgame items
+################################################################################
+
+Show
+  Class Armour
+  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk"
+  Rarity = Normal Rare
+
+### Boots & Gloves have the same naming scheme
+Show
+  Class Glove Boot
+  BaseType Titan Slink Sorcerer Dragonscale Crusader Murder "Assassin's Boots"
+  Rarity = Normal Rare
+
+Show
+  Class Helmet
+  BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Deicide Mask"
+  Rarity = Normal Rare
+
+Show
+  Class Claw
+  # Each endgame claw has strengths and weaknesses that make them worth using
+  DropLevel >= 64
+  Rarity = Normal Rare
+
+Show
+  Class Bow
+  DropLevel >= 66
+  Rarity = Normal Rare
+
+Show
+  Class Dagger
+  # These daggers are the best of their kinds
+  BaseType "Ambusher" "Sai" "Platinum Kris" "Demon Dagger"
+  Rarity = Normal Rare
+
+Show
+  Class "One Hand Mace"
+  # These are the best of their kind
+  BaseType "Gavel" "Behemoth Mace" "Auric Mace" "Nightmare Mace"
+  Rarity = Normal Rare
+
+Show
+  Class Sceptre
+  # These are the best of their kind
+  BaseType "Carnal Sceptre" "Void Sceptre" "Sambar Sceptre" "Opal Sceptre"
+  Rarity = Normal Rare
+
+Show
+  Class "Two Hand Mace"
+  # These are the best of their kind
+  BaseType "Karui Maul" "Piledriver" "Coronal Maul" "Imperial Maul"
+  Rarity = Normal Rare
+
+Show
+  Class Staves
+  # These are the best of their kind
+  BaseType "Lathi" "Maelström Staff" "Imperial Staff" "Eclipse Staff" "Judgement Staff"
+  Rarity = Normal Rare
+
+Show
+  Class Wands
+  # Most endgame wands have something going for them, so show all of them
+  DropLevel >= 56
+  Rarity = Normal Rare
+
+Show
+  Class "One Hand Sword"
+  BaseType "Legion Sword" "Tiger Hook" "Eternal Sword"
+  Rarity = Normal Rare
+
+Show
+  Class "Thrusting One Hand Sword"
+  BaseType "Dragoon Sword" "Harpy Rapier" "Jewelled Foil" "Vaal Rapier"
+  Rarity = Normal Rare
+
+Show
+  Class "Two Hand Sword"
+  # Most endgame 2h swords have something going for it
+  DropLevel >= 59
+  Rarity = Normal Rare
+
+Show
+  Class "One Hand Axe"
+  BaseType "Vaal Hatchet" "Royal Axe" "Runic Hatchet"
+  Rarity = Normal Rare
+
+Show
+  Class "Two Hand Axe"
+  DropLevel >= 64
+  Rarity = Normal Rare
+
+Show
+  Class Shield
+  BaseType "Pinnacle Tower Shield" "Colossal Tower Shield" "Imperial Buckler" "Vaal Buckler" "Crusader Buckler" "Titanium Spirit Shield" "Fossilised Spirit Shield" "Elegant Round Shield" "Spiny Round Shield" "Cardinal Round Shield" "Teak Round Shield" "Archon Kite Shield" "Mosaic Kite Shield" "Champion Kite Shield" "Supreme Spiked Shield" "Mirrored Spiked Shield"
+  Rarity = Normal Rare
+
+# This is the only one that is strictly worse than other quivers
+Hide
+  Rarity < Rare
+  Class Quiver
+  BaseType "Serrated Arrow Quiver"
+  ItemLevel >= 28
+
+Show
+  Class Quiver
+  Rarity = Normal Rare
+
+#### All exceptions for gear should have been whitelisted above or they will get hidden.
+
+# Top-end drops that are not efficient, but might be acceptable when unlucky
+Show
+  Rarity = Rare
+  ItemLevel >= 68
+  DropLevel >= 62
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield Quiver
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 24
+
+Hide
+  ItemLevel >= 68
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield Quiver
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 24
+
+################################################################################
+# Non-currency, non-equipment
+################################################################################
+
+# Divination Cards, we always want them.
+Show
+    Class Card
+    SetBorderColor 200 200 200
+    SetBackgroundColor 120 120 120
+    SetTextColor 0 0 0
+    SetFontSize 45
+    PlayAlertSoundPositional 3 300
+
+# Can't buy these gems, so highlight:
+# http://pathofexile.gamepedia.com/List_of_drop-only_gems
+Show
+  Class Gem
+  BaseType "Empower" "Enlighten" "Enhance" "Detonate Mines" "Portal" "Added Chaos Damage" "Mirror Arrow" "Block Chance Reduction" "Vaal Breach"
+  SetBorderColor 31 255 63
+  SetFontSize 45
+
+# Highlight gems with quality
+Show
+    Class Gem
+    Quality >= 1
+    SetBorderColor 63 255 127
+    SetFontSize 40
+
+# Show all vaal gems
+Show
+    Class Gem
+    BaseType "Vaal"
+    SetBorderColor 127 0 0
+
+# Costs: Scroll of Wisdom
+Show
+  Class Gem
+  DropLevel <= 4
+  SetBorderColor 63 63 63
+
+# Costs: Orb of Transmutation
+Show
+  Class Gem
+  DropLevel <= 12
+  SetBorderColor 127 127 127
+
+# Costs: Orb of Alteration
+Show
+  Class Gem
+  DropLevel <= 24
+  SetBorderColor 63 63 127
+
+# Costs: Orb of Chance
+Show
+  Class Gem
+  DropLevel <= 34
+  SetBorderColor 255 215 127
+
+# Costs: Orb of Alchemy
+Show
+  Class Gem
+  DropLevel > 34
+  SetBorderColor 255 215 0
+
+
+# Show all maps with their own color (white/yellow/red)
+# Red maps, tier 11+
+Show
+    Class Map
+    DropLevel >= 78
+    SetBackgroundColor 168 32 0
+    SetTextColor 163 141 109
+    SetFontSize 50
+    PlayAlertSoundPositional 3 300
+
+# Yellow maps, tier 6+
+Show
+    Class Map
+    DropLevel >= 73
+    SetBackgroundColor 127 80 0
+    SetTextColor 163 127 63
+    SetFontSize 45
+    PlayAlertSoundPositional 3 300
+
+# White maps and other map stuff
+Show
+    Class "Map Fragments" "Map" "Labyrinth Map Item"
+    SetBackgroundColor 80 80 63
+    SetTextColor 163 141 109
+    SetFontSize 40
+
+################################################################################
+# Flasks
+################################################################################
+
+Show
+    Class "Utility Flasks"
+    SetBorderColor 0 255 255
+
+Show
+    Class Flask
+    #BaseType "Divine Life Flask" "Eternal Life Flask" "Divine Mana Flask" "Eternal Mana Flask"
+    BaseType "Divine Life Flask" "Eternal Life Flask" "Eternal Mana Flask"
+
+# Quality Flasks
+Show
+    Class Flask
+    Quality >= 10
+    SetBorderColor 0 127 0
+    SetFontSize 24
+
+# Low level flasks, or poor stats
+Hide
+    Class Flask
+    SetBackgroundColor 0 0 0 63
+    SetFontSize 24
+
+################################################################################
+# Socketed items
+################################################################################
+# Level 2 allows 3+ sockets
+# Level 25 allows 4+ sockets
+# Level 35 allows 5+ sockets
+# 6+ sockets have intrinsic value, so they are always shown (near top of the filter)
+################################################################################
+
+# One-handed items can have up to three sockets
+# From maps, only show 3-linked weapons
+Show
+  Class "Wand" "One Hand" "Claw" "Dagger" Sceptre Shield
+  LinkedSockets >= 3
+  DropLevel >= 60
+  SetBackgroundColor 0 0 0 63
+
+Show
+    Sockets >= 5
+    DropLevel >= 60
+    SetBackgroundColor 0 0 0 63
+
+# Gloves and such can't have more than 4 sockets, so always show 4-links
+Show
+    LinkedSockets >= 4
+    DropLevel >= 60
+    SetBackgroundColor 0 0 0 63
+
+################################################################################
+# Mid-late game "boring" item filter
+################################################################################
+
+# Hide boring jewelry after normal
+Hide
+  BaseType "Studded Belt" "Paua Ring" "Cloth Belt" "Gold Amulet" "Gold Ring" "Paua Amulet" "Coral Amulet"
+  Rarity <= Rare
+
+# Always show jewelry items
+Show
+  Class Ring Belt Amulet
+  Rarity = Normal Rare
+
+# Show level 62+ items with (near) max links, because they are often the endgame cycle of items
+
+# No sockets
+Show
+  Class Quiver
+  DropLevel >= 62
+  SetBorderColor 255 0 255
+  SetBackgroundColor 0 0 0 63
+
+# Max 3 sockets possible
+Show
+  Class Claw Dagger Wand "One Hand Swords" "One Hand Axes" "One Hand Maces" Quiver Shield Sceptre
+  LinkedSockets >= 3
+  DropLevel >= 62
+  SetBorderColor 255 0 255
+  SetBackgroundColor 0 0 0 63
+
+# Max 4+ sockets
+Show
+  Class Sword Axe Mace Bow Stave Glove Boot Armour Helmet
+  LinkedSockets >= 4
+  DropLevel >= 62
+  SetBorderColor 255 0 255
+  SetBackgroundColor 0 0 0 63
+
+# Don't show lower base items in white maps
+Show
+  Rarity >= Rare
+  DropLevel >= 62
+  ItemLevel >= 68
+
+# Gloves and such can easily be rolled into 4 socket, 4 link, so be less strict. This also means more will show.
+Show
+  Rarity >= Rare
+  DropLevel >= 62
+  ItemLevel >= 73
+  Class Glove Boot Helmet Shield Sceptre "One Hand" Dagger Claw Wand
+  SetBackgroundColor 0 0 0 63
+
+# Always show 20% quality items
+Show
+  Quality = 20
+  SetBorderColor 0 255 0
+
+# Anything we would have hidden with quality, set a border around it to make it stand out.
+Hide
+  Quality >= 16
+  SetBorderColor 0 255 0
+
+# Manually hide what is not explicitly shown
+Hide
+  Class Amulet Ring Belt Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield Sceptre
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 24
+
+# Everything should be shown, so if not: make it stand out as something new
+Show
+  SetBackgroundColor 255 127 127
