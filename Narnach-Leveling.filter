@@ -1446,6 +1446,10 @@ Show
     Class "Utility Flasks"
     SetBorderColor 0 255 255
 
+################################################################################
+# Gems
+################################################################################
+
 # Can't buy these gems, so highlight:
 # http://pathofexile.gamepedia.com/List_of_drop-only_gems
 Show
@@ -1465,11 +1469,41 @@ Show
 Show
     Class Gem
     BaseType "Vaal"
+    SetBorderColor 127 0 0
 
-# Show all other gems
+# Costs: Scroll of Wisdom
 Show
-    Class Gem
-    SetBackgroundColor 0 0 0 200
+  Class Gem
+  DropLevel <= 4
+  SetBorderColor 63 63 63
+
+# Costs: Orb of Transmutation
+Show
+  Class Gem
+  DropLevel <= 12
+  SetBorderColor 127 127 127
+
+# Costs: Orb of Alteration
+Show
+  Class Gem
+  DropLevel <= 24
+  SetBorderColor 63 63 127
+
+# Costs: Orb of Chance
+Show
+  Class Gem
+  DropLevel <= 34
+  SetBorderColor 255 215 127
+
+# Costs: Orb of Alchemy
+Show
+  Class Gem
+  DropLevel > 34
+  SetBorderColor 255 215 0
+
+################################################################################
+# Maps: highlight the different tiers, and play sounds for yellow and red ones
+################################################################################
 
 # Show all maps with their own color (white/yellow/red)
 # Red maps, tier 11+

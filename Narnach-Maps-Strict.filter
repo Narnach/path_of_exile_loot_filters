@@ -501,6 +501,10 @@ Show
     SetFontSize 45
     PlayAlertSoundPositional 3 300
 
+################################################################################
+# Gems
+################################################################################
+
 # Can't buy these gems, so highlight:
 # http://pathofexile.gamepedia.com/List_of_drop-only_gems
 Show
@@ -552,6 +556,9 @@ Show
   DropLevel > 34
   SetBorderColor 255 215 0
 
+################################################################################
+# Maps: highlight the different tiers, and play sounds for yellow and red ones
+################################################################################
 
 # Show all maps with their own color (white/yellow/red)
 # Red maps, tier 11+
