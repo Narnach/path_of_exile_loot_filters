@@ -28,12 +28,6 @@ Show
   SetBorderColor 255 0 255
   PlayAlertSoundPositional 7 300
 
-# Abyss Jewels drop around Abysses, the central mechanic from Abyss League
-Show
-  Class "Abyss Jewel"
-  SetBorderColor 255 0 255
-  PlayAlertSoundPositional 7 300
-
 # Elder items only drop in maps that have been corrupted by the Elder
 Show
   ElderItem True
