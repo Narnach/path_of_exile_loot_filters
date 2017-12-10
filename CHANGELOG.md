@@ -1,5 +1,7 @@
 # Changelog
 
+* 10 December 2017
+  * FIX: "ShaperItemItem" was not a thing, it's supposed to be "ShaperItem".
 * 9 December 2017
   * Removed duplicate listing of Abyss Jewels. They are nice, but no need to show them twice :-)
 * 7 December 2017

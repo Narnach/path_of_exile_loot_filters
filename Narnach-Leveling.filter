@@ -37,7 +37,7 @@ Show
 
 # Shaper items only drop in maps that have been corrupted by the Shaper
 Show
-  ShaperItemItem True
+  ShaperItem True
   SetFontSize 42
   SetBorderColor 135 0 220 255
   PlayAlertSoundPositional 7 300
