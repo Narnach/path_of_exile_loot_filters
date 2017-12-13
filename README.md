@@ -3,15 +3,13 @@
 (Last major patch update: 3.1 / War for the Atlas / Abyss League)
 
 These are the [Path of Exile](https://www.pathofexile.com/) loot filters I use in my recordings over at [youtube.com/narnach](https://www.youtube.com/narnach)
-It keeps evolving over time, as my needs keep changing.
-My biases are towards my playstyle and my needs. Yours may be different.
-
+It keeps evolving over time, as my needs keep changing and new things get added to the game over time. Make sure to check back [here](https://github.com/Narnach/path_of_exile_loot_filters) every once in a while. My biases are towards my playstyle and my needs. Yours may be different.
 
 This collection of loot filters started a just a simple loot filter that I played with when the feature got introduced in Path of Exile 2.0. Over time it's evolved to a collection of loot filters for different stages of the game:
 
-- [Leveling](Narnach-Leveling.filter): A general purpose filter to use while leveling, with a focus on showing the items that are appropriate to your current area level, or about 5 below it.
-- [Maps](Narnach-Maps.filter): A filter to use when you're running maps. It hides low level items, but still show endgame crafting bases and potentially valuable items to use or trade away.
-- [Strict](Narnach-Maps-Strict.filter): A filter that is useful once you are established in maps, and just want all the "junk" items to disappear. This is the strict loot filter to keep your screen mostly free of visual noise.
+- [Leveling](https://github.com/Narnach/path_of_exile_loot_filters/raw/master/Narnach-Leveling.filter): A general purpose filter to use while leveling, with a focus on showing the items that are appropriate to your current area level, or about 5 below it.
+- [Maps](https://github.com/Narnach/path_of_exile_loot_filters/raw/master/Narnach-Maps.filter): A filter to use when you're running maps. It hides low level items, but still show endgame crafting bases and potentially valuable items to use or trade away.
+- [Strict](https://github.com/Narnach/path_of_exile_loot_filters/raw/master/Narnach-Maps-Strict.filter): A filter that is useful once you are established in maps, and just want all the "junk" items to disappear. This is the strict loot filter to keep your screen mostly free of visual noise.
 
 Originally I hosted my filter in a Gist on Github, but as I've added more filter files, that became cluttered and difficult to use. This repository solves that organisational problem!
 
@@ -19,7 +17,7 @@ Each loot filter traditionally had its own changelog listed near the top, but I'
 
 ## How to use these filters
 
-If you only want a single filter, then simply copy the raw text of the filter and store it in a file in this directory:
+If you only want a single filter, then simply copy the raw text of the filter (follow the links above) and store it in a file in this directory:
 
 `C:\Users\<USERNAME>\Documents\My Games\Path of Exile\`
 

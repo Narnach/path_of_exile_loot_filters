@@ -4,7 +4,7 @@
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
 # This loot filter has its home here: https://github.com/Narnach/path_of_exile_loot_filters
-# Remember to check it out for updates (espeically at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
+# Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 
 ################################################################################
 # New League items in 3.1 / War for the Atlas / Abyss League
