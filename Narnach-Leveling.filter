@@ -1655,35 +1655,69 @@ Hide
 # 6+ sockets have intrinsic value, so they are always shown (near top of the filter)
 ################################################################################
 
+# Show level 62+ items with (near) max links, because they are often the endgame cycle of items
+
+# Max 3 sockets possible
+Show
+  Class Claw Dagger Wand "One Hand Swords" "One Hand Axes" "One Hand Maces" Shield Sceptre
+  LinkedSockets >= 3
+  DropLevel >= 62
+  SetBorderColor 255 0 255
+  SetBackgroundColor 0 0 0 63
+
+# Max 4+ sockets
+Show
+  Class Sword Axe Mace Bow Stave Glove Boot Armour Helmet
+  LinkedSockets >= 4
+  DropLevel >= 62
+  SetBorderColor 255 0 255
+  SetBackgroundColor 0 0 0 63
+
 # 5+ sockets is worth showing (unless previously hidden because of low level)
 Show
-    Sockets >= 5
+  Sockets >= 5
+  Rarity = Normal Rare
 
 # 4-links are always good to show
 Show
   LinkedSockets >= 4
+  # Magic items with a 4 link might be worth using as base, so don't filter those out yet
 
-# Until act 5, show all items with 3+ sockets and don't fuss about links
+# Until we can get 4 sockets (and a little after), be happy with 3 sockets
 Show
-   Sockets >= 3
-   ItemLevel < 40
+  Sockets >= 3
+  ItemLevel < 30
+  Rarity = Normal Rare
+
+# Until act 5, show all items with a 3-link or 4+ sockets
+Show
+  LinkedSockets >= 3
+  ItemLevel < 40
+  Rarity = Normal Rare
+Show
+  Sockets >= 4
+  ItemLevel < 40
+  Rarity = Normal Rare
 
 # Max 3 sockets: from act 5, only 3+ links
 Show
   Class "Wand" "One Hand" "Claw" "Dagger" Sceptre Shield
   LinkedSockets >= 3
   ItemLevel < 68
+  # Magic items with a 3 link might be worth using as base, so don't filter those out yet
 
 # From maps, fade the background when something is only shown for its sockets
 Show
   Class "Wand" "One Hand" "Claw" "Dagger" Sceptre Shield
   LinkedSockets >= 3
+  Rarity = Normal Rare
   SetBackgroundColor 0 0 0 63
 
 # From act 5, bump the requirement to 4+ sockets for items that can have 4+ sockets
 Show
   Sockets >= 4
   ItemLevel < 67
+  Rarity = Normal Rare
 
 ################################################################################
 # Early game showing of not-quite-trash items
@@ -1697,6 +1731,12 @@ Show
 Show
   Rarity >= Magic
   ItemLevel <= 10
+
+# Stop showing magic items once we finish act 2
+Hide
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Rarity = Magic
+  ItemLevel >= 23
 
 ################################################################################
 # Mid-late game "boring" item filter
@@ -1718,24 +1758,6 @@ Show
 Show
   Class Ring Belt Amulet
   Rarity = Normal
-
-# Show level 62+ items with (near) max links, because they are often the endgame cycle of items
-
-# Max 3 sockets possible
-Show
-  Class Claw Dagger Wand "One Hand Swords" "One Hand Axes" "One Hand Maces" Shield Sceptre
-  LinkedSockets >= 3
-  DropLevel >= 62
-  SetBorderColor 255 0 255
-  SetBackgroundColor 0 0 0 63
-
-# Max 4+ sockets
-Show
-  Class Sword Axe Mace Bow Stave Glove Boot Armour Helmet
-  LinkedSockets >= 4
-  DropLevel >= 62
-  SetBorderColor 255 0 255
-  SetBackgroundColor 0 0 0 63
 
 ################################################################################
 # All items below are not explicitly shown for any reason

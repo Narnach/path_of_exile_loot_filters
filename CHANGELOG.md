@@ -1,7 +1,8 @@
 # Changelog
 
 * 18 December 2017
-  * Leveling: be a bit less strict about showing items with lower socket counts. Until act 5, 3+ sockets is fine, from act 5, require 4 sockets where possible
+  * Leveling: be a bit less strict about showing items with lower socket counts.
+  * Leveling: hide trash magic weapons/armour after act 2 (only show 3/4 linked equippables)
 * 10 December 2017
   * FIX: "ShaperItemItem" was not a thing, it's supposed to be "ShaperItem".
 * 9 December 2017
