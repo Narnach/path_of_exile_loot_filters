@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 7 December 2017
+# Last updated on 18 December 2017
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -353,6 +353,185 @@ Show
     SetBorderColor 255 215 0
     SetFontSize 45
 
+################################################################################
+# Divination Cards
+################################################################################
+
+# Divination Cards, we always want them.
+Show
+    Class Card
+    SetBorderColor 200 200 200
+    SetBackgroundColor 120 120 120
+    SetTextColor 0 0 0
+    SetFontSize 45
+    PlayAlertSoundPositional 3 300
+
+################################################################################
+# Gems
+################################################################################
+
+# Can't buy these gems, so highlight:
+# http://pathofexile.gamepedia.com/List_of_drop-only_gems
+Show
+  Class Gem
+  BaseType "Empower" "Enlighten" "Enhance" "Detonate Mines" "Portal" "Added Chaos Damage" "Mirror Arrow" "Block Chance Reduction" "Vaal Breach"
+  SetBorderColor 31 255 63
+  SetFontSize 45
+
+# Highlight gems with quality
+Show
+    Class Gem
+    Quality >= 1
+    SetBorderColor 63 255 127
+    SetFontSize 40
+
+# Show all vaal gems
+Show
+    Class Gem
+    BaseType "Vaal"
+    SetBorderColor 127 0 0
+
+# Costs: Scroll of Wisdom
+Show
+  Class Gem
+  DropLevel <= 4
+  SetBorderColor 63 63 63
+
+# Costs: Orb of Transmutation
+Show
+  Class Gem
+  DropLevel <= 12
+  SetBorderColor 127 127 127
+
+# Costs: Orb of Alteration
+Show
+  Class Gem
+  DropLevel <= 24
+  SetBorderColor 63 63 127
+
+# Costs: Orb of Chance
+Show
+  Class Gem
+  DropLevel <= 34
+  SetBorderColor 255 215 127
+
+# Costs: Orb of Alchemy
+Show
+  Class Gem
+  DropLevel > 34
+  SetBorderColor 255 215 0
+
+################################################################################
+# Maps: highlight the different tiers, and play sounds for yellow and red ones
+################################################################################
+
+# Show all maps with their own color (white/yellow/red)
+# Red maps, tier 11+
+Show
+    Class Map
+    DropLevel >= 78
+    SetBackgroundColor 168 32 0
+    SetTextColor 163 141 109
+    SetFontSize 50
+    PlayAlertSoundPositional 3 300
+
+# Yellow maps, tier 6+
+Show
+    Class Map
+    DropLevel >= 73
+    SetBackgroundColor 127 80 0
+    SetTextColor 163 127 63
+    SetFontSize 45
+    PlayAlertSoundPositional 3 300
+
+# White maps and other map stuff
+Show
+    Class "Map Fragments" "Map" "Labyrinth Map Item"
+    SetBackgroundColor 80 80 63
+    SetTextColor 163 141 109
+    SetFontSize 40
+
+################################################################################
+# Flasks: only show the "current" tier based on map level
+################################################################################
+
+# Lots of new utility flasks, so show them all
+Show
+    Class "Utility Flasks"
+    SetBorderColor 0 255 255
+
+# Non-utility flasks
+Show
+    Class Flask
+    DropLevel <= 1
+    ItemLevel < 3
+
+Show
+    Class Flask
+    DropLevel >= 3
+    ItemLevel < 6
+
+Show
+    Class Flask
+    DropLevel >= 6
+    ItemLevel < 12
+
+Show
+    Class Flask
+    DropLevel >= 12
+    ItemLevel < 18
+
+Show
+    Class Flask
+    DropLevel >= 18
+    ItemLevel < 24
+
+Show
+    Class Flask
+    DropLevel >= 24
+    ItemLevel < 30
+
+Show
+    Class Flask
+    DropLevel >= 30
+    ItemLevel < 36
+
+Show
+    Class Flask
+    DropLevel >= 36
+    ItemLevel < 42
+
+Show
+    Class Flask
+    DropLevel >= 42
+    ItemLevel < 48
+
+# A couple tiers of flasks stand out between level 42 and 60
+Show
+    Class Flask
+    BaseType "Hallowed Life Flask" "Sanctified Mana Flask" "Hallowed Mana Flask"
+    ItemLevel < 60
+
+# Top-tier flasks
+Show
+    Class Flask
+    BaseType "Divine Life Flask" "Eternal Life Flask" "Divine Mana Flask" "Eternal Mana Flask"
+
+# Quality Flasks
+Show
+    Class Flask
+    Quality >= 10
+
+# Low level flasks, or poor stats
+Hide
+    Class Flask
+    SetBackgroundColor 0 0 0 63
+    SetFontSize 24
+
+################################################################################
+# Chaos/Regal Recipe
+################################################################################
+
 # Outline level 75+ items for the regal recipe
 # Rings and amulets are the most elusive
 Show
@@ -388,7 +567,7 @@ Show
 #  SetBackgroundColor 63 63 0 63
 
 ################################################################################
-# Endgame items
+# Endgame items: always show them when normal or rare, ignore magic
 ################################################################################
 
 Show
@@ -489,6 +668,10 @@ Show
   BaseType "Pinnacle Tower Shield" "Colossal Tower Shield" "Imperial Buckler" "Vaal Buckler" "Crusader Buckler" "Titanium Spirit Shield" "Fossilised Spirit Shield" "Elegant Round Shield" "Spiny Round Shield" "Cardinal Round Shield" "Teak Round Shield" "Archon Kite Shield" "Mosaic Kite Shield" "Champion Kite Shield" "Supreme Spiked Shield" "Mirrored Spiked Shield"
   Rarity = Normal Rare
 
+################################################################################
+# Quivers have no sockets, and are like jewelry in that they all have different utilty
+################################################################################
+
 # This is the only one that is strictly worse than other quivers
 Hide
   Rarity < Rare
@@ -500,12 +683,14 @@ Show
   Class Quiver
   Rarity = Normal Rare
 
+################################################################################
+# Top end "decent item" filter
+################################################################################
 # Top-end drops that are not efficient, but might be acceptable when unlucky
 Show
   Rarity = Rare
   ItemLevel >= 67
-  #DropLevel >= 62
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield Quiver
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
@@ -513,21 +698,21 @@ Show
 Hide
   ItemLevel >= 67
   DropLevel >= 62
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield Quiver
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield
   SetBackgroundColor 0 0 0 63
 
 # Merciless level items
 Hide
   ItemLevel >= 67
   DropLevel >= 56
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield Quiver
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
 # Really low level stuff
 Hide
   ItemLevel >= 67
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield Quiver
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield
   SetBackgroundColor 0 0 0 63
   SetFontSize 18
 
@@ -859,14 +1044,14 @@ Show
   BaseType "Decorative Axe"
   ItemLevel < 33
   Rarity Normal
-  LinkedSockets = 3
+  Sockets = 3
 
 Show
   Class "One Hand Axes"
   BaseType "Spectral Axe"
   ItemLevel < 35
   Rarity Normal
-  LinkedSockets = 3
+  Sockets = 3
 
 Show
   Class "One Hand Axes"
@@ -874,14 +1059,14 @@ Show
   BaseType "Etched Hatchet"
   ItemLevel < 39
   Rarity Normal
-  LinkedSockets = 3
+  Sockets = 3
 
 Show
   Class "One Hand Axes"
   BaseType "Jasper Axe"
   ItemLevel < 39
   Rarity Normal
-  LinkedSockets = 3
+  Sockets = 3
 
 Show
   Class "One Hand Axes"
@@ -1028,28 +1213,27 @@ Show
   Class Armour
   BaseType "War Plate"
   ItemLevel < 28
-  Sockets >= 3
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Full Plate"
   ItemLevel < 32
-  Sockets >= 4
+  Sockets >= 3
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Arena Plate"
   ItemLevel < 35
-  Sockets >= 4
+  Sockets >= 3
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Lordly Plate"
   ItemLevel < 37
-  Sockets >= 4
+  Sockets >= 3
   Rarity Normal
 
 Show
@@ -1153,84 +1337,82 @@ Show
   Class Armour
   BaseType "Scholar's Robe"
   ItemLevel < 25
-  Sockets >= 3
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Silken Garb"
   ItemLevel < 28
-  Sockets >= 3
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Mage's Vestment"
   ItemLevel < 32
-  Sockets >= 4
+  Sockets >= 3
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Silk Robe"
   ItemLevel < 35
-  Sockets >= 4
+  Sockets >= 3
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Cabalist Regalia"
   ItemLevel < 37
-  Sockets >= 4
+  Sockets >= 3
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Sage's Robe"
   ItemLevel < 41
-  LinkedSockets >= 4
+  Sockets >= 4
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Silken Wrap"
   ItemLevel < 45
-  LinkedSockets >= 4
+  Sockets >= 4
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Conjurer's Vestment"
   ItemLevel < 53
-  LinkedSockets >= 4
+  Sockets >= 4
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Destroyer Regalia"
   ItemLevel < 56
-  LinkedSockets >= 4
+  Sockets >= 4
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Savant's Robe"
   ItemLevel < 59
-  LinkedSockets >= 4
+  Sockets >= 4
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Necromancer Silks"
   ItemLevel < 62
-  LinkedSockets >= 4
+  Sockets >= 4
   Rarity Normal
 
 Show
   # 3-10% increased Spell Damage
   Class Armour
   BaseType "Occultist's Vestment"
-  LinkedSockets >= 4
+  Sockets >= 4
   SetBorderColor 127 127 127
   Rarity Normal
 
@@ -1238,13 +1420,13 @@ Show
   Class Armour
   BaseType "Widowsilk Robe"
   ItemLevel < 68
-  LinkedSockets >= 4
+  Sockets >= 4
   Rarity Normal
 
 Show
   Class Armour
   BaseType "Vaal Regalia"
-  LinkedSockets >= 4
+  Sockets >= 4
   Rarity Normal
   SetBorderColor 127 127 127
   SetBackgroundColor 0 0 0 63
@@ -1284,21 +1466,20 @@ Show
   BaseType "Cedar Tower Shield"
   Rarity Normal
   ItemLevel < 24
-  #Sockets 3
 
 Show
   Class Shield
   BaseType "Copper Tower Shield"
   Rarity Normal
   ItemLevel < 30
-  #Sockets 3
+  Sockets 3
 
 Show
   Class Shield
   BaseType "Reinforced Tower Shield"
   Rarity Normal
   ItemLevel < 47
-  #LinkedSockets 3
+  Sockets 3
 
 # Ignore Painted, Buckskin & Mahogany Tower Shield because armour is lower
 
@@ -1307,14 +1488,14 @@ Show
   BaseType "Bronze Tower Shield"
   Rarity Normal
   ItemLevel < 51
-  #LinkedSockets 3
+  Sockets 3
 
 Show
   Class Shield
   BaseType "Girded Tower Shield"
   Rarity Normal
   ItemLevel < 64
-  #LinkedSockets 3
+  Sockets 3
 
 # Ignore Crested, Shagreen & Ebony Tower Shield because armour is lower
 
@@ -1323,12 +1504,13 @@ Show
   BaseType "Ezomyte Tower Shield"
   Rarity Normal
   ItemLevel < 67
-  #LinkedSockets 3
+  Sockets 3
 
 Show
   Class Shield
   BaseType "Colossal Tower Shield"
   Rarity Normal
+  Sockets 3
   SetBorderColor 127 127 127
   SetBackgroundColor 0 0 0 63
 
@@ -1342,11 +1524,19 @@ Hide
   SetFontSize 24
 
 ################################################################################
+# Other item types fall under the generic rules listed below
+################################################################################
+
+
+################################################################################
 # Hide low level equippable items because they are too low level
+# Rule of thumb: stop showing items 5-9 levels after they start dropping
+# Example: From item level 10-14, only show items that drop from level 5+
+# Example: From item level 15-19, only show items that drop from level 10+
 ################################################################################
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
   ItemLevel >= 10
   DropLevel < 5
   Rarity < Rare
@@ -1354,15 +1544,15 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
-  ItemLevel >= 10
-  DropLevel < 5
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  ItemLevel >= 15
+  DropLevel < 10
   Rarity < Rare
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
   ItemLevel >= 20
   DropLevel < 15
   Rarity < Rare
@@ -1370,7 +1560,15 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  ItemLevel >= 25
+  DropLevel < 20
+  Rarity < Rare
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 24
+
+Hide
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
   ItemLevel >= 30
   DropLevel < 25
   Rarity < Rare
@@ -1378,7 +1576,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
   ItemLevel >= 35
   DropLevel < 30
   Rarity < Rare
@@ -1386,7 +1584,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
   ItemLevel >= 40
   DropLevel < 35
   Rarity < Rare
@@ -1394,7 +1592,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
   ItemLevel >= 45
   DropLevel < 40
   Rarity < Rare
@@ -1402,7 +1600,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
   ItemLevel >= 50
   DropLevel < 45
   Rarity < Rare
@@ -1410,7 +1608,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
   ItemLevel >= 55
   DropLevel < 50
   Rarity < Rare
@@ -1418,23 +1616,24 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
-  Rarity < Rare
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
   ItemLevel >= 60
   DropLevel < 55
+  Rarity < Rare
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
 # From level 67 onwards (Act 4 Merciless) hide all low level base items
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Stave  Shield
+  ItemLevel >= 65
+  DropLevel < 60
   Rarity < Rare
-  ItemLevel >= 67
-  DropLevel < 62
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
-# From level 67 onwards (Act 4 Merciless) only show endgame viable armour
+# From level 67 onwards (Act 4 Merciless) only show endgame viable armour (whitelisted above)
+# by hiding all other ones
 Hide
   Class Glove Boot Armour Helmet
   Rarity < Rare
@@ -1443,178 +1642,9 @@ Hide
   SetFontSize 24
 
 ################################################################################
-# Non-currency, non-equipment
+# By this point, only generic equippable items remain that are roughly alright
+# on the leveling curve, or they are rare
 ################################################################################
-
-# Divination Cards, we always want them.
-Show
-    Class Card
-    SetBorderColor 200 200 200
-    SetBackgroundColor 120 120 120
-    SetTextColor 0 0 0
-    SetFontSize 45
-    PlayAlertSoundPositional 3 300
-
-# Lots of new utility flasks, so show them all
-Show
-    Class "Utility Flasks"
-    SetBorderColor 0 255 255
-
-################################################################################
-# Gems
-################################################################################
-
-# Can't buy these gems, so highlight:
-# http://pathofexile.gamepedia.com/List_of_drop-only_gems
-Show
-  Class Gem
-  BaseType "Empower" "Enlighten" "Enhance" "Detonate Mines" "Portal" "Added Chaos Damage" "Mirror Arrow" "Block Chance Reduction" "Vaal Breach"
-  SetBorderColor 31 255 63
-  SetFontSize 45
-
-# Highlight gems with quality
-Show
-    Class Gem
-    Quality >= 1
-    SetBorderColor 63 255 127
-    SetFontSize 40
-
-# Show all vaal gems
-Show
-    Class Gem
-    BaseType "Vaal"
-    SetBorderColor 127 0 0
-
-# Costs: Scroll of Wisdom
-Show
-  Class Gem
-  DropLevel <= 4
-  SetBorderColor 63 63 63
-
-# Costs: Orb of Transmutation
-Show
-  Class Gem
-  DropLevel <= 12
-  SetBorderColor 127 127 127
-
-# Costs: Orb of Alteration
-Show
-  Class Gem
-  DropLevel <= 24
-  SetBorderColor 63 63 127
-
-# Costs: Orb of Chance
-Show
-  Class Gem
-  DropLevel <= 34
-  SetBorderColor 255 215 127
-
-# Costs: Orb of Alchemy
-Show
-  Class Gem
-  DropLevel > 34
-  SetBorderColor 255 215 0
-
-################################################################################
-# Maps: highlight the different tiers, and play sounds for yellow and red ones
-################################################################################
-
-# Show all maps with their own color (white/yellow/red)
-# Red maps, tier 11+
-Show
-    Class Map
-    DropLevel >= 78
-    SetBackgroundColor 168 32 0
-    SetTextColor 163 141 109
-    SetFontSize 50
-    PlayAlertSoundPositional 3 300
-
-# Yellow maps, tier 6+
-Show
-    Class Map
-    DropLevel >= 73
-    SetBackgroundColor 127 80 0
-    SetTextColor 163 127 63
-    SetFontSize 45
-    PlayAlertSoundPositional 3 300
-
-# White maps and other map stuff
-Show
-    Class "Map Fragments" "Map" "Labyrinth Map Item"
-    SetBackgroundColor 80 80 63
-    SetTextColor 163 141 109
-    SetFontSize 40
-
-################################################################################
-# Flasks: only show the "current" tier based on map level
-################################################################################
-
-Show
-    Class Flask
-    DropLevel <= 1
-    ItemLevel < 3
-
-Show
-    Class Flask
-    DropLevel >= 3
-    ItemLevel < 6
-
-Show
-    Class Flask
-    DropLevel >= 6
-    ItemLevel < 12
-
-Show
-    Class Flask
-    DropLevel >= 12
-    ItemLevel < 18
-
-Show
-    Class Flask
-    DropLevel >= 18
-    ItemLevel < 24
-
-Show
-    Class Flask
-    DropLevel >= 24
-    ItemLevel < 30
-
-Show
-    Class Flask
-    DropLevel >= 30
-    ItemLevel < 36
-
-Show
-    Class Flask
-    DropLevel >= 36
-    ItemLevel < 42
-
-Show
-    Class Flask
-    DropLevel >= 42
-    ItemLevel < 48
-
-# A couple tiers of flasks stand out between level 42 and 60
-Show
-    Class Flask
-    BaseType "Hallowed Life Flask" "Sanctified Mana Flask" "Hallowed Mana Flask"
-    ItemLevel < 60
-
-# Top-tier flasks
-Show
-    Class Flask
-    BaseType "Divine Life Flask" "Eternal Life Flask" "Divine Mana Flask" "Eternal Mana Flask"
-
-# Quality Flasks
-Show
-    Class Flask
-    Quality >= 10
-
-# Low level flasks, or poor stats
-Hide
-    Class Flask
-    SetBackgroundColor 0 0 0 63
-    SetFontSize 24
 
 ################################################################################
 # Socketed items
@@ -1625,44 +1655,34 @@ Hide
 # 6+ sockets have intrinsic value, so they are always shown (near top of the filter)
 ################################################################################
 
-# One-handed items can have up to three sockets
-# Show any 3 socket melee weapon until cruel
+# 5+ sockets is worth showing (unless previously hidden because of low level)
 Show
-  Class "Wand" "One Hand" "Claw" "Dagger" Sceptre Shield
-  Sockets >= 3
-  ItemLevel < 40
+    Sockets >= 5
 
-# From cruel, only 3+ links until maps
+# 4-links are always good to show
+Show
+  LinkedSockets >= 4
+
+# Until act 5, show all items with 3+ sockets and don't fuss about links
+Show
+   Sockets >= 3
+   ItemLevel < 40
+
+# Max 3 sockets: from act 5, only 3+ links
 Show
   Class "Wand" "One Hand" "Claw" "Dagger" Sceptre Shield
   LinkedSockets >= 3
   ItemLevel < 68
 
-# One-handed items can have up to three sockets
-# From maps, only show 3-linked weapons
+# From maps, fade the background when something is only shown for its sockets
 Show
   Class "Wand" "One Hand" "Claw" "Dagger" Sceptre Shield
   LinkedSockets >= 3
   SetBackgroundColor 0 0 0 63
 
-# 5+ sockets is worth showing, regardless of level.
-Show
-    Sockets >= 5
-
-# Gloves and such can't have more than 4 sockets, so always show 4-links
-Show
-    LinkedSockets >= 4
-
-# Early game, 3 links are the best we can get.
-Show
-   LinkedSockets >= 3
-   ItemLevel < 25
-
-# Early game (act 1-4), show any 4 socket, as it's likely an improvement
-# Update: when there is no league, any 4-socket is actually really useful.
+# From act 5, bump the requirement to 4+ sockets for items that can have 4+ sockets
 Show
   Sockets >= 4
-  #ItemLevel < 40
   ItemLevel < 67
 
 ################################################################################
@@ -1682,7 +1702,7 @@ Show
 # Mid-late game "boring" item filter
 ################################################################################
 
-# Hide boring jewelry after normal
+# Hide boring jewelry after act 4
 Hide
   BaseType "Studded Belt" "Paua Ring" "Cloth Belt" "Gold Amulet" "Gold Ring" "Paua Amulet" "Coral Amulet"
   Rarity <= Magic
@@ -1694,23 +1714,16 @@ Show
   Class Ring Amulet Belt
   ItemLevel < 68
 
-# Always show jewelry items
+# Always show jewelry items as crafting bases
 Show
   Class Ring Belt Amulet
   Rarity = Normal
 
 # Show level 62+ items with (near) max links, because they are often the endgame cycle of items
 
-# No sockets
-Show
-  Class Quiver
-  DropLevel >= 62
-  SetBorderColor 255 0 255
-  SetBackgroundColor 0 0 0 63
-
 # Max 3 sockets possible
 Show
-  Class Claw Dagger Wand "One Hand Swords" "One Hand Axes" "One Hand Maces" Quiver Shield Sceptre
+  Class Claw Dagger Wand "One Hand Swords" "One Hand Axes" "One Hand Maces" Shield Sceptre
   LinkedSockets >= 3
   DropLevel >= 62
   SetBorderColor 255 0 255
@@ -1749,7 +1762,7 @@ Show
   SetFontSize 24
 
 ################################################################################
-# Legacy League rare rules: after level 20, only show the last 10-15 drop levels
+# Rares: after level 20, only show the last 10-15 drop levels
 ################################################################################
 Show
   Rarity >= Rare
@@ -1795,38 +1808,21 @@ Show
   ItemLevel <= 60
   DropLevel >= 45
 
-# Close the gap to Dried Lake
+# Last one before maps, where we only care about endgame items
 Show
   Rarity >= Rare
-  ItemLevel < 67
+  ItemLevel <= 67
   DropLevel >= 50
-
-################################################################################
-# Regular rules resume
-################################################################################
 
 # Don't show lower base items in white maps
 Show
   Rarity >= Rare
+  ItemLevel >= 68
   DropLevel >= 62
-  ItemLevel >= 67
-#  ItemLevel < 73
 
-# Yellow maps are more strict with what we show: 5 sockets on items that can have up to 6
-#Show
-#  Rarity >= Rare
-#  DropLevel >= 62
-#  ItemLevel >= 73
-#  Sockets >= 5
-#  Class Armour Stave "Two Hand" Bow
-
-# Gloves and such can easily be rolled into 4 socket, 4 link, so be less strict. This also means more will show.
-Show
-  Rarity >= Rare
-  DropLevel >= 62
-  ItemLevel >= 73
-  Class Glove Boot Helmet Shield Sceptre "One Hand" Dagger Claw Wand
-  SetBackgroundColor 0 0 0 63
+################################################################################
+# Regular rules resume
+################################################################################
 
 # Always show 20% quality items
 Show
@@ -1837,7 +1833,6 @@ Show
 Hide
   Quality >= 15
   SetBorderColor 0 255 0
-
 
 Hide
   Quality >= 10
