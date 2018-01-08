@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 18 December 2017
+# Last updated on 8 January 2018
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -1662,16 +1662,14 @@ Show
   Class Claw Dagger Wand "One Hand Swords" "One Hand Axes" "One Hand Maces" Shield Sceptre
   LinkedSockets >= 3
   DropLevel >= 62
-  SetBorderColor 255 0 255
-  SetBackgroundColor 0 0 0 63
+  SetBorderColor 255 255 255
 
 # Max 4+ sockets
 Show
   Class Sword Axe Mace Bow Stave Glove Boot Armour Helmet
   LinkedSockets >= 4
   DropLevel >= 62
-  SetBorderColor 255 0 255
-  SetBackgroundColor 0 0 0 63
+  SetBorderColor 255 255 255
 
 # 5+ sockets is worth showing (unless previously hidden because of low level)
 Show

@@ -1,5 +1,9 @@
 # Changelog
 
+* 8 January 2018
+  * All: changed highlighting of drop level 62+ itemw with max 3 or 4+ socket items from purple edge to white edge. It's less attention grabbing this way.
+  * Leveling: 3 and 4+ socket items no longer have a transparent background. This makes sense for maps filters, because there's plenty of items there and you really only want the best, but while leveling you simply want upgrades so don't reduce the visual noise just yet.
+  * Maps + strict: only show rare+ quivers, not white/magic.
 * 18 December 2017
   * Leveling: be a bit less strict about showing items with lower socket counts.
   * Leveling: hide trash magic weapons/armour after act 2 (only show 3/4 linked equippables)

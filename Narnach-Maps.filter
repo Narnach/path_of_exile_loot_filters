@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 7 December 2017
+# Last updated on 8 January 2018
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -663,25 +663,22 @@ Show
 # No sockets
 Show
   Class Quiver
+  Rarity >= Rare
   DropLevel >= 62
-  SetBorderColor 255 0 255
-  SetBackgroundColor 0 0 0 63
 
 # Max 3 sockets possible
 Show
   Class Claw Dagger Wand "One Hand Swords" "One Hand Axes" "One Hand Maces" Quiver Shield Sceptre
   LinkedSockets >= 3
   DropLevel >= 62
-  SetBorderColor 255 0 255
-  SetBackgroundColor 0 0 0 63
+  SetBorderColor 255 255 255
 
 # Max 4+ sockets
 Show
   Class Sword Axe Mace Bow Stave Glove Boot Armour Helmet
   LinkedSockets >= 4
   DropLevel >= 62
-  SetBorderColor 255 0 255
-  SetBackgroundColor 0 0 0 63
+  SetBorderColor 255 255 255
 
 # Don't show lower base items in white maps
 Show

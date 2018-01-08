@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 7 December 2017
+# Last updated on 8 January 2018
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -684,8 +684,7 @@ Show
 # No sockets
 Show
   Class Quiver
-  DropLevel >= 62
-  SetBorderColor 255 0 255
+  Rarity >= Rare
   SetBackgroundColor 0 0 0 63
 
 # Max 3 sockets possible
@@ -693,7 +692,7 @@ Show
   Class Claw Dagger Wand "One Hand Swords" "One Hand Axes" "One Hand Maces" Quiver Shield Sceptre
   LinkedSockets >= 3
   DropLevel >= 62
-  SetBorderColor 255 0 255
+  SetBorderColor 255 255 255
   SetBackgroundColor 0 0 0 63
 
 # Max 4+ sockets
@@ -701,7 +700,7 @@ Show
   Class Sword Axe Mace Bow Stave Glove Boot Armour Helmet
   LinkedSockets >= 4
   DropLevel >= 62
-  SetBorderColor 255 0 255
+  SetBorderColor 255 255 255
   SetBackgroundColor 0 0 0 63
 
 # Don't show lower base items in white maps
