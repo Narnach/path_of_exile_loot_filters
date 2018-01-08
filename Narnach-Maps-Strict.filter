@@ -486,10 +486,7 @@ Show
 
 # This is the only one that is strictly worse than other quivers
 Hide
-  Rarity < Rare
-  Class Quiver
   BaseType "Serrated Arrow Quiver"
-  ItemLevel >= 28
 
 Show
   Class Quiver
@@ -680,12 +677,6 @@ Show
   Rarity = Rare
 
 # Show level 62+ items with (near) max links, because they are often the endgame cycle of items
-
-# No sockets
-Show
-  Class Quiver
-  Rarity >= Rare
-  SetBackgroundColor 0 0 0 63
 
 # Max 3 sockets possible
 Show
