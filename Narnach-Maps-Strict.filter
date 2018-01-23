@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 8 January 2018
+# Last updated on 22 January 2018
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -32,14 +32,14 @@ Show
 Show
   ElderItem True
   SetFontSize 42
-  SetBorderColor 0 220 220 255
+  SetBackgroundColor 0 220 220 255
   PlayAlertSoundPositional 7 300
 
 # Shaper items only drop in maps that have been corrupted by the Shaper
 Show
   ShaperItem True
   SetFontSize 42
-  SetBorderColor 135 0 220 255
+  SetBackgroundColor 135 0 220 255
   PlayAlertSoundPositional 7 300
 
 ################################################################################

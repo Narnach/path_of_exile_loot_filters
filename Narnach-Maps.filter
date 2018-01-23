@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 8 January 2018
+# Last updated on 22 January 2018
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -32,14 +32,14 @@ Show
 Show
   ElderItem True
   SetFontSize 42
-  SetBorderColor 0 220 220 255
+  SetBackgroundColor 0 220 220 255
   PlayAlertSoundPositional 7 300
 
 # Shaper items only drop in maps that have been corrupted by the Shaper
 Show
   ShaperItem True
   SetFontSize 42
-  SetBorderColor 135 0 220 255
+  SetBackgroundColor 135 0 220 255
   PlayAlertSoundPositional 7 300
 
 ################################################################################
@@ -369,100 +369,186 @@ Show
 Show
   Class Armour
   BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk"
-  Rarity = Normal Rare
+  Rarity = Rare
+
+Show
+  Class Armour
+  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk"
+  Rarity = Normal
+  Sockets >= 4
 
 ### Boots & Gloves have the same naming scheme
 Show
   Class Glove Boot
   BaseType Titan Slink Sorcerer Dragonscale Crusader Murder "Assassin's Boots"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class Glove Boot
+  BaseType Titan Slink Sorcerer Dragonscale Crusader Murder "Assassin's Boots"
+  Rarity = Normal
+  LinkedSockets = 4
 
 Show
   Class Helmet
   BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Deicide Mask"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class Helmet
+  BaseType "Royal Burgonet" "Lion Pelt" "Hubris Circlet" "Nightmare Bascinet" "Prophet Crown" "Praetor Crown" "Deicide Mask"
+  Rarity = Normal
+  LinkedSockets = 4
 
+# Each endgame claw has strengths and weaknesses that make them worth using
 Show
   Class Claw
-  # Each endgame claw has strengths and weaknesses that make them worth using
   DropLevel >= 64
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class Claw
+  DropLevel >= 64
+  Rarity = Normal
+  LinkedSockets = 3
 
 Show
   Class Bow
   DropLevel >= 66
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class Bow
+  DropLevel >= 66
+  Rarity = Normal
+  Sockets >= 4
 
+# These daggers are the best of their kinds
 Show
   Class Dagger
-  # These daggers are the best of their kinds
   BaseType "Ambusher" "Sai" "Platinum Kris" "Demon Dagger"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class Dagger
+  BaseType "Ambusher" "Sai" "Platinum Kris" "Demon Dagger"
+  Rarity = Normal
+  LinkedSockets = 3
 
+# These are the best of their kind
 Show
   Class "One Hand Mace"
-  # These are the best of their kind
   BaseType "Gavel" "Behemoth Mace" "Auric Mace" "Nightmare Mace"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class "One Hand Mace"
+  BaseType "Gavel" "Behemoth Mace" "Auric Mace" "Nightmare Mace"
+  Rarity = Normal
+  LinkedSockets = 3
 
+# These are the best of their kind
 Show
   Class Sceptre
-  # These are the best of their kind
   BaseType "Carnal Sceptre" "Void Sceptre" "Sambar Sceptre" "Opal Sceptre"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class Sceptre
+  BaseType "Carnal Sceptre" "Void Sceptre" "Sambar Sceptre" "Opal Sceptre"
+  Rarity = Normal
+  LinkedSockets = 3
 
+# These are the best of their kind
 Show
   Class "Two Hand Mace"
-  # These are the best of their kind
   BaseType "Karui Maul" "Piledriver" "Coronal Maul" "Imperial Maul"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class "Two Hand Mace"
+  BaseType "Karui Maul" "Piledriver" "Coronal Maul" "Imperial Maul"
+  Rarity = Normal
+  Sockets >= 4
 
+# These are the best of their kind
 Show
   Class Staves
-  # These are the best of their kind
   BaseType "Lathi" "Maelström Staff" "Imperial Staff" "Eclipse Staff" "Judgement Staff"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class Staves
+  BaseType "Lathi" "Maelström Staff" "Imperial Staff" "Eclipse Staff" "Judgement Staff"
+  Rarity = Normal
+  Sockets >= 4
 
+# Most endgame wands have something going for them, so show all of them
+# Opal Wand: highest max spell damage
+# Tornado: best balanced (attack speed, dps, spell damage)
+# Prophecy Wand: crit bonus
+# Profane: cast speed bonus
 Show
   Class Wands
-  # Most endgame wands have something going for them, so show all of them
-  # Opal Wand: highest max spell damage
-  # Tornado: best balanced (attack speed, dps, spell damage)
-  # Prophecy Wand: crit bonus
-  # Profane: cast speed bonus
   BaseType "Profane Wand" "Opal Wand" "Prophecy Wand" "Tornado Wand"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class Wands
+  BaseType "Profane Wand" "Opal Wand" "Prophecy Wand" "Tornado Wand"
+  Rarity = Normal
+  LinkedSockets = 3
 
 Show
   Class "One Hand Sword"
   BaseType "Legion Sword" "Tiger Hook" "Eternal Sword"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class "One Hand Sword"
+  BaseType "Legion Sword" "Tiger Hook" "Eternal Sword"
+  Rarity = Normal
+  LinkedSockets = 3
 
 Show
   Class "Thrusting One Hand Sword"
   BaseType "Dragoon Sword" "Harpy Rapier" "Jewelled Foil" "Vaal Rapier"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class "Thrusting One Hand Sword"
+  BaseType "Dragoon Sword" "Harpy Rapier" "Jewelled Foil" "Vaal Rapier"
+  Rarity = Normal
+  LinkedSockets = 3
 
+# Most endgame 2h swords have something going for it
 Show
   Class "Two Hand Sword"
-  # Most endgame 2h swords have something going for it
   DropLevel >= 59
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class "Two Hand Sword"
+  DropLevel >= 59
+  Rarity = Normal
+  Sockets >= 4
 
 Show
   Class "One Hand Axe"
   BaseType "Vaal Hatchet" "Royal Axe" "Runic Hatchet"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class "One Hand Axe"
+  BaseType "Vaal Hatchet" "Royal Axe" "Runic Hatchet"
+  Rarity = Normal
+  LinkedSockets = 3
 
 Show
   Class "Two Hand Axe"
   DropLevel >= 64
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class "Two Hand Axe"
+  DropLevel >= 64
+  Rarity = Normal
+  Sockets >= 4
 
 Show
   Class Shield
   BaseType "Pinnacle Tower Shield" "Colossal Tower Shield" "Imperial Buckler" "Vaal Buckler" "Crusader Buckler" "Titanium Spirit Shield" "Fossilised Spirit Shield" "Elegant Round Shield" "Spiny Round Shield" "Cardinal Round Shield" "Teak Round Shield" "Archon Kite Shield" "Mosaic Kite Shield" "Champion Kite Shield" "Supreme Spiked Shield" "Mirrored Spiked Shield"
-  Rarity = Normal Rare
+  Rarity = Rare
+Show
+  Class Shield
+  BaseType "Pinnacle Tower Shield" "Colossal Tower Shield" "Imperial Buckler" "Vaal Buckler" "Crusader Buckler" "Titanium Spirit Shield" "Fossilised Spirit Shield" "Elegant Round Shield" "Spiny Round Shield" "Cardinal Round Shield" "Teak Round Shield" "Archon Kite Shield" "Mosaic Kite Shield" "Champion Kite Shield" "Supreme Spiked Shield" "Mirrored Spiked Shield"
+  Rarity = Normal
+  LinkedSockets = 3
 
 # This is the only one that is strictly worse than other quivers
 Hide
