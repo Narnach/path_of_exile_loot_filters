@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 22 January 2018
+# Last updated on 28 January 2018
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -567,13 +567,31 @@ Show
   DropLevel >= 62
   Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield Quiver
   SetBackgroundColor 0 0 0 63
+  SetFontSize 28
+
+# Low-level orb farming rares that are always 2x3 or smaller
+Show
+  Rarity = Rare
+  ItemLevel >= 68
+  Class Armour Glove Boot Helmet Claw Sceptre Wands Dagger Quiver "One Hand"
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 24
+
+# Shields and bows have 2x3 and 2x4 variations
+Show
+  Rarity = Rare
+  ItemLevel >= 68
+  Class Bow Shield
+  Width <= 2
+  Height <= 3
+  SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
 Hide
   ItemLevel >= 68
   Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield Quiver
   SetBackgroundColor 0 0 0 63
-  SetFontSize 24
+  SetFontSize 18
 
 ################################################################################
 # Non-currency, non-equipment

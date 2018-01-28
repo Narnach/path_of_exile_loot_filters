@@ -1,5 +1,7 @@
 # Changelog
 
+* 28 January 2018
+  * Maps: Show rare items that take less than 6 inventory squares, regardless of level. Lower level ones are smaller than higher level ones. This helps to get lower tier orbs from selling rares.
 * 22 January 2018
   * All: Shaper and Elder item highlights are much more obvious. Entire background now has a different colour instead of only the border.
 * 16 January 2018
