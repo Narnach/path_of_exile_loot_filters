@@ -1,5 +1,7 @@
 # Changelog
 
+* 19 March 2018
+  * Leveling: only show Tower Shields with more armour than lower level ones (there's a few large "gaps" with higher level shields that are worse than the lower level one).
 * 28 January 2018
   * Maps: Show rare items that take less than 6 inventory squares, regardless of level. Lower level ones are smaller than higher level ones. This helps to get lower tier orbs from selling rares.
 * 22 January 2018

@@ -1323,6 +1323,97 @@ Hide
   SetFontSize 24
 
 ################################################################################
+# Strength Shields
+################################################################################
+
+# 9 armour
+Show
+  Class Shield
+  BaseType "Splintered Tower Shield"
+  ItemLevel < 5
+  Rarity Normal
+
+# 46 armour
+Show
+  Class Shield
+  BaseType "Corroded Tower Shield"
+  ItemLevel < 11
+  Rarity Normal
+
+# 53 armour, a tiny upgrade
+Show
+  Class Shield
+  BaseType "Rawhide Tower Shield"
+  Sockets >= 2
+  ItemLevel < 17
+  Rarity Normal
+
+# 108 armour
+Show
+  Class Shield
+  BaseType "Cedar Tower Shield"
+  Sockets = 3
+  ItemLevel < 24
+  Rarity Normal
+
+# 191 armour
+Show
+  Class Shield
+  BaseType "Copper Tower Shield"
+  Sockets = 3
+  ItemLevel < 30
+  Rarity Normal
+
+# 287 armour. There are a bunch of shields of higher level with less armour than this one, so you're going to see this as the only shield in act 4 and 5.
+Show
+  Class Shield
+  BaseType "Reinforced Tower Shield"
+  Sockets = 3
+  ItemLevel < 47
+  Rarity Normal
+
+# 367 armour
+Show
+  Class Shield
+  BaseType "Bronze Tower Shield"
+  Sockets = 3
+  ItemLevel < 51
+  Rarity Normal
+
+# 481 armour. Another shield that has to last for a while before you get a small upgrade.
+Show
+  Class Shield
+  BaseType "Girded Tower Shield"
+  Sockets = 3
+  ItemLevel < 64
+  Rarity Normal
+
+# 522 armour
+Show
+  Class Shield
+  BaseType "Ezomyte Tower Shield"
+  Sockets = 3
+  ItemLevel < 67
+  Rarity Normal
+
+# 632 armour, better than the next tier so this is the endgame armour shield.
+Show
+  Class Shield
+  BaseType "Colossal Tower Shield"
+  Sockets = 3
+  SetBorderColor 127 127 127
+  SetBackgroundColor 0 0 0 63
+  Rarity Normal
+
+Hide
+  Class Shield
+  # All strength shields are Tower Shields
+  BaseType "Tower Shield"
+  Rarity Normal
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 24
+
+################################################################################
 # Intelligence Body Armours
 ################################################################################
 
