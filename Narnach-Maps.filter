@@ -1,10 +1,16 @@
 # Narnach's Loot filter for Maps
-# Last updated on 28 January 2018
+# Last updated on 19 March 2018
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
 # This loot filter has its home here: https://github.com/Narnach/path_of_exile_loot_filters
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
+
+################################################################################
+# New League items in 3.2 / Bestiary League
+################################################################################
+
+# No custom highlight required for 3.2. The nets are currency and thus always stand out and play a sound.
 
 ################################################################################
 # New League items in 3.1 / War for the Atlas / Abyss League
