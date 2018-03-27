@@ -1,5 +1,7 @@
 # Changelog
 
+* 27 March 2018
+  * Leveling: Show weapons + armour with 10% quality or more, except for the very bulky ones (large bows, tower shields, staves). This helps with the 40% quality recipes to get whetstones and armour scraps.
 * 19 March 2018
   * Leveling: only show Tower Shields with more armour than lower level ones (there's a few large "gaps" with higher level shields that are worse than the lower level one).
 * 28 January 2018

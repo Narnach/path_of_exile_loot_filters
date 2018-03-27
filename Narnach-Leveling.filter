@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 19 March 2018
+# Last updated on 27 March 2018
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -205,13 +205,6 @@ Show
     SocketGroup RGB
     SetBorderColor 0 255 0
     SetFontSize 40
-
-# Treat it as a regular currency item now
-#Show
-#    BaseType "Chromatic Orb"
-#    SetBorderColor 0 255 0
-#    SetTextColor 0 255 0
-#    SetFontSize 45
 
 # Special
 Show
@@ -1945,6 +1938,23 @@ Show
 Show
   Quality = 20
   SetBorderColor 0 255 0
+
+# High Quality small items to trade in for whetstones/scraps 40% quality recipe
+# 10% quality and up means that you only need 3-4 of these to get your scrap.
+# 3x2 and smaller items
+Show
+  Quality >= 10
+  Height <= 3
+  Width <= 2
+  SetBorderColor 0 255 0
+  SetBackgroundColor 0 0 0 63
+# 4x1 pointy swords
+Show
+  Quality >= 10
+  Height <= 4
+  Width <= 1
+  SetBorderColor 0 255 0
+  SetBackgroundColor 0 0 0 63
 
 # Anything we would have hidden with quality, set a border around it to make it stand out.
 Hide
