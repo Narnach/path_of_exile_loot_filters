@@ -516,10 +516,11 @@ Show
     Class Flask
     BaseType "Divine Life Flask" "Eternal Life Flask" "Divine Mana Flask" "Eternal Mana Flask"
 
-# Quality Flasks
+# Quality Flasks: 3x any of these gives a Glassblower's Bauble
 Show
     Class Flask
-    Quality >= 10
+    SetBorderColor 0 255 0
+    Quality >= 14
 
 # Low level flasks, or poor stats
 Hide
@@ -564,6 +565,66 @@ Show
 #  ItemLevel < 75
 #  SetBorderColor 255 255 0
 #  SetBackgroundColor 63 63 0 63
+
+################################################################################
+# weapons and armour
+################################################################################
+# High quality (small) items to trade in for whetstones/scraps 40% quality recipe
+# 1x20 = currency
+# 3x14 = 42 = currency
+# You can trade 3x armour scraps for 1 whetstone, so weapons are more valuable than armour
+# We only show armour with quality that can trade 3x for currency (14%+)
+# Weapons: we also show quality that can trade 4x for currency (10%+)
+
+# Always show 20% quality items, because they directly give you a quality currency item
+Show
+  Quality = 20
+  SetBorderColor 0 255 0
+
+# 3x2 and smaller wapons (no longbows)
+Show
+  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
+  Quality >= 14
+  Height <= 3
+  Width <= 2
+  SetBorderColor 0 255 0
+  SetBackgroundColor 0 0 0 63
+
+# 4x1 pointy swords
+Show
+  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
+  Quality >= 14
+  Height <= 4
+  Width <= 1
+  SetBorderColor 0 255 0
+  SetBackgroundColor 0 0 0 63
+
+# 3x2 and smaller wapons (no longbows)
+Show
+  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
+  Quality >= 10
+  Height <= 3
+  Width <= 2
+  SetBorderColor 0 127 0
+  SetBackgroundColor 0 0 0 63
+
+# 4x1 pointy swords
+Show
+  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
+  Quality >= 10
+  Height <= 4
+  Width <= 1
+  SetBorderColor 0 127 0
+  SetBackgroundColor 0 0 0 63
+
+# Armour that's not a 4x2 tower shield
+Show
+  Class Armour Glove Boot Helmet Shield
+  Quality >= 14
+  Height <= 3
+  Width <= 2
+  SetBorderColor 0 127 0
+  SetBackgroundColor 0 0 0 63
 
 ################################################################################
 # Endgame items: always show them when normal or rare, ignore magic
@@ -1934,39 +1995,20 @@ Show
 # Regular rules resume
 ################################################################################
 
-# Always show 20% quality items
-Show
-  Quality = 20
-  SetBorderColor 0 255 0
-
-# High Quality small items to trade in for whetstones/scraps 40% quality recipe
-# 10% quality and up means that you only need 3-4 of these to get your scrap.
-# 3x2 and smaller items
-Show
-  Quality >= 10
-  Height <= 3
-  Width <= 2
-  SetBorderColor 0 255 0
-  SetBackgroundColor 0 0 0 63
-# 4x1 pointy swords
-Show
-  Quality >= 10
-  Height <= 4
-  Width <= 1
-  SetBorderColor 0 255 0
-  SetBackgroundColor 0 0 0 63
-
 # Anything we would have hidden with quality, set a border around it to make it stand out.
+# 3x14=42=currency
 Hide
-  Quality >= 15
+  Quality >= 14
   SetBorderColor 0 255 0
 
+# 4x10=40=currency
 Hide
   Quality >= 10
   SetBorderColor 0 200 0
 
+# 5x8=40=currency
 Hide
-  Quality >= 5
+  Quality >= 8
   SetBorderColor 0 100 0
 
 # Manually hide what is not explicitly shown

@@ -1,5 +1,7 @@
 # Changelog
 
+* 29 March 2018
+  * Leveling: Tweaked the quality of wapons/armour showing to include magic items, and moved the show/hide threshold for armour to 14% (any 3x of these will give currency) and for weapons highlight 14%+ different from 10%+
 * 27 March 2018
   * Leveling: Show weapons + armour with 10% quality or more, except for the very bulky ones (large bows, tower shields, staves). This helps with the 40% quality recipes to get whetstones and armour scraps.
 * 19 March 2018
