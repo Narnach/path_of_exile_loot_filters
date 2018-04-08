@@ -1,5 +1,7 @@
 # Changelog
 
+* 8 April 2018
+  * Maps/Strict: highlight maps-tier nets with custom colors
 * 29 March 2018
   * Leveling: Tweaked the quality of wapons/armour showing to include magic items, and moved the show/hide threshold for armour to 14% (any 3x of these will give currency) and for weapons highlight 14%+ different from 10%+
 * 27 March 2018

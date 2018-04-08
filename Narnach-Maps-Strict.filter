@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 19 March 2018
+# Last updated on 8 April 2018
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -10,7 +10,49 @@
 # New League items in 3.2 / Bestiary League
 ################################################################################
 
-# No custom highlight required for 3.2. The nets are currency and thus always stand out and play a sound.
+# Level 58-70, usable in acts 9-10 and T1-3 maps
+Show
+  Class Currency
+  BaseType "Simple Steel Net"
+  SetFontSize 35
+  SetTextColor 215 255 255
+  SetBorderColor 255 215 0
+  PlayAlertSoundPositional 7 300
+
+# Level 60-75, usable in act 10 and T1-8 maps
+Show
+  Class Currency
+  BaseType "Reinforced Steel Net"
+  SetFontSize 40
+  SetTextColor 255 215 127
+  SetBorderColor 255 215 0
+  PlayAlertSoundPositional 7 300
+
+# Level 64+, usable in act 10 and all map tiers
+Show
+  Class Currency
+  BaseType "Strong Steel Net"
+  SetFontSize 45
+  SetTextColor 255 127 127
+  SetBorderColor 255 215 0
+  PlayAlertSoundPositional 7 300
+
+# Revive corpses
+Show
+  Class Currency
+  BaseType "Necromancy Net"
+  SetFontSize 45
+  SetTextColor 127 255 127
+  SetBorderColor 255 215 0
+  PlayAlertSoundPositional 7 300
+
+# Too low for use in maps
+Show
+  Class Currency
+  BaseType "Net"
+  SetFontSize 30
+  SetBorderColor 255 215 0
+  PlayAlertSoundPositional 7 300
 
 ################################################################################
 # New League items in 3.1 / War for the Atlas / Abyss League
