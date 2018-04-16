@@ -1,5 +1,8 @@
 # Changelog
 
+* 16 April 2018
+  * All: added highlighting for tier 10 nets: Thaumaturgical Net (can't believe I missed this one).
+  * All: top-tier nets play the "an orb of great power" sound instead of the generic currency sound. This affects Necro, Thaumaturgical and Strong Steel Nets. I hope this helps to discern good net drops from regular currency drops (because for good nets you might want to look around, just like for fuses and such)
 * 8 April 2018
   * Maps/Strict: highlight maps-tier nets with custom colors
   * Leveling: highlight all nets in addition to the map-tier net highlighting used in maps

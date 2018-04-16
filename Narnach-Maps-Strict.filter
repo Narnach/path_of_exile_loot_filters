@@ -35,7 +35,16 @@ Show
   SetFontSize 45
   SetTextColor 255 127 127
   SetBorderColor 255 215 0
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional ShGeneral 300
+
+# Level 68+, usable in all map tiers
+Show
+  Class Currency
+  BaseType "Thaumaturgical Net"
+  SetFontSize 50
+  SetTextColor 255 63 63
+  SetBorderColor 255 127 0
+  PlayAlertSoundPositional ShGeneral 300
 
 # Revive corpses
 Show
@@ -44,7 +53,7 @@ Show
   SetFontSize 45
   SetTextColor 127 255 127
   SetBorderColor 255 215 0
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional ShGeneral 300
 
 # Too low for use in maps
 Show
