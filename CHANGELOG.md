@@ -1,5 +1,7 @@
 # Changelog
 
+* 25 April 2018
+  * Maps/Strict: split Divination Cards into two categories: normal and boring. Boring cards are slightly de-emphasised graphically and play their drop sound at a lower volume. Boring: Rain of Chaos, Scholar, Carrion Crow, Thunderous Skies. More will likely join this group as I encounter them.
 * 16 April 2018
   * All: added highlighting for tier 10 nets: Thaumaturgical Net (can't believe I missed this one).
   * All: top-tier nets play the "an orb of great power" sound instead of the generic currency sound. This affects Necro, Thaumaturgical and Strong Steel Nets. I hope this helps to discern good net drops from regular currency drops (because for good nets you might want to look around, just like for fuses and such)
