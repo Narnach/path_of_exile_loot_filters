@@ -1,5 +1,7 @@
 # Changelog
 
+* 3 June 2018
+  * All: added highlights for Incursion League items, such as Stone of Passage, Flashpowder Keg, the stackable currencies "Vial of X" and the specific affixes that some items can have when dropped by the Omnitect.
 * 25 April 2018
   * Maps/Strict: split Divination Cards into two categories: normal and boring. Boring cards are slightly de-emphasised graphically and play their drop sound at a lower volume. Boring: Rain of Chaos, Scholar, Carrion Crow, Thunderous Skies. More will likely join this group as I encounter them.
 * 16 April 2018

@@ -1,10 +1,38 @@
 # Narnach's Loot filter for Maps
-# Last updated on 25 April 2018
+# Last updated on 3 June 2018
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
 # This loot filter has its home here: https://github.com/Narnach/path_of_exile_loot_filters
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
+
+################################################################################
+# New League items in 3.3 / Incursion League
+################################################################################
+
+# Covers Stone of Passage and Flashpowder Keg
+Show
+  Class "Incursion Item"
+  SetFontSize 42
+  SetTextColor 255 0 255
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 7 300
+
+# Covers all the "Vial of X" items
+Show
+  Class "Stackable Currency"
+  BaseType "Vial of"
+  SetFontSize 35
+  SetTextColor 215 255 255
+  SetBorderColor 255 215 0
+  PlayAlertSoundPositional 7 300
+
+# Incursion-specific item affixes, should only drop from the Omnitect
+Show
+  HasExplicitMod "Tacati's" "Citaqualotl's" "Matatl's" "Topotante's" "Xopec's" "Guatelitzi's" "of Tacati" "of Citaqualotl" "of Matatl" "of Puhuarte" "of Guatelitzi"
+  SetBorderColor 0 0 255
+  SetFontSize 35
+  PlayAlertSoundPositional 7 300
 
 ################################################################################
 # New League items in 3.2 / Bestiary League
