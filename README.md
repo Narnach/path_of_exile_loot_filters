@@ -1,6 +1,6 @@
 # Narnach's Loot filters for Path of Exile
 
-(Last major patch update: 3.2 / Bestiary League)
+(Last major patch update: 3.3 / Incursion League)
 
 These are the [Path of Exile](https://www.pathofexile.com/) loot filters I use in my recordings over at [youtube.com/narnach](https://www.youtube.com/narnach)
 It keeps evolving over time, as my needs keep changing and new things get added to the game over time. Make sure to check back [here](https://github.com/Narnach/path_of_exile_loot_filters) every once in a while. My biases are towards my playstyle and my needs. Yours may be different.
