@@ -37,6 +37,27 @@ Show
   PlayAlertSoundPositional 7 300
 
 ################################################################################
+# League specific items for 2.5 Breach League
+# (moved up to prevent clashing with 3.2 Nets)
+################################################################################
+
+Show
+  Class "Stackable Currency"
+  BaseType Splinter Blessing
+  SetFontSize 45
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 2 300
+
+Show
+  Class Rings
+  BaseType "Breach Ring"
+  SetBorderColor 255 0 255
+
+# Breachstones used to have their own category, but in 2.6 they have been moved
+# to the "Misc Map Items" Class, presumably so they can add new league items to
+# this and we don't have to update filters anymore.
+
+################################################################################
 # New League items in 3.2 / Bestiary League
 ################################################################################
 
@@ -166,24 +187,8 @@ Show
 #  PlayAlertSoundPositional 7 300
 
 ################################################################################
-# League specific items for 2.5 Breach League
+# 2.5 moved up due to Splinter of Uul-Netol clashing with the Bestiary Nets.
 ################################################################################
-
-Show
-  Class "Stackable Currency"
-  BaseType Splinter Blessing
-  SetFontSize 45
-  SetBorderColor 255 0 255
-  PlayAlertSoundPositional 7 300
-
-Show
-  Class Rings
-  BaseType "Breach Ring"
-  SetBorderColor 255 0 255
-
-# Breachstones used to have their own category, but in 2.6 they have been moved
-# to the "Misc Map Items" Class, presumably so they can add new league items to
-# this and we don't have to update filters anymore.
 
 ################################################################################
 # New base items in patch 2.4, exclusive to specific maps
