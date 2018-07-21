@@ -3,6 +3,7 @@
 * 21 July 2018
   * Leveling: added location for custom logic
   * All: properly highlight Uul-Netol splinters, instead of treating them like Nets (they're both currency and contain the word "net")
+  * Leveling: reduced number of magic and useless items shown
 * 3 June 2018
   * All: added highlights for Incursion League items, such as Stone of Passage, Flashpowder Keg, the stackable currencies "Vial of X" and the specific affixes that some items can have when dropped by the Omnitect.
 * 25 April 2018

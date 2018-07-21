@@ -660,7 +660,8 @@ Show
 #  SetBackgroundColor 63 63 0 63
 
 ################################################################################
-# weapons and armour
+# weapons and armour with quality
+# (disabled most because Incursion has too much item spam and this is distracting)
 ################################################################################
 # High quality (small) items to trade in for whetstones/scraps 40% quality recipe
 # 1x20 = currency
@@ -675,49 +676,49 @@ Show
   SetBorderColor 0 255 0
 
 # 3x2 and smaller wapons (no longbows)
-Show
-  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
-  Quality >= 14
-  Height <= 3
-  Width <= 2
-  SetBorderColor 0 255 0
-  SetBackgroundColor 0 0 0 63
+#Show
+#  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
+#  Quality >= 14
+#  Height <= 3
+#  Width <= 2
+#  SetBorderColor 0 255 0
+#  SetBackgroundColor 0 0 0 63
 
 # 4x1 pointy swords
-Show
-  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
-  Quality >= 14
-  Height <= 4
-  Width <= 1
-  SetBorderColor 0 255 0
-  SetBackgroundColor 0 0 0 63
+#Show
+#  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
+#  Quality >= 14
+#  Height <= 4
+#  Width <= 1
+#  SetBorderColor 0 255 0
+#  SetBackgroundColor 0 0 0 63
 
 # 3x2 and smaller wapons (no longbows)
-Show
-  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
-  Quality >= 10
-  Height <= 3
-  Width <= 2
-  SetBorderColor 0 127 0
-  SetBackgroundColor 0 0 0 63
+#Show
+#  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
+#  Quality >= 10
+#  Height <= 3
+#  Width <= 2
+#  SetBorderColor 0 127 0
+#  SetBackgroundColor 0 0 0 63
 
 # 4x1 pointy swords
-Show
-  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
-  Quality >= 10
-  Height <= 4
-  Width <= 1
-  SetBorderColor 0 127 0
-  SetBackgroundColor 0 0 0 63
+#Show
+#  Class Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger
+#  Quality >= 10
+#  Height <= 4
+#  Width <= 1
+#  SetBorderColor 0 127 0
+#  SetBackgroundColor 0 0 0 63
 
 # Armour that's not a 4x2 tower shield
-Show
-  Class Armour Glove Boot Helmet Shield
-  Quality >= 14
-  Height <= 3
-  Width <= 2
-  SetBorderColor 0 127 0
-  SetBackgroundColor 0 0 0 63
+#Show
+#  Class Armour Glove Boot Helmet Shield
+#  Quality >= 14
+#  Height <= 3
+#  Width <= 2
+#  SetBorderColor 0 127 0
+#  SetBackgroundColor 0 0 0 63
 
 ################################################################################
 # Endgame items: always show them when normal or rare, ignore magic
@@ -1906,14 +1907,16 @@ Show
   Class Claw Dagger Wand "One Hand Swords" "One Hand Axes" "One Hand Maces" Shield Sceptre
   LinkedSockets >= 3
   DropLevel >= 62
-  SetBorderColor 255 255 255
+  Rarity = Normal Rare
+  #SetBorderColor 255 255 255
 
 # Max 4+ sockets
 Show
   Class Sword Axe Mace Bow Stave Glove Boot Armour Helmet
   LinkedSockets >= 4
   DropLevel >= 62
-  SetBorderColor 255 255 255
+  Rarity = Normal Rare
+  #SetBorderColor 255 255 255
 
 # 5+ sockets is worth showing (unless previously hidden because of low level)
 Show
@@ -1946,7 +1949,8 @@ Show
   Class "Wand" "One Hand" "Claw" "Dagger" Sceptre Shield
   LinkedSockets >= 3
   ItemLevel < 68
-  # Magic items with a 3 link might be worth using as base, so don't filter those out yet
+  Rarity = Normal Rare
+
 
 # From maps, fade the background when something is only shown for its sockets
 Show
