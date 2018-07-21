@@ -1,5 +1,7 @@
 # Changelog
 
+* 21 July 2018
+  * Leveling: added location for custom logic
 * 3 June 2018
   * All: added highlights for Incursion League items, such as Stone of Passage, Flashpowder Keg, the stackable currencies "Vial of X" and the specific affixes that some items can have when dropped by the Omnitect.
 * 25 April 2018
