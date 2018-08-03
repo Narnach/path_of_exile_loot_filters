@@ -18,7 +18,7 @@ Show
   SetFontSize 42
   SetTextColor 255 0 255
   SetBorderColor 255 0 255
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 5 300
 
 # Covers all the "Vial of X" items
 Show
@@ -27,14 +27,14 @@ Show
   SetFontSize 35
   SetTextColor 215 255 255
   SetBorderColor 255 215 0
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 5 300
 
 # Incursion-specific item affixes, should only drop from the Omnitect
 Show
   HasExplicitMod "Tacati's" "Citaqualotl's" "Matatl's" "Topotante's" "Xopec's" "Guatelitzi's" "of Tacati" "of Citaqualotl" "of Matatl" "of Puhuarte" "of Guatelitzi"
   SetBorderColor 0 0 255
   SetFontSize 35
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 5 300
 
 ################################################################################
 # League specific items for 2.5 Breach League
@@ -68,7 +68,7 @@ Show
   SetFontSize 35
   SetTextColor 215 255 255
   SetBorderColor 255 215 0
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 6 300
 
 # Level 60-75, usable in act 10 and T1-8 maps
 Show
@@ -77,7 +77,7 @@ Show
   SetFontSize 40
   SetTextColor 255 215 127
   SetBorderColor 255 215 0
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 6 300
 
 # Level 64+, usable in act 10 and all map tiers
 Show
@@ -86,7 +86,7 @@ Show
   SetFontSize 45
   SetTextColor 255 127 127
   SetBorderColor 255 215 0
-  PlayAlertSoundPositional ShGeneral 300
+  PlayAlertSoundPositional 6 300
 
 # Level 68+, usable in all map tiers
 Show
@@ -95,7 +95,7 @@ Show
   SetFontSize 50
   SetTextColor 255 63 63
   SetBorderColor 255 127 0
-  PlayAlertSoundPositional ShGeneral 300
+  PlayAlertSoundPositional 6 300
 
 # Revive corpses
 Show
@@ -104,7 +104,7 @@ Show
   SetFontSize 45
   SetTextColor 127 255 127
   SetBorderColor 255 215 0
-  PlayAlertSoundPositional ShGeneral 300
+  PlayAlertSoundPositional 6 300
 
 # Other nets get treated as random currency
 
@@ -115,7 +115,7 @@ Show
   SetFontSize 32
   SetTextColor 215 255 127
   SetBorderColor 255 215 0
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 6 300
 
 ################################################################################
 # New League items in 3.1 / War for the Atlas / Abyss League
@@ -131,27 +131,27 @@ Show
   Class Belt
   BaseType "Stygian Vise"
   SetBorderColor 255 0 255
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 1 300
 
 # Abyss Jewels drop around Abysses, the central mechanic from Abyss League
 Show
   Class "Abyss Jewel"
   SetBorderColor 255 0 255
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 1 300
 
 # Elder items only drop in maps that have been corrupted by the Elder
 Show
   ElderItem True
   SetFontSize 42
   SetBackgroundColor 0 220 220 255
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 5 300
 
 # Shaper items only drop in maps that have been corrupted by the Shaper
 Show
   ShaperItem True
   SetFontSize 42
   SetBackgroundColor 135 0 220 255
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 5 300
 
 ################################################################################
 # League specific items for 3.0 / Harbinger League
@@ -160,7 +160,7 @@ Show
   Class Piece "Pantheon Soul"
   SetFontSize 45
   SetBorderColor 255 0 255
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 5 300
 
 Show
   BaseType "Divine Vessel"
@@ -168,7 +168,7 @@ Show
   SetFontSize 45
   SetBorderColor 255 215 0
   SetBackgroundColor 255 0 0
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 5 300
 
 ################################################################################
 # League specific items for 2.6 Legacy League
@@ -209,7 +209,7 @@ Show
   BaseType Talisman
   SetFontSize 45
   SetBorderColor 255 0 0
-  PlayAlertSoundPositional 4 300
+  PlayAlertSoundPositional 5 300
 
 ################################################################################
 # Items that are always useful
@@ -237,7 +237,7 @@ Show
   SetTextColor 255 0 0
   SetBorderColor 255 255 255
   SetFontSize 45
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 4 300
 
 # Anything with 6 sockets, connected or not.
 Show
@@ -299,10 +299,10 @@ Show
 Show
     BaseType "Key" "Remnant of Corruption"
     SetBorderColor 255 0 255
-    PlayAlertSoundPositional 7 300
+    PlayAlertSoundPositional 4 300
     SetFontSize 45
 
-# High-tier currency with custom audio
+# High-tier currency
 Show
     BaseType "Orb of Alchemy"
     SetTextColor 255 50 0
@@ -419,7 +419,7 @@ Show
   Class Currency
   SetFontSize 45
   SetBorderColor 255 0 255
-  PlayAlertSoundPositional 7 300
+  PlayAlertSoundPositional 5 300
 
 # The worst shards
 Show
@@ -620,6 +620,39 @@ Hide
 ################################################################################
 # CUSTOM: hide item types I don't intend to use
 ################################################################################
+
+# Base item types to hide because I don't use them:
+# - Not an archer, so no bows & quivers
+# - Shield, so no two-handers
+# - Caster, so no swords/axes/claws (keep wands, scepters (maces), daggers)
+# Delay enforcing this until item level 10, just so I can equip "whatever" really early on
+Hide
+  Class Quiver Bow "Two Hand" Stave Claw Sword Axe
+  Rarity < Unique
+
+# Totally not useful item types
+Hide
+  BaseType "Tower Shield"
+  Rarity < Unique
+
+# Not helpful as crafting base, but useful to sell when found as rares
+Hide
+  BaseType "Iron Ring" "Gold Ring" "Gold Amulet" "Paua Ring" "Paua Amulet" "Coral Ring" "Coral Amulet" "Aquamarine Flask"
+  Rarity < Rare
+
+# Too many item drops, so ignore everything that has poor sockets.
+Hide
+  Class Armour Helmet Gloves Boots
+  Rarity <= Magic
+  LinkedSockets < 3
+  ItemLevel >= 10
+
+# Don't care about magic items
+Hide
+  Class Ring Belt Amulet Dagger Wand
+  Rarity = Magic
+  LinkedSockets < 3
+  ItemLevel >= 10
 
 ################################################################################
 # Chaos/Regal Recipe
