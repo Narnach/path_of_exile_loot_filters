@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 21 July 2018
+# Last updated on 3 August 2018
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -402,8 +402,8 @@ Show
     BaseType "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Silver Coin" "Chromatic Orb"
     SetTextColor 255 100 0
     SetBorderColor 255 100 0
-    PlayAlertSoundPositional 8 200
-    SetFontSize 39
+    PlayAlertSoundPositional ShGeneral 200
+    SetFontSize 37
 
 # Low tier currency
 Show

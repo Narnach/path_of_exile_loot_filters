@@ -1,5 +1,8 @@
 # Changelog
 
+* 3 August 2018
+  * All: play a "valuable orb" sound for Orb of Chance / Jeweller's Orb / Chisel / Silver Coin
+  * Maps/strict: added space for custom logic
 * 21 July 2018
   * Leveling: added location for custom logic
   * All: properly highlight Uul-Netol splinters, instead of treating them like Nets (they're both currency and contain the word "net")

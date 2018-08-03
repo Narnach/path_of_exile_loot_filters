@@ -1,10 +1,12 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 21 July 2018
+# Last updated on 3 August 2018
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
 # This loot filter has its home here: https://github.com/Narnach/path_of_exile_loot_filters
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
+#
+# A good place to hide items you don't want for your character is in the CUSTOM section below.
 
 ################################################################################
 # New League items in 3.3 / Incursion League
@@ -413,8 +415,8 @@ Show
     BaseType "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Silver Coin" "Chromatic Orb"
     SetTextColor 255 100 0
     SetBorderColor 255 100 0
-    PlayAlertSoundPositional 8 200
-    SetFontSize 39
+    PlayAlertSoundPositional ShGeneral 200
+    SetFontSize 37
 
 # Low tier currency
 Show
@@ -734,6 +736,10 @@ Hide
     Class Flask
     SetBackgroundColor 0 0 0 63
     SetFontSize 16
+
+################################################################################
+# CUSTOM: hide item types I don't intend to use
+################################################################################
 
 ################################################################################
 # Socketed items
