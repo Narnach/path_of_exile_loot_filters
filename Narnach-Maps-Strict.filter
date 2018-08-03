@@ -454,6 +454,14 @@ Show
     SetBorderColor 255 215 0
     SetFontSize 45
 
+################################################################################
+# CUSTOM: hide item types I don't intend to use
+################################################################################
+
+################################################################################
+# Chaos/Regal recipe
+################################################################################
+
 # Outline level 75+ items for the regal recipe
 # Rings and amulets are the most elusive
 Show
@@ -736,43 +744,6 @@ Hide
     Class Flask
     SetBackgroundColor 0 0 0 63
     SetFontSize 16
-
-################################################################################
-# CUSTOM: hide item types I don't intend to use
-################################################################################
-
-# Base item types to hide because I don't use them:
-# - Not an archer, so no bows & quivers
-# - Shield, so no two-handers
-# - Caster, so no swords/axes/claws (keep wands, scepters (maces), daggers)
-# Delay enforcing this until item level 10, just so I can equip "whatever" really early on
-Hide
-  Class Quiver Bow "Two Hand" Stave Claw Sword Axe
-  Rarity < Unique
-
-# Totally not useful item types
-Hide
-  BaseType "Tower Shield"
-  Rarity < Unique
-
-# Not helpful as crafting base, but useful to sell when found as rares
-Hide
-  BaseType "Iron Ring" "Gold Ring" "Gold Amulet" "Paua Ring" "Paua Amulet" "Coral Ring" "Coral Amulet" "Aquamarine Flask"
-  Rarity < Rare
-
-# Too many item drops, so ignore everything that has poor sockets.
-Hide
-  Class Armour Helmet Gloves Boots
-  Rarity <= Magic
-  LinkedSockets < 3
-  ItemLevel >= 10
-
-# Don't care about magic items
-Hide
-  Class Ring Belt Amulet Dagger Wand
-  Rarity = Magic
-  LinkedSockets < 3
-  ItemLevel >= 10
 
 ################################################################################
 # Socketed items
