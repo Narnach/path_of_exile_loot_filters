@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 3 August 2018
+# Last updated on 8 August 2018
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -258,12 +258,21 @@ Show
 ################################################################################
 
 # "Cartographer's Chisel" recipe items.
-# Only show white ones, because you need to apply 20% quality to them.
+# Show the ones that can get 20% quality with 4 whetstones: white, 12% magic, 16% rare
+# De-emphasise the hammers with low/no quality because they are very common
 Show
     BaseType "Stone Hammer" "Rock Breaker" "Gavel"
     Rarity = Normal
+    Quality >= 10
     SetBorderColor 127 255 0
-    SetFontSize 40
+    SetBackgroundColor 0 0 0 63
+
+# De-emphasise the ones with low quality due to how common they are
+Show
+    BaseType "Stone Hammer" "Rock Breaker" "Gavel"
+    Rarity = Normal
+    SetBackgroundColor 0 0 0 63
+    SetBorderColor 31 63 0
 
 Show
     BaseType "Stone Hammer" "Rock Breaker" "Gavel"
@@ -271,14 +280,14 @@ Show
     Rarity = Magic
     Quality >= 12
     SetBorderColor 127 255 0
-    SetFontSize 40
+    SetBackgroundColor 0 0 0 63
 
 Show
     BaseType "Stone Hammer" "Rock Breaker" "Gavel"
     # 4 chisels adds 4% quality to a rare item
     Quality >= 16
     SetBorderColor 127 255 0
-    SetFontSize 40
+    SetBackgroundColor 0 0 0 63
 
 # "Chromatic" recipe items for larger items should not stand out as much at higher levels, because those items are huge and not worth it while mapping.
 Show
@@ -620,39 +629,6 @@ Hide
 ################################################################################
 # CUSTOM: hide item types I don't intend to use
 ################################################################################
-
-# Base item types to hide because I don't use them:
-# - Not an archer, so no bows & quivers
-# - Shield, so no two-handers
-# - Caster, so no swords/axes/claws (keep wands, scepters (maces), daggers)
-# Delay enforcing this until item level 10, just so I can equip "whatever" really early on
-Hide
-  Class Quiver Bow "Two Hand" Stave Claw Sword Axe
-  Rarity < Unique
-
-# Totally not useful item types
-Hide
-  BaseType "Tower Shield"
-  Rarity < Unique
-
-# Not helpful as crafting base, but useful to sell when found as rares
-Hide
-  BaseType "Iron Ring" "Gold Ring" "Gold Amulet" "Paua Ring" "Paua Amulet" "Coral Ring" "Coral Amulet" "Aquamarine Flask"
-  Rarity < Rare
-
-# Too many item drops, so ignore everything that has poor sockets.
-Hide
-  Class Armour Helmet Gloves Boots
-  Rarity <= Magic
-  LinkedSockets < 3
-  ItemLevel >= 10
-
-# Don't care about magic items
-Hide
-  Class Ring Belt Amulet Dagger Wand
-  Rarity = Magic
-  LinkedSockets < 3
-  ItemLevel >= 10
 
 ################################################################################
 # Chaos/Regal Recipe

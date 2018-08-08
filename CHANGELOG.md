@@ -1,5 +1,8 @@
 # Changelog
 
+* 8 August 2018
+  * All: chisel recipe hammers: visually de-emphasise 0% quality hammers (they stood out too much)
+  * Leveling: removed custom logic section content (it's only for my character, not for the generic filter)
 * 3 August 2018
   * All: play a "valuable orb" sound for Orb of Chance / Jeweller's Orb / Chisel / Silver Coin
   * Maps/strict: added space for custom logic

@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 3 August 2018
+# Last updated on 8 August 2018
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -251,11 +251,21 @@ Show
 ################################################################################
 
 # "Cartographer's Chisel" recipe items.
-# Only show white ones, because you need to apply 20% quality to them.
+# Show the ones that can get 20% quality with 4 whetstones: white, 12% magic, 16% rare
+# De-emphasise the hammers with low/no quality because they are very common
 Show
     BaseType "Stone Hammer" "Rock Breaker" "Gavel"
     Rarity = Normal
+    Quality >= 10
     SetBorderColor 127 255 0
+    SetBackgroundColor 0 0 0 63
+
+# De-emphasise the ones with low quality due to how common they are
+Show
+    BaseType "Stone Hammer" "Rock Breaker" "Gavel"
+    Rarity = Normal
+    SetBackgroundColor 0 0 0 63
+    SetBorderColor 31 63 0
 
 Show
     BaseType "Stone Hammer" "Rock Breaker" "Gavel"
@@ -263,12 +273,14 @@ Show
     Rarity = Magic
     Quality >= 12
     SetBorderColor 127 255 0
+    SetBackgroundColor 0 0 0 63
 
 Show
     BaseType "Stone Hammer" "Rock Breaker" "Gavel"
     # 4 chisels adds 4% quality to a rare item
     Quality >= 16
     SetBorderColor 127 255 0
+    SetBackgroundColor 0 0 0 63
 
 # "Chromatic" items: only show them when 3x2 or smaller (ignores bows, tower shields, stabby swords)
 Show
