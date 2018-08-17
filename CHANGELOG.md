@@ -1,5 +1,7 @@
 # Changelog
 
+* 17 August 2018
+  * All: show Blood Raiment and Sadist Garb (evastion/ES endgame armour). Blood Raiment has best ES. Sadist Garb has best ES/Evasion balance. Carnal Armour has best ES and mana bonus.
 * 8 August 2018
   * All: chisel recipe hammers: visually de-emphasise 0% quality hammers (they stood out too much)
   * Leveling: removed custom logic section content (it's only for my character, not for the generic filter)

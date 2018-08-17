@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 8 August 2018
+# Last updated on 17 August 2018
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -476,12 +476,12 @@ Show
 
 Show
   Class Armour
-  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk"
+  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk" "Sadist Garb" "Blood Raiment"
   Rarity = Rare
 
 Show
   Class Armour
-  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk"
+  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk" "Sadist Garb" "Blood Raiment"
   Rarity = Normal
   Sockets >= 4
 

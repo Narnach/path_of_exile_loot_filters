@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 8 August 2018
+# Last updated on 17 August 2018
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -496,7 +496,7 @@ Show
 
 Show
   Class Armour
-  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk"
+  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk" "Sadist Garb" "Blood Raiment"
   Rarity = Rare
 
 ### Boots & Gloves have the same naming scheme

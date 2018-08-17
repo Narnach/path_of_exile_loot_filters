@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 8 August 2018
+# Last updated on 17 August 2018
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -735,7 +735,7 @@ Show
 
 Show
   Class Armour
-  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk"
+  BaseType "Astral Plate" "Glorious Plate" "Zodiac Leather" "Assassin's Garb" "Occultist's Vestment" "Vaal Regalia" "Triumphant Lamellar" "Saintly Chainmail" "Carnal Armour" "Sacrificial Garb" "Full Dragonscale" "Saint's Hauberk" "Sadist Garb" "Blood Raiment"
   Rarity = Normal Rare
 
 ### Boots & Gloves have the same naming scheme
