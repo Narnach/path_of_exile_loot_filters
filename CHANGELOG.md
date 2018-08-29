@@ -1,5 +1,7 @@
 # Changelog
 
+* 29 August 2018
+  * All: show corrupted rare items
 * 17 August 2018
   * All: show Blood Raiment and Sadist Garb (evastion/ES endgame armour). Blood Raiment has best ES. Sadist Garb has best ES/Evasion balance. Carnal Armour has best ES and mana bonus.
 * 8 August 2018

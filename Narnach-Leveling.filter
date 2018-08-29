@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 17 August 2018
+# Last updated on 29 August 2018
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -35,6 +35,12 @@ Show
   SetBorderColor 0 0 255
   SetFontSize 35
   PlayAlertSoundPositional 5 300
+
+# Corrupted items are special so show the rares
+Show
+  Corrupted True
+  SetBorderColor 255 0 0
+  Rarity >= Rare
 
 ################################################################################
 # League specific items for 2.5 Breach League
