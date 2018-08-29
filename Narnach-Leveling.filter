@@ -9,6 +9,19 @@
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
 
 ################################################################################
+# New League items in 3.4 / Delve League
+################################################################################
+
+# New craftable currency
+Show
+  Class Currency
+  BaseType Fossil Resonator
+  SetFontSize 45
+  SetTextColor 127 255 127
+  SetBorderColor 255 215 0
+  PlayAlertSoundPositional 6 300
+
+################################################################################
 # New League items in 3.3 / Incursion League
 ################################################################################
 
@@ -186,11 +199,11 @@ Show
 #  PlayAlertSoundPositional 7 300
 
 # Breachstones and Ancient Reliquary Keys are all one category
-#Show
-#  Class "Misc Map Items"
-#  SetFontSize 45
-#  SetBorderColor 255 0 255
-#  PlayAlertSoundPositional 7 300
+Show
+  Class "Misc Map Items"
+  SetFontSize 45
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 7 300
 
 ################################################################################
 # 2.5 moved up due to Splinter of Uul-Netol clashing with the Bestiary Nets.

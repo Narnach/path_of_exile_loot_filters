@@ -2,6 +2,7 @@
 
 * 29 August 2018
   * All: show corrupted rare items
+  * Leveling: added highlights for the new 3.4 currency items. Once I've tested they work I'll roll these out to the other filters. Beams, custom sounds and minimap icons will follow at a later time as well. I'd like to try those out for myself in the game before updating the filter with them.
 * 17 August 2018
   * All: show Blood Raiment and Sadist Garb (evastion/ES endgame armour). Blood Raiment has best ES. Sadist Garb has best ES/Evasion balance. Carnal Armour has best ES and mana bonus.
 * 8 August 2018
