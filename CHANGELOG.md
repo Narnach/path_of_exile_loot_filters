@@ -1,5 +1,7 @@
 # Changelog
 
+* 3 September 2018
+  * Leveling: reduce dropped items spam (prevalent in Delve) by hiding white/blue items with less than maximum linked sockets.
 * 29 August 2018
   * All: show corrupted rare items
   * Leveling: added highlights for the new 3.4 currency items. Once I've tested they work I'll roll these out to the other filters. Beams, custom sounds and minimap icons will follow at a later time as well. I'd like to try those out for myself in the game before updating the filter with them.

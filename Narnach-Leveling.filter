@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 29 August 2018
+# Last updated on 3 September 2018
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -644,6 +644,41 @@ Hide
     Class Flask
     SetBackgroundColor 0 0 0 63
     SetFontSize 24
+
+################################################################################
+# Delve tweaks: drastically reduce the number of shown items.
+################################################################################
+
+# Items that can have up to 3 linked sockets, but don't.
+Hide
+  Rarity Normal Magic
+  Class "One Hand" Mace Claw Dagger Sceptre Wand Shield
+  ItemLevel >= 5
+  LinkedSockets < 3
+  SetBackgroundColor 0 0 0 63
+
+# Items that can have up to 4 linked sockets from item level 25+
+Hide
+  Rarity Normal Magic
+  Class Boot Glove Helmet Armour "Two Hand" Stave Bow
+  ItemLevel >= 5
+  ItemLevel < 25
+  Sockets <= 3
+  LinkedSockets < 3
+  SetBackgroundColor 0 0 0 63
+Hide
+  Rarity Normal Magic
+  Class Boot Glove Helmet Armour "Two Hand" Stave Bow
+  ItemLevel >= 25
+  Sockets <= 4
+  LinkedSockets < 4
+  SetBackgroundColor 0 0 0 63
+
+# Early on you want some jewelry, but from act 2 onwards you only want rares and white ones to alch into rares.
+Hide
+  Rarity Magic
+  Class Ring Amulet Belt
+  ItemLevel >= 10
 
 ################################################################################
 # CUSTOM: hide item types I don't intend to use
