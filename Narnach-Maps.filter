@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 29 August 2018
+# Last updated on 3 September 2018
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -7,6 +7,19 @@
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 #
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
+
+################################################################################
+# New League items in 3.4 / Delve League
+################################################################################
+
+# New craftable currency
+Show
+  Class Currency
+  BaseType Fossil Resonator
+  SetFontSize 45
+  SetTextColor 127 255 127
+  SetBorderColor 255 215 0
+  PlayAlertSoundPositional 6 300
 
 ################################################################################
 # New League items in 3.3 / Incursion League

@@ -1,6 +1,7 @@
 # Changelog
 
 * 3 September 2018
+  * All: highlight new resonators + fossils introduced in Delve
   * Leveling: reduce dropped items spam (prevalent in Delve) by hiding white/blue items with less than maximum linked sockets.
 * 29 August 2018
   * All: show corrupted rare items
