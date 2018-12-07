@@ -1,5 +1,7 @@
 # Changelog
 
+* 7 December 2018
+  * All: added highlights for Betrayal Veiled mods and Scarabs.
 * 3 September 2018
   * All: highlight new resonators + fossils introduced in Delve
   * Leveling: reduce dropped items spam (prevalent in Delve) by hiding white/blue items with less than maximum linked sockets.

@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 3 September 2018
+# Last updated on 7 December 2018
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -7,6 +7,26 @@
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 #
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
+
+################################################################################
+# New League items in 3.5 / Betrayal League
+################################################################################
+
+# Scarabs
+Show
+  Class "Map Fragment"
+  BaseType Scarab
+  SetFontSize 45
+  SetTextColor 127 255 127
+  SetBorderColor 255 215 0
+  PlayAlertSoundPositional 6 300
+
+# Veiled items
+Show
+  HasExplicitMod "Veiled" "Leo's Veiled" "Catarina's Veiled" "Elreon's Veiled" "Vorici's Veiled" "Haku's Veiled" "Tora's Veiled" "Vagan's Veiled" "Guff's Veiled" "It That Fled's Veiled" "Gravicius' Veiled" "Korell's Veiled" "Rin's Veiled" "of the Veil" "of Janus' Veil" "of Hillock's Veil" "of Jorgin's Veil" "of Cameria's Veil" "of Aisling's Veil" "of Riker's Veil"
+  SetBorderColor 255 0 255
+  SetFontSize 35
+  PlayAlertSoundPositional 5 300
 
 ################################################################################
 # New League items in 3.4 / Delve League
