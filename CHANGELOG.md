@@ -1,5 +1,7 @@
 # Changelog
 
+* 11 December 2018
+  * Leveling: overhauled highlighting (started using map icons & beams) for: currency, maps, div cards, rare gems, essences, uniques, quest items.
 * 7 December 2018
   * All: added highlights for Betrayal Veiled mods and Scarabs.
 * 3 September 2018
