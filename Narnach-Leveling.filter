@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 11 December 2018
+# Last updated on 14 December 2018
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -316,7 +316,7 @@ Show
   SetTextColor 255 0 0
   SetBorderColor 255 0 0
   SetFontSize 40
-  PlayAlertSoundPositional 4 300
+  PlayAlertSoundPositional 4 200
   MinimapIcon 1 Red Circle
   PlayEffect Red
 
@@ -325,6 +325,7 @@ Show
   LinkedSockets 5
   SetBorderColor 255 255 127
   SetFontSize 35
+  PlayAlertSoundPositional 4 100
   MinimapIcon 2 White Circle
   PlayEffect White
 

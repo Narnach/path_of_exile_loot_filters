@@ -1,5 +1,7 @@
 # Changelog
 
+* 14 December 2018
+  * Leveling: 5-link items got a sound in addition to the light beam.
 * 11 December 2018
   * Leveling: overhauled highlighting (started using map icons & beams) for: currency, maps, div cards, rare gems, essences, uniques, quest items.
 * 7 December 2018
