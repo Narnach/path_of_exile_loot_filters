@@ -36,6 +36,7 @@ A very handy page to bookmark is the [Wiki Guide](https://pathofexile.gamepedia.
 A loot filter is rarely finished. Here is a list of things I still intend to change.
 
 * See if I can simplify some rules and re-think the layout of the filter files. With three files, it'd be nice to have some sections that are always the same, and clearly marked sections that are different.
+* It is my intention to eventually merge the Leveling filter into the Maps filters, and only have a Strict and a non-Strict version of the same filter. This ties in with the previous point of re-thinking my filter layout. I might have to resort to using different raw files to store sections and then using a script to merge them together. We'll see what I'll end up doing.
 
 ## Attribution
 
