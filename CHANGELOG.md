@@ -1,5 +1,7 @@
 # Changelog
 
+* 17 December 2018
+  * Maps & Strict: copied changes from Leveling, with minor modifications to not show low level gems
 * 14 December 2018
   * Leveling: 5-link items got a sound in addition to the light beam.
 * 11 December 2018

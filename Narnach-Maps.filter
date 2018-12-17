@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 7 December 2018
+# Last updated on 17 December 2018
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -16,10 +16,10 @@
 Show
   Class "Map Fragment"
   BaseType Scarab
-  SetFontSize 45
-  SetTextColor 127 255 127
-  SetBorderColor 255 215 0
-  PlayAlertSoundPositional 6 300
+  SetFontSize 39
+  SetBorderColor 127 255 127
+  MinimapIcon 2 White Hexagon
+  PlayEffect White Temp
 
 # Veiled items
 Show
@@ -48,10 +48,12 @@ Show
 # Covers Stone of Passage and Flashpowder Keg
 Show
   Class "Incursion Item"
-  SetFontSize 42
-  SetTextColor 255 0 255
-  SetBorderColor 255 0 255
+  SetFontSize 45
+  SetTextColor 0 255 0
+  SetBorderColor 0 255 0
   PlayAlertSoundPositional 5 300
+  MinimapIcon 0 Green Hexagon
+  PlayEffect Green
 
 # Covers all the "Vial of X" items
 Show
@@ -145,11 +147,14 @@ Show
   SetBorderColor 255 215 0
   PlayAlertSoundPositional 6 300
 
+# Other nets get treated as random currency
+
 # Too low for use in maps
 Show
   Class Currency
   BaseType "Net"
-  SetFontSize 30
+  SetFontSize 32
+  SetTextColor 215 255 127
   SetBorderColor 255 215 0
   PlayAlertSoundPositional 6 300
 
@@ -216,11 +221,15 @@ Show
 #  PlayAlertSoundPositional 7 300
 
 # Breachstones and Ancient Reliquary Keys are all one category
-#Show
-#  Class "Misc Map Items"
-#  SetFontSize 45
-#  SetBorderColor 255 0 255
-#  PlayAlertSoundPositional 7 300
+Show
+  Class "Misc Map Items"
+  SetFontSize 45
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 7 300
+
+################################################################################
+# 2.5 moved up due to Splinter of Uul-Netol clashing with the Bestiary Nets.
+################################################################################
 
 ################################################################################
 # New base items in patch 2.4, exclusive to specific maps
@@ -249,15 +258,44 @@ Show
 
 # Show all jewels
 Show
-    Class Jewel
-    SetBackgroundColor 0 63 63
+  Class Jewel
+  SetBackgroundColor 0 63 63
 
 # Always show uniques
 Show
-    Rarity >= Unique
-    SetFontSize 40
-    SetBorderColor 255 127 0
-    PlayAlertSoundPositional 8 300
+  Rarity >= Unique
+  SetFontSize 40
+  SetBorderColor 255 127 0
+  PlayAlertSoundPositional 8 300
+  MinimapIcon 0 Yellow Circle
+  PlayEffect Yellow
+
+# Quest items
+Show
+  Class Quest
+  SetFontSize 45
+  SetBorderColor 0 255 0
+  PlayAlertSoundPositional 8 150
+  MinimapIcon 0 Green Circle
+  PlayEffect Green
+
+# Labyrinth items that make trials easier
+Show
+  Class "Labyrinth Trinket"
+  SetBorderColor 0 255 0
+  SetTextColor 0 255 0
+  PlayAlertSoundPositional 4 300
+  SetFontSize 45
+  MinimapIcon 1 Green Circle
+
+# Special / not quite sure what it is
+Show
+  BaseType "Key"
+  SetBorderColor 0 255 0
+  SetTextColor 0 255 0
+  PlayAlertSoundPositional 4 300
+  SetFontSize 45
+  MinimapIcon 1 Green Circle
 
 ################################################################################
 # High socket items with intrinsic value
@@ -270,6 +308,8 @@ Show
   SetBorderColor 255 255 255
   SetFontSize 45
   PlayAlertSoundPositional 4 300
+  MinimapIcon 0 White Circle
+  PlayEffect White
 
 # Anything with 6 sockets, connected or not.
 Show
@@ -277,16 +317,21 @@ Show
   SetTextColor 255 0 0
   SetBorderColor 255 0 0
   SetFontSize 40
-  PlayAlertSoundPositional 4 300
+  PlayAlertSoundPositional 4 200
+  MinimapIcon 1 Red Circle
+  PlayEffect Red
 
 # 5 Linked sockets. These _can_ be really useful early in a league.
 Show
   LinkedSockets 5
   SetBorderColor 255 255 127
   SetFontSize 35
+  PlayAlertSoundPositional 4 100
+  MinimapIcon 2 White Circle
+  PlayEffect White
 
 ################################################################################
-# Currency items, arguably the most important drops
+# Currency recipe items
 ################################################################################
 
 # "Cartographer's Chisel" recipe items.
@@ -321,169 +366,362 @@ Show
     SetBorderColor 127 255 0
     SetBackgroundColor 0 0 0 63
 
-# "Chromatic" items: only show them when 3x2 or smaller (ignores bows, tower shields, stabby swords)
-Show
-    SocketGroup RGB
-    ItemLevel >= 60
-    Height <= 3
-    Width <= 2
-    SetBorderColor 0 255 0
-    SetBackgroundColor 0 168 0 63
-
-# Chromatic Stabby swords
+# "Chromatic" recipe items for larger items should not stand out as much at higher levels, because those items are huge and not worth it while mapping.
 Show
     SocketGroup RGB
     ItemLevel >= 60
     Height = 4
-    Width = 1
+    Width = 2
     SetBorderColor 0 255 0
     SetBackgroundColor 0 168 0 63
 
-# Special
+# "Chromatic" recipe items not previously highlighted.
 Show
-    BaseType "Key" "Remnant of Corruption"
-    SetBorderColor 255 0 255
-    PlayAlertSoundPositional 4 300
-    SetFontSize 45
-
-# High-tier currency
-Show
-    BaseType "Orb of Alchemy"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShAlchemy 300
-    SetFontSize 42
-
-Show
-    BaseType "Blessed Orb"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShBlessed 300
-    SetFontSize 42
-
-Show
-    BaseType "Chaos Orb"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShChaos 300
-    SetFontSize 42
-
-Show
-    BaseType "Divine Orb"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShDivine 300
-    SetFontSize 42
-
-Show
-    BaseType "Exalted Orb"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShExalted 300
-    SetFontSize 42
-
-Show
-    BaseType "Orb of Fusing"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShFusing 300
-    SetFontSize 42
-
-Show
-    BaseType "Mirror of Kalandra"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShMirror 300
-    SetFontSize 42
-
-Show
-    BaseType "Regal Orb"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShRegal 300
-    SetFontSize 42
-
-Show
-    BaseType "Vaal Orb"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShVaal 300
-    SetFontSize 42
-
-Show
-    BaseType "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Cartographer's Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional ShGeneral 300
-    SetFontSize 42
-
-# Top-tier shards
-Show
-    BaseType "Exalted Shard" "Mirror Shard"
-    SetTextColor 255 50 0
-    SetBorderColor 255 50 0
-    PlayAlertSoundPositional 9 300
-    SetFontSize 42
-
-# Mid-tier Harbinger Orbs
-Show
-    BaseType "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb"
-    SetTextColor 255 50 0
-    SetBorderColor 255 100 0
-    PlayAlertSoundPositional ShGeneral 250
-    SetFontSize 39
-
-# Mid-tier shards of Harbinger Orbs
-Show
-    BaseType "Harbinger's Shard" "Horizon Shard" "Ancient Shard" "Binding Shard" "Annulment Shard" "Regal Shard" "Chaos Shard" "Alchemy Shard" "Engineer's Shard"
-    SetTextColor 255 100 0
-    SetBorderColor 255 150 0
-    PlayAlertSoundPositional 8 200
-    SetFontSize 36
-
-# Mid-tier currency
-Show
-    BaseType "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Silver Coin" "Chromatic Orb"
-    SetTextColor 255 100 0
-    SetBorderColor 255 100 0
-    PlayAlertSoundPositional ShGeneral 200
-    SetFontSize 37
-
-# Low tier currency
-Show
-    BaseType "Orb of Transmutation" "Orb of Alteration" "Blacksmith's Whetstone" "Orb of Augmentation" "Armourer's Scrap"
-    #SetTextColor 255 215 0
-    SetBorderColor 255 215 0
+    SocketGroup RGB
+    SetBorderColor 0 255 0
+    SetFontSize 40
     PlayAlertSoundPositional 9 150
-    SetFontSize 36
+    MinimapIcon 2 Green Circle
+    PlayEffect Green Temp
 
-# Not to be confused with the Essence Drain gem :-)
+################################################################################
+# Top Tier Currency
+#
+# These drop (at best) a few times per league.
+# - Announcer: Mirror of Kalandra, Exalted Orb, Divine Orb
+# - Color: white BG, red border, red text, large white star minimap, white effect
+################################################################################
+
 Show
-  BaseType "Essence"
-  Class Currency
+  BaseType "Mirror of Kalandra"
+  PlayAlertSoundPositional ShMirror 300
+  SetBackgroundColor 255 255 255
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
   SetFontSize 45
+  MinimapIcon 0 White Star
+  PlayEffect White
+
+Show
+  BaseType "Exalted Orb"
+  PlayAlertSoundPositional ShExalted 300
+  SetBackgroundColor 255 255 255
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 45
+  MinimapIcon 0 White Star
+  PlayEffect White
+
+Show
+  BaseType "Divine Orb"
+  PlayAlertSoundPositional ShDivine 300
+  SetBackgroundColor 255 255 255
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 45
+  MinimapIcon 0 White Star
+  PlayEffect White
+
+################################################################################
+# High Tier Currency
+#
+# These drop maybe once per map, and at least once every few maps.
+# - Announcer: Chaos Orb, Blessed Orb, Orb of Fusing, Regal Orb, Vaal Orb
+# - Generic: "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Cartographer's Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
+# - Top-tier shards
+# - Harbinger Orbs: "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb"
+# - Tier 4+ Essences & Remnants of Corruption
+# - Color: black BG, red border, red text, medium red star minimap, red effect
+################################################################################
+
+Show
+  BaseType "Chaos Orb"
+  PlayAlertSoundPositional ShChaos 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+Show
+  BaseType "Blessed Orb"
+  PlayAlertSoundPositional ShBlessed 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+Show
+  BaseType "Orb of Fusing"
+  PlayAlertSoundPositional ShFusing 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+Show
+  BaseType "Regal Orb"
+  PlayAlertSoundPositional ShRegal 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+Show
+  BaseType "Vaal Orb"
+  PlayAlertSoundPositional ShVaal 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+Show
+  BaseType "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Cartographer's Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
+  PlayAlertSoundPositional ShGeneral 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+Show
+  BaseType "Exalted Shard" "Mirror Shard"
+  PlayAlertSoundPositional ShGeneral 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+Show
+  BaseType "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb"
+  PlayAlertSoundPositional ShGeneral 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+# High: Tier 5+ Essences & Remnant of Corruption
+Show
+  Class Currency
+  BaseType "Deafening Essence" "Shrieking Essence" "Screaming Essence" "Remnant of Corruption"
+  PlayAlertSoundPositional ShGeneral 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+################################################################################
+# Medium Tier Currency
+#
+# These drop multiple times per map.
+# - Announcer: Orb of Alchemy
+# - Generic: Orb of Chance, Glassblower's Bauble, Jeweller Orb, Cartographer's Chisel, Silver Coin, Chromatic Orb
+# - Harbinger & high-tier shards
+# - Tier 3-4 Essences
+# - Color: black BG, orange border, orange text, small red star minimap, temp red effect
+################################################################################
+
+Show
+  BaseType "Orb of Alchemy"
+  PlayAlertSoundPositional ShAlchemy 200
+  SetTextColor 255 100 0
+  SetBorderColor 255 100 0
+  SetFontSize 39
+  MinimapIcon 2 Red Star
+  PlayEffect Red Temp
+
+Show
+  BaseType "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Silver Coin" "Chromatic Orb" "Glassblower's Bauble"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 100 0
+  SetBorderColor 255 100 0
+  SetFontSize 39
+  MinimapIcon 2 Red Star
+  PlayEffect Red Temp
+
+Show
+  BaseType "Harbinger's Shard" "Horizon Shard" "Ancient Shard" "Binding Shard" "Annulment Shard" "Regal Shard" "Chaos Shard" "Alchemy Shard" "Engineer's Shard"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 100 0
+  SetBorderColor 255 100 0
+  SetFontSize 39
+  MinimapIcon 2 Red Star
+  PlayEffect Red Temp
+
+# Medium: Tier 3-4 Essences
+Show
+  Class Currency
+  BaseType "Weeping Essence" "Wailing Essence"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 100 0
+  SetBorderColor 255 100 0
+  SetFontSize 39
+  MinimapIcon 2 Red Star
+  PlayEffect Red Temp
+
+################################################################################
+# Low Tier Currency
+#
+# These drop so often that you don't mind missing a pickup.
+# - "Orb of Transmutation" "Orb of Alteration" "Blacksmith's Whetstone" "Orb of Augmentation" "Armourer's Scrap"
+# - Tier 1-2 Essences
+# - Color: black BG, gold border, gold text, small brown star minimap, brown temp effect
+################################################################################
+
+Show
+  BaseType "Orb of Transmutation" "Orb of Alteration" "Blacksmith's Whetstone" "Orb of Augmentation" "Armourer's Scrap"
+  PlayAlertSoundPositional 9 150
+  SetTextColor 255 150 0
+  SetBorderColor 255 150 0
+  SetFontSize 35
+  MinimapIcon 2 Brown Star
+  PlayEffect Brown Temp
+
+# Low: Tier 1-2 Essences
+Show
+  Class Currency
+  BaseType "Whispering Essence" "Muttering Essence"
+  PlayAlertSoundPositional 9 150
+  SetTextColor 255 150 0
+  SetBorderColor 255 150 0
+  SetFontSize 35
+  MinimapIcon 2 Brown Star
+  PlayEffect Brown Temp
+
+################################################################################
+# Trash Tier Currency
+#
+# Scrolls and worse, you'll start to drown in these soon enough.
+# - Scroll of Wisdom, Portal Scroll
+# - Worst shards
+# - Color: black BG, no border, gold text, no minimap, no effect
+################################################################################
+
+# Scrolls and leftover shards
+Show
+  BaseType Shard Scroll
+  Class Currency
+  SetFontSize 30
+
+################################################################################
+# In case I forgot something / future-proofing: other currency
+#
+# - Color: black BG, purple border, red text, medium red star minimap, red effect
+################################################################################
+
+Show
+  Class Currency
+  PlayAlertSoundPositional 9 250
+  SetTextColor 255 0 0
   SetBorderColor 255 0 255
-  PlayAlertSoundPositional 5 300
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
 
-# The worst shards
-Show
-    BaseType "Transmutation Shard" "Alteration Shard"
-#    SetTextColor 255 215 0
-#    SetBorderColor 255 215 0
-    SetFontSize 30
+################################################################################
+# Divination Cards
+# - Color: light gray BG, dark gray border, black text, medium white square minimap, white effect
+################################################################################
 
-# Scrolls: ID & Portal
-# They are meant to blend into the background, so we de-emphasise them.
 Show
-    BaseType "Scroll"
-    #SetBackgroundColor 0 0 0 63
-    SetFontSize 30
+  Class Card
+  SetBorderColor 200 200 200
+  SetBackgroundColor 120 120 120
+  SetTextColor 0 0 0
+  SetFontSize 45
+  PlayAlertSoundPositional 3 150
+  MinimapIcon 2 White Square
+  PlayEffect White
 
-# Other currency
+################################################################################
+# Gems
+#
+# Pickup only gems:
+# - Color: default BG, green border, default text, large white hexagon minimap, white effect
+# Gems with quality:
+# - Color: default BG, green border, default text, small white hexagon minimap, white effect
+# Vaal gems:
+# - Color: default BG, red border, default text, small red hexagon minimap, red effect
+################################################################################
+
+# Can't buy these gems, so highlight:
+# http://pathofexile.gamepedia.com/List_of_drop-only_gems
 Show
-    Class Currency
-    SetBorderColor 255 215 0
-    SetFontSize 45
+  Class Gem
+  BaseType "Empower" "Enlighten" "Enhance" "Detonate Mines" "Portal" "Added Chaos Damage" "Mirror Arrow" "Block Chance Reduction" "Vaal Breach"
+  SetBorderColor 31 255 63
+  SetFontSize 45
+  PlayAlertSoundPositional 9 200
+  MinimapIcon 1 White Hexagon
+  PlayEffect White
+
+# Highlight gems with quality
+Show
+  Class Gem
+  Quality >= 1
+  SetBorderColor 63 255 127
+  PlayAlertSoundPositional 8 150
+  SetFontSize 40
+  MinimapIcon 2 White Hexagon
+  PlayEffect White
+
+# Show all vaal gems
+Show
+  Class Gem
+  BaseType "Vaal"
+  SetBorderColor 127 0 0
+  MinimapIcon 2 Red Hexagon
+  PlayEffect Red
+
+# Hide other gems
+Hide
+  Class Gem
+  SetBorderColor 0 0 0 63
+
+################################################################################
+# Maps: highlight the different tiers, and play sounds for yellow and red ones
+# Show all maps with their own color (white/yellow/red)
+################################################################################
+
+# Red maps, tier 11+
+Show
+  Class Map
+  MapTier >= 11
+  SetBackgroundColor 168 32 0
+  SetTextColor 163 141 109
+  SetFontSize 45
+  PlayAlertSoundPositional 3 300
+  MinimapIcon 0 Red Square
+  PlayEffect Red
+
+# Yellow maps, tier 6+
+Show
+  Class Map
+  MapTier >= 6
+  SetBackgroundColor 127 80 0
+  SetTextColor 163 127 63
+  SetFontSize 42
+  PlayAlertSoundPositional 3 250
+  MinimapIcon 1 Yellow Square
+  PlayEffect Yellow
+
+# White maps
+# Non-map, but related (fragments and such)
+Show
+  Class Map "Map Fragments" "Labyrinth Map Item"
+  SetBackgroundColor 80 80 63
+  SetTextColor 163 141 109
+  SetFontSize 39
+  PlayAlertSoundPositional 3 200
+  MinimapIcon 2 White Square
+  PlayEffect White
 
 ################################################################################
 # CUSTOM: hide item types I don't intend to use
@@ -739,114 +977,6 @@ Hide
   Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield Quiver
   SetBackgroundColor 0 0 0 63
   SetFontSize 18
-
-################################################################################
-# Divination Cards
-################################################################################
-
-# Boring / common Divination Cards, show them but with less emphasis
-Show
-  Class Card
-  BaseType "Carrion Crow" "Scholar" "Thunderous Skies" "Rain of Chaos"
-  SetBorderColor 150 150 150
-  SetBackgroundColor 100 100 100
-  SetTextColor 0 0 0
-  SetFontSize 35
-  PlayAlertSoundPositional 3 150
-
-# Divination Cards, we always want them.
-Show
-  Class Card
-  SetBorderColor 200 200 200
-  SetBackgroundColor 120 120 120
-  SetTextColor 0 0 0
-  SetFontSize 45
-  PlayAlertSoundPositional 3 300
-
-################################################################################
-# Gems
-################################################################################
-
-# Can't buy these gems, so highlight:
-# http://pathofexile.gamepedia.com/List_of_drop-only_gems
-Show
-  Class Gem
-  BaseType "Empower" "Enlighten" "Enhance" "Detonate Mines" "Portal" "Added Chaos Damage" "Mirror Arrow" "Block Chance Reduction" "Vaal Breach"
-  SetBorderColor 31 255 63
-  SetFontSize 45
-
-# Highlight gems with quality
-Show
-    Class Gem
-    Quality >= 1
-    SetBorderColor 63 255 127
-    SetFontSize 40
-
-# Show all vaal gems
-Show
-    Class Gem
-    BaseType "Vaal"
-    SetBorderColor 127 0 0
-
-# Costs: Scroll of Wisdom
-Hide
-  Class Gem
-  DropLevel <= 4
-  SetBorderColor 63 63 63
-
-# Costs: Orb of Transmutation
-Hide
-  Class Gem
-  DropLevel <= 12
-  SetBorderColor 127 127 127
-
-# Costs: Orb of Alteration
-Hide
-  Class Gem
-  DropLevel <= 24
-  SetBorderColor 63 63 127
-
-# Costs: Orb of Chance
-Hide
-  Class Gem
-  DropLevel <= 34
-  SetBorderColor 255 215 127
-
-# Costs: Orb of Alchemy
-Hide
-  Class Gem
-  DropLevel > 34
-  SetBorderColor 255 215 0
-
-################################################################################
-# Maps: highlight the different tiers, and play sounds for yellow and red ones
-################################################################################
-
-# Show all maps with their own color (white/yellow/red)
-# Red maps, tier 11+
-Show
-    Class Map
-    DropLevel >= 78
-    SetBackgroundColor 168 32 0
-    SetTextColor 163 141 109
-    SetFontSize 50
-    PlayAlertSoundPositional 3 300
-
-# Yellow maps, tier 6+
-Show
-    Class Map
-    DropLevel >= 73
-    SetBackgroundColor 127 80 0
-    SetTextColor 163 127 63
-    SetFontSize 45
-    PlayAlertSoundPositional 3 300
-
-# White maps and other map stuff
-Show
-    Class "Map Fragments" "Map" "Labyrinth Map Item"
-    SetBackgroundColor 80 80 63
-    SetTextColor 163 141 109
-    SetFontSize 40
 
 ################################################################################
 # Flasks
