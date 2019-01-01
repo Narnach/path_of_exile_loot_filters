@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 17 December 2018
+# Last updated on 1 January 2019
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -172,13 +172,17 @@ Show
   Class Belt
   BaseType "Stygian Vise"
   SetBorderColor 255 0 255
-  PlayAlertSoundPositional 1 300
+  PlayAlertSoundPositional 8 300
+  MinimapIcon 1 Red Star
+  PlayEffect Red
 
 # Abyss Jewels drop around Abysses, the central mechanic from Abyss League
 Show
   Class "Abyss Jewel"
   SetBorderColor 255 0 255
-  PlayAlertSoundPositional 1 300
+  PlayAlertSoundPositional 8 200
+  MinimapIcon 2 Red Star
+  PlayEffect Red Temp
 
 # Elder items only drop in maps that have been corrupted by the Elder
 Show
@@ -186,6 +190,8 @@ Show
   SetFontSize 42
   SetBackgroundColor 0 220 220 255
   PlayAlertSoundPositional 5 300
+  MinimapIcon 0 Blue Star
+  PlayEffect Blue
 
 # Shaper items only drop in maps that have been corrupted by the Shaper
 Show
@@ -193,6 +199,8 @@ Show
   SetFontSize 42
   SetBackgroundColor 135 0 220 255
   PlayAlertSoundPositional 5 300
+  MinimapIcon 0 Blue Star
+  PlayEffect Blue
 
 ################################################################################
 # League specific items for 3.0 / Harbinger League
