@@ -904,27 +904,30 @@ Hide
 # Flasks
 ################################################################################
 
-Show
-    Class "Utility Flasks"
-    SetBorderColor 0 255 255
-
 # Quality Flasks
 Show
-    Class Flask
-    # 13 + 13 + 14 = 40, enough to upgrade.
-    Quality >= 13
-    SetBorderColor 0 127 0
-    SetFontSize 24
+  Class Flask
+  Quality >= 10
+  SetBorderColor 0 127 0
 
+# De-emphasize flasks in maps
+Show
+  Class "Utility Flasks"
+  ItemLevel >= 68
+  SetBorderColor 0 255 255
+  SetBackgroundColor 0 0 0 63
+
+# Hide even top-tier regular flasks
 Hide
-    Class Flask
-    BaseType "Divine Life Flask" "Eternal Life Flask" "Eternal Mana Flask"
+  Class Flask
+  BaseType "Divine Life Flask" "Eternal Life Flask" "Eternal Mana Flask"
+  SetBackgroundColor 0 0 0 63
 
 # Low level flasks, or poor stats
 Hide
-    Class Flask
-    SetBackgroundColor 0 0 0 63
-    SetFontSize 16
+  Class Flask
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 24
 
 ################################################################################
 # Socketed items

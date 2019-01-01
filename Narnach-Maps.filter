@@ -990,27 +990,31 @@ Hide
 # Flasks
 ################################################################################
 
+# Quality Flasks, 40% gets you a Glassblower's Bauble. 4*10=40
 Show
-    Class "Utility Flasks"
-    SetBorderColor 0 255 255
+  Class Flask
+  Quality >= 10
+  SetBorderColor 0 127 0
 
+# De-emphasize flasks in maps
 Show
-    Class Flask
-    #BaseType "Divine Life Flask" "Eternal Life Flask" "Divine Mana Flask" "Eternal Mana Flask"
-    BaseType "Divine Life Flask" "Eternal Life Flask" "Eternal Mana Flask"
+  Class "Utility Flasks"
+  ItemLevel >= 68
+  SetBorderColor 0 255 255
+  SetBackgroundColor 0 0 0 63
 
-# Quality Flasks
+# De-emphasize flasks in maps
 Show
-    Class Flask
-    Quality >= 10
-    SetBorderColor 0 127 0
-    SetFontSize 24
+  Class Flask
+  BaseType "Divine Life Flask" "Eternal Life Flask" "Eternal Mana Flask"
+  ItemLevel >= 68
+  SetBackgroundColor 0 0 0 63
 
 # Low level flasks, or poor stats
 Hide
-    Class Flask
-    SetBackgroundColor 0 0 0 63
-    SetFontSize 24
+  Class Flask
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 24
 
 ################################################################################
 # Socketed items

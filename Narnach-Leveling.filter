@@ -760,10 +760,16 @@ Show
 # Flasks: only show the "current" tier based on map level
 ################################################################################
 
-# Lots of new utility flasks, so show them all
+# Quality Flasks, 40% gets you a Glassblower's Bauble. 5*8=40
 Show
-    Class "Utility Flasks"
-    SetBorderColor 0 255 255
+  Class Flask
+  Quality >= 8
+  SetBorderColor 0 127 0
+
+# Utility flasks are uncommon and useful, so always show them
+Show
+  Class "Utility Flasks"
+  SetBorderColor 0 255 255
 
 # Non-utility flasks
 Show
@@ -821,12 +827,6 @@ Show
 Show
     Class Flask
     BaseType "Divine Life Flask" "Eternal Life Flask" "Divine Mana Flask" "Eternal Mana Flask"
-
-# Quality Flasks: 3x any of these gives a Glassblower's Bauble
-Show
-    Class Flask
-    SetBorderColor 0 255 0
-    Quality >= 14
 
 # Low level flasks, or poor stats
 Hide

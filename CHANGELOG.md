@@ -1,6 +1,7 @@
 # Changelog
 
 * 1 January 2019
+  * All: updated flask highlighting: quality goes first, in maps non-quality flasks get de-emphasized
   * All: updated sounds & minimap icons for patch 3.1 items (abyss jewels, stygian vise, elder/shaper items)
 * 17 December 2018
   * Maps & Strict: copied changes from Leveling, with minor modifications to not show low level gems
