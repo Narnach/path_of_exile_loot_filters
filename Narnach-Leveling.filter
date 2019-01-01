@@ -883,16 +883,8 @@ Show
   Class Ring Amulet Belt
   Rarity = Rare
   ItemLevel >= 75
-  SetBorderColor 255 63 0
-
-# I tend to grab two handed weapons for the hand slots, so I ignore bows, quivers and one handed weapons.
-# Only highlight endgame-tier items, because there are more than enough items and not enough portals in maps.
-#Show
-#  Class Boot Glove Helmet Armour "Two Hand" Stave
-#  Rarity = Rare
-#  ItemLevel >= 75
-#  DropLevel >= 62
-#  SetBorderColor 255 127 0
+  SetBorderColor 255 63 0 127
+  SetBackgroundColor 0 0 0 63
 
 # Outline level 60+ items for the chaos recipe
 # I tend to grab two handed weapons for the hand slots, so I ignore bows, quivers and one handed weapons.
@@ -900,16 +892,8 @@ Show
   Class Ring Amulet Belt
   Rarity = Rare
   ItemLevel >= 60
-  SetBorderColor 255 255 0
-
-# Only show the chaos recipe items until we get to Regal recipe territory
-#Show
-#  Class Boot Glove Helmet Armour "Two Hand" Stave
-#  Rarity = Rare
-#  ItemLevel >= 60
-#  ItemLevel < 75
-#  SetBorderColor 255 255 0
-#  SetBackgroundColor 63 63 0 63
+  SetBorderColor 255 255 0 127
+  SetBackgroundColor 0 0 0 63
 
 ################################################################################
 # weapons and armour with quality
