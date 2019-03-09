@@ -1,5 +1,7 @@
 # Changelog
 
+* 9 March 2019
+  * All: added highlights for Synthesis league items
 * 1 January 2019
   * All: updated chaos/regal recipe jewelry highlight: de-emphasize these drops because they are not that important
   * All: updated flask highlighting: quality goes first, in maps non-quality flasks get de-emphasized

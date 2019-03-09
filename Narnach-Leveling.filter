@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 1 January 2019
+# Last updated on 9 March 2019
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -7,6 +7,38 @@
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 #
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
+
+################################################################################
+# New League items in 3.6 / Synthesis League
+################################################################################
+
+# Fractured Items
+Show
+  FracturedItem True
+  SetBorderColor 255 0 255
+  SetFontSize 35
+  PlayAlertSoundPositional 5 300
+  MinimapIcon 2 Yellow Circle
+  PlayEffect Yellow
+
+# Synthesised Items
+Show
+  SynthesisedItem True
+  SetBorderColor 255 0 255
+  SetFontSize 35
+  PlayAlertSoundPositional 5 300
+  MinimapIcon 1 Yellow Circle
+  PlayEffect Yellow
+
+# Item has enchants? (Filter is new this league)
+Show
+  AnyEnchantment True
+  SetBorderColor 127 0 255
+  SetFontSize 35
+  PlayAlertSoundPositional 5 300
+  MinimapIcon 1 Yellow Circle
+  PlayEffect Yellow
+
 ################################################################################
 # New League items in 3.5 / Betrayal League
 ################################################################################
