@@ -17,7 +17,7 @@ Show
   FracturedItem True
   SetBorderColor 255 0 255
   SetFontSize 35
-  PlayAlertSoundPositional 5 300
+  PlayAlertSoundPositional 6 250
   MinimapIcon 2 Yellow Circle
   PlayEffect Yellow
 
@@ -26,7 +26,7 @@ Show
   SynthesisedItem True
   SetBorderColor 255 0 255
   SetFontSize 35
-  PlayAlertSoundPositional 5 300
+  PlayAlertSoundPositional 6 250
   MinimapIcon 1 Yellow Circle
   PlayEffect Yellow
 
@@ -35,7 +35,7 @@ Show
   AnyEnchantment True
   SetBorderColor 127 0 255
   SetFontSize 35
-  PlayAlertSoundPositional 5 300
+  PlayAlertSoundPositional 6 250
   MinimapIcon 1 Yellow Circle
   PlayEffect Yellow
 

@@ -17,7 +17,7 @@ Show
   FracturedItem True
   SetBorderColor 255 0 255
   SetFontSize 35
-  PlayAlertSoundPositional 5 300
+  PlayAlertSoundPositional 6 250
   MinimapIcon 2 Yellow Circle
   PlayEffect Yellow
 
@@ -26,7 +26,7 @@ Show
   SynthesisedItem True
   SetBorderColor 255 0 255
   SetFontSize 35
-  PlayAlertSoundPositional 5 300
+  PlayAlertSoundPositional 6 250
   MinimapIcon 1 Yellow Circle
   PlayEffect Yellow
 
@@ -35,7 +35,7 @@ Show
   AnyEnchantment True
   SetBorderColor 127 0 255
   SetFontSize 35
-  PlayAlertSoundPositional 5 300
+  PlayAlertSoundPositional 6 250
   MinimapIcon 1 Yellow Circle
   PlayEffect Yellow
 
@@ -871,6 +871,16 @@ Hide
 ################################################################################
 
 # Items that can have up to 3 linked sockets, but don't.
+# Very early act 1
+Show
+  Rarity Normal Magic
+  Class "One Hand" Mace Claw Dagger Sceptre Wand Shield
+  ItemLevel < 5
+  LinkedSockets < 3
+  SetBackgroundColor 0 0 0 63
+
+# Items that can have up to 3 linked sockets, but don't.
+# Rest of the game
 Hide
   Rarity Normal Magic
   Class "One Hand" Mace Claw Dagger Sceptre Wand Shield
@@ -879,6 +889,16 @@ Hide
   SetBackgroundColor 0 0 0 63
 
 # Items that can have up to 4 linked sockets from item level 25+
+# Very early act 1
+Show
+  Rarity Normal Magic
+  Class Boot Glove Helmet Armour "Two Hand" Stave Bow
+  ItemLevel < 5
+  Sockets <= 3
+  LinkedSockets < 3
+  SetBackgroundColor 0 0 0 63
+
+# Acts 1-3
 Hide
   Rarity Normal Magic
   Class Boot Glove Helmet Armour "Two Hand" Stave Bow
@@ -887,6 +907,8 @@ Hide
   Sockets <= 3
   LinkedSockets < 3
   SetBackgroundColor 0 0 0 63
+
+# Rest of the game
 Hide
   Rarity Normal Magic
   Class Boot Glove Helmet Armour "Two Hand" Stave Bow
