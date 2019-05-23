@@ -2,6 +2,7 @@
 
 * 23 May 2019
   * All: highlight Perandus Coins as medium tier currency.
+  * All: better highlight Breach Splinters on par with medium tier currency.
 * 9 March 2019
   * All: added highlights for Synthesis league items
 * 1 January 2019
