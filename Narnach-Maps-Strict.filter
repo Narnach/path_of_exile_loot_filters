@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 9 March 2019
+# Last updated on 23 May 2019
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -589,7 +589,7 @@ Show
   PlayEffect Red Temp
 
 Show
-  BaseType "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Silver Coin" "Chromatic Orb" "Glassblower's Bauble"
+  BaseType "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Silver Coin" "Chromatic Orb" "Glassblower's Bauble" "Perandus Coin"
   PlayAlertSoundPositional 8 200
   SetTextColor 255 100 0
   SetBorderColor 255 100 0

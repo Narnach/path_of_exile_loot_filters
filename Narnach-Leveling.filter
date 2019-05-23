@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 9 March 2019
+# Last updated on 23 May 2019
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -577,8 +577,9 @@ Show
   MinimapIcon 2 Red Star
   PlayEffect Red Temp
 
+# Medium tier currency
 Show
-  BaseType "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Silver Coin" "Chromatic Orb" "Glassblower's Bauble"
+  BaseType "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Silver Coin" "Chromatic Orb" "Glassblower's Bauble" "Perandus Coin"
   PlayAlertSoundPositional 8 200
   SetTextColor 255 100 0
   SetBorderColor 255 100 0
@@ -586,6 +587,7 @@ Show
   MinimapIcon 2 Red Star
   PlayEffect Red Temp
 
+# High tier shards
 Show
   BaseType "Harbinger's Shard" "Horizon Shard" "Ancient Shard" "Binding Shard" "Annulment Shard" "Regal Shard" "Chaos Shard" "Alchemy Shard" "Engineer's Shard"
   PlayAlertSoundPositional 8 200
