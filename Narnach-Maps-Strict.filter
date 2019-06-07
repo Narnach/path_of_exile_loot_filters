@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 23 May 2019
+# Last updated on 7 June 2019
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -7,6 +7,42 @@
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 #
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
+
+################################################################################
+# New League items in 3.7 / Legion League
+################################################################################
+
+# Incubators. Treat these as high tier currency
+Show
+  Class Incubator
+  PlayAlertSoundPositional ShGeneral 250
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+
+# Legion Splinters and Emblems overlap with Breach Splinters and blessings,
+# so they are merged now.
+Show
+  Class "Stackable Currency"
+  BaseType Splinter Blessing
+  SetBorderColor 255 0 255
+  SetTextColor 255 100 0
+  SetFontSize 39
+  PlayAlertSoundPositional 2 300
+  MinimapIcon 2 Red Star
+  PlayEffect Red
+
+Show
+  Class "Map Fragment"
+  BaseType Blessing
+  SetBorderColor 255 0 255
+  SetTextColor 255 100 0
+  SetFontSize 39
+  PlayAlertSoundPositional 2 300
+  MinimapIcon 1 Red Star
+  PlayEffect Red
 
 ################################################################################
 # New League items in 3.6 / Synthesis League
@@ -107,30 +143,6 @@ Show
   Corrupted True
   SetBorderColor 255 0 0
   Rarity >= Rare
-
-################################################################################
-# League specific items for 2.5 Breach League
-# (moved up to prevent clashing with 3.2 Nets)
-################################################################################
-
-Show
-  Class "Stackable Currency"
-  BaseType Splinter Blessing
-  SetBorderColor 255 0 255
-  SetTextColor 255 100 0
-  SetFontSize 39
-  PlayAlertSoundPositional 2 300
-  MinimapIcon 2 Red Star
-  PlayEffect Red Temp
-
-Show
-  Class Rings
-  BaseType "Breach Ring"
-  SetBorderColor 255 0 255
-
-# Breachstones used to have their own category, but in 2.6 they have been moved
-# to the "Misc Map Items" Class, presumably so they can add new league items to
-# this and we don't have to update filters anymore.
 
 ################################################################################
 # New League items in 3.2 / Bestiary League
@@ -271,8 +283,15 @@ Show
   PlayAlertSoundPositional 7 300
 
 ################################################################################
-# 2.5 moved up due to Splinter of Uul-Netol clashing with the Bestiary Nets.
+# League specific items for 2.5 Breach League
 ################################################################################
+
+# Splinters have been merged with 3.7 Legion Splinters
+# Breach rings are just corrupted rares, so they have a generic highlight.
+# Breachstones used to have their own category, but in 2.6 they have been moved
+# to the "Misc Map Items" Class, presumably so they can add new league items to
+# this and we don't have to update filters anymore.
+
 
 ################################################################################
 # New base items in patch 2.4, exclusive to specific maps

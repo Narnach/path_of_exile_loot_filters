@@ -1,5 +1,7 @@
 # Changelog
 
+* 7 June 2019
+  * All: added patch 3.7 / Legion loot highlights (Incubators/Blessings/Splinters)
 * 23 May 2019
   * All: highlight Perandus Coins as medium tier currency.
   * All: better highlight Breach Splinters on par with medium tier currency.
