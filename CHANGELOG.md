@@ -1,5 +1,7 @@
 # Changelog
 
+* 13 June 2019
+  * Leveling: don't hide non-4-linked items until act 5 (instead of act 4). This gives you a little more time to pickup those 4 socketed but not linked items while leveling.
 * 7 June 2019
   * All: added patch 3.7 / Legion loot highlights (Incubators/Blessings/Splinters)
 * 23 May 2019

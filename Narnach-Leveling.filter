@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 7 June 2019
+# Last updated on 13 June 2019
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -813,6 +813,9 @@ Show
   PlayEffect White
 
 ################################################################################
+# CUSTOM: hide item types I don't intend to use
+################################################################################
+################################################################################
 # Flasks: only show the "current" tier based on map level
 ################################################################################
 
@@ -922,7 +925,7 @@ Show
   LinkedSockets < 3
   SetBackgroundColor 0 0 0 63
 
-# Acts 1-3
+# Acts 1-2: hide items with less than 3 sockets
 Hide
   Rarity Normal Magic
   Class Boot Glove Helmet Armour "Two Hand" Stave Bow
@@ -932,11 +935,19 @@ Hide
   LinkedSockets < 3
   SetBackgroundColor 0 0 0 63
 
-# Rest of the game
+# Acts 3-4: show all 4+ socketed items that are white or rare (ignore magic)
+Show
+  Rarity Normal Rare
+  Class Boot Glove Helmet Armour "Two Hand" Stave Bow
+  ItemLevel <= 40
+  Sockets >= 4
+  SetBackgroundColor 0 0 0 63
+
+# Act 5+: only show 4+ linked gear
 Hide
   Rarity Normal Magic
   Class Boot Glove Helmet Armour "Two Hand" Stave Bow
-  ItemLevel >= 25
+  ItemLevel >= 41
   Sockets <= 4
   LinkedSockets < 4
   SetBackgroundColor 0 0 0 63
@@ -946,10 +957,6 @@ Hide
   Rarity Magic
   Class Ring Amulet Belt
   ItemLevel >= 10
-
-################################################################################
-# CUSTOM: hide item types I don't intend to use
-################################################################################
 
 ################################################################################
 # Chaos/Regal Recipe
