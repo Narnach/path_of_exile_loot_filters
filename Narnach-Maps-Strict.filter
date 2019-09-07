@@ -24,6 +24,18 @@ Show
   MinimapIcon 0 Green Square
   PlayEffect Green
 
+# Oils!
+Show
+  Class "Stackable Currency"
+  BaseType "Oil"
+  SetBackgroundColor 32 64 0
+  SetBorderColor 255 0 255
+  SetTextColor 255 100 0
+  SetFontSize 42
+  PlayAlertSoundPositional 2 250
+  MinimapIcon 2 Red Star
+  PlayEffect Red
+
 ################################################################################
 # New League items in 3.7 / Legion League
 ################################################################################
