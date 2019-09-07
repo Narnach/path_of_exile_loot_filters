@@ -17,7 +17,8 @@ Show
   Class Map
   BlightedMap True
   SetBackgroundColor 80 127 0
-  SetTextColor 163 141 109
+  SetTextColor 255 225 200
+  SetBorderColor 255 225 200
   SetFontSize 45
   PlayAlertSoundPositional 3 300
   MinimapIcon 0 Green Square
