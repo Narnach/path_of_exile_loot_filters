@@ -862,47 +862,47 @@ Show
 Show
     Class Flask
     DropLevel <= 1
-    ItemLevel < 3
-
-Show
-    Class Flask
-    DropLevel >= 3
     ItemLevel < 6
 
 Show
     Class Flask
-    DropLevel >= 6
+    DropLevel >= 3
     ItemLevel < 12
 
 Show
     Class Flask
-    DropLevel >= 12
+    DropLevel >= 6
     ItemLevel < 18
 
 Show
     Class Flask
-    DropLevel >= 18
+    DropLevel >= 12
     ItemLevel < 24
 
 Show
     Class Flask
-    DropLevel >= 24
+    DropLevel >= 18
     ItemLevel < 30
 
 Show
     Class Flask
-    DropLevel >= 30
+    DropLevel >= 24
     ItemLevel < 36
 
 Show
     Class Flask
-    DropLevel >= 36
+    DropLevel >= 30
     ItemLevel < 42
 
 Show
     Class Flask
-    DropLevel >= 42
+    DropLevel >= 36
     ItemLevel < 48
+
+Show
+    Class Flask
+    DropLevel >= 42
+    ItemLevel < 54
 
 # A couple tiers of flasks stand out between level 42 and 60
 Show

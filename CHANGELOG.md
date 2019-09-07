@@ -2,6 +2,8 @@
 
 * 7 September 2019
   * All: highlight Blighted maps with a nice sickly green color.
+  * All: highlight Oils with custom color.
+  * Leveling: show flasks a little longer (show current + previous tier instead of only current tier)
 * 13 June 2019
   * Leveling: don't hide non-4-linked items until act 5 (instead of act 4). This gives you a little more time to pickup those 4 socketed but not linked items while leveling.
 * 7 June 2019
