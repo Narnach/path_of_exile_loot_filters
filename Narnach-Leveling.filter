@@ -947,7 +947,7 @@ Hide
 # Very early act 1
 Show
   Rarity Normal Magic
-  Class Boot Glove Helmet Armour "Two Hand" Stave Bow
+  Class Boot Glove Helmet Armour "Two Hand" Staves Warstaff Bow
   ItemLevel < 5
   Sockets <= 3
   LinkedSockets < 3
@@ -956,7 +956,7 @@ Show
 # Acts 1-2: hide items with less than 3 sockets
 Hide
   Rarity Normal Magic
-  Class Boot Glove Helmet Armour "Two Hand" Stave Bow
+  Class Boot Glove Helmet Armour "Two Hand" Staves Warstaff Bow
   ItemLevel >= 5
   ItemLevel < 25
   Sockets <= 3
@@ -966,7 +966,7 @@ Hide
 # Acts 3-4: show all 4+ socketed items that are white or rare (ignore magic)
 Show
   Rarity Normal Rare
-  Class Boot Glove Helmet Armour "Two Hand" Stave Bow
+  Class Boot Glove Helmet Armour "Two Hand" Staves Warstaff Bow
   ItemLevel <= 40
   Sockets >= 4
   SetBackgroundColor 0 0 0 63
@@ -974,7 +974,7 @@ Show
 # Act 5+: only show 4+ linked gear
 Hide
   Rarity Normal Magic
-  Class Boot Glove Helmet Armour "Two Hand" Stave Bow
+  Class Boot Glove Helmet Armour "Two Hand" Staves Warstaff Bow
   ItemLevel >= 41
   Sockets <= 4
   LinkedSockets < 4
@@ -1073,7 +1073,7 @@ Show
   Rarity = Normal Rare
 
 Show
-  Class Staves
+  Class Staves Warstaff
   # These are the best of their kind
   BaseType "Lathi" "Maelström Staff" "Imperial Staff" "Eclipse Staff" "Judgement Staff"
   Rarity = Normal Rare
@@ -1141,7 +1141,7 @@ Show
 Show
   Rarity = Rare
   ItemLevel >= 67
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaff Wands Axe Bow Dagger Shield
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
@@ -1149,21 +1149,21 @@ Show
 Hide
   ItemLevel >= 67
   DropLevel >= 62
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaff Wands Axe Bow Dagger Shield
   SetBackgroundColor 0 0 0 63
 
 # Merciless level items
 Hide
   ItemLevel >= 67
   DropLevel >= 56
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaff Wands Axe Bow Dagger Shield
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
 # Really low level stuff
 Hide
   ItemLevel >= 67
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Wands Axe Bow Dagger Shield
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaff Wands Axe Bow Dagger Shield
   SetBackgroundColor 0 0 0 63
   SetFontSize 18
 
@@ -2078,7 +2078,7 @@ Hide
 ################################################################################
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 10
   DropLevel < 5
   Rarity < Rare
@@ -2086,7 +2086,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 15
   DropLevel < 10
   Rarity < Rare
@@ -2094,7 +2094,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 20
   DropLevel < 15
   Rarity < Rare
@@ -2102,7 +2102,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 25
   DropLevel < 20
   Rarity < Rare
@@ -2110,7 +2110,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 30
   DropLevel < 25
   Rarity < Rare
@@ -2118,7 +2118,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 35
   DropLevel < 30
   Rarity < Rare
@@ -2126,7 +2126,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 40
   DropLevel < 35
   Rarity < Rare
@@ -2134,7 +2134,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 45
   DropLevel < 40
   Rarity < Rare
@@ -2142,7 +2142,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 50
   DropLevel < 45
   Rarity < Rare
@@ -2150,7 +2150,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 55
   DropLevel < 50
   Rarity < Rare
@@ -2158,7 +2158,7 @@ Hide
   SetFontSize 24
 
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet Shield
   ItemLevel >= 60
   DropLevel < 55
   Rarity < Rare
@@ -2167,7 +2167,7 @@ Hide
 
 # From level 67 onwards (Act 4 Merciless) hide all low level base items
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave  Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff  Shield
   ItemLevel >= 65
   DropLevel < 60
   Rarity < Rare
@@ -2209,7 +2209,7 @@ Show
 
 # Max 4+ sockets
 Show
-  Class Sword Axe Mace Bow Stave Glove Boot Armour Helmet
+  Class Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet
   LinkedSockets >= 4
   DropLevel >= 62
   Rarity = Normal Rare
@@ -2277,7 +2277,7 @@ Show
 
 # Stop showing magic items once we finish act 2
 Hide
-  Class Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield
+  Class Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Quiver Glove Boot Armour Helmet Shield
   Rarity = Magic
   ItemLevel >= 23
 
@@ -2407,7 +2407,7 @@ Hide
 
 # Manually hide what is not explicitly shown
 Hide
-  Class Amulet Ring Belt Claw Dagger Wand Sword Axe Mace Bow Stave Quiver Glove Boot Armour Helmet Shield Sceptre
+  Class Amulet Ring Belt Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Quiver Glove Boot Armour Helmet Shield Sceptre
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
