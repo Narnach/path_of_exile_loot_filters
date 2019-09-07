@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 13 June 2019
+# Last updated on 7 September 2019
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -7,6 +7,21 @@
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 #
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
+
+################################################################################
+# New League items in 3.8 / Blight League
+################################################################################
+
+# Blighted maps are special Tower Defense only maps
+Show
+  Class Map
+  BlightedMap True
+  SetBackgroundColor 80 127 0
+  SetTextColor 163 141 109
+  SetFontSize 45
+  PlayAlertSoundPositional 3 300
+  MinimapIcon 0 Green Square
+  PlayEffect Green
 
 ################################################################################
 # New League items in 3.7 / Legion League
