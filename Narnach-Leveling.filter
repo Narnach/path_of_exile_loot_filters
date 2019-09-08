@@ -887,17 +887,17 @@ Show
 Show
     Class Flask
     DropLevel >= 24
-    ItemLevel < 36
+    ItemLevel < 30
 
 Show
     Class Flask
     DropLevel >= 30
-    ItemLevel < 42
+    ItemLevel < 46
 
 Show
     Class Flask
     DropLevel >= 36
-    ItemLevel < 48
+    ItemLevel < 42
 
 Show
     Class Flask
