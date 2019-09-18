@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 7 September 2019
+# Last updated on 18 September 2019
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -35,6 +35,13 @@ Show
   PlayAlertSoundPositional 2 250
   MinimapIcon 2 Red Star
   PlayEffect Red
+
+# New item types; presumably maps only, so relatively rare. Same look/sound as the 2.4 maps items
+Show
+  BaseType "Vermillion Ring" "Cerulean Ring" "Convoking Wand"
+  SetFontSize 40
+  SetBorderColor 127 255 255
+  PlayAlertSoundPositional 4 300
 
 ################################################################################
 # New League items in 3.7 / Legion League

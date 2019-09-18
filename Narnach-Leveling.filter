@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 8 September 2019
+# Last updated on 18 September 2019
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -35,6 +35,13 @@ Show
   PlayAlertSoundPositional 2 250
   MinimapIcon 2 Red Star
   PlayEffect Red
+
+# New item types; presumably maps only, so relatively rare. Same look/sound as the 2.4 maps items
+Show
+  BaseType "Vermillion Ring" "Cerulean Ring" "Convoking Wand"
+  SetFontSize 40
+  SetBorderColor 127 255 255
+  PlayAlertSoundPositional 4 300
 
 ################################################################################
 # New League items in 3.7 / Legion League

@@ -1,5 +1,7 @@
 # Changelog
 
+* 18 September 2019
+  * All: highlight Vermillion Ring, Cerulean Ring and Convoking Wand, new item base types
 * 8 September 2019
   * Leveling: Flasks only show in wider level ranges in acts 1-3; afterwards it became too noisy (partial revert of earlier changes)
 * 7 September 2019
