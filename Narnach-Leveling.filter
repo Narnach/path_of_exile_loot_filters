@@ -9,6 +9,18 @@
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
 
 ################################################################################
+# New League items in 3.9 / Metamorph League / Conquerors of the Atlas expansion
+################################################################################
+
+Show
+  Class "Metamorph Sample"
+  SetFontSize 40
+  SetBorderColor 0 255 0
+  PlayAlertSoundPositional 8 150
+  MinimapIcon 2 Green Square
+  PlayEffect Green
+
+################################################################################
 # New League items in 3.8 / Blight League
 ################################################################################
 
@@ -524,7 +536,7 @@ Show
 #
 # These drop maybe once per map, and at least once every few maps.
 # - Announcer: Chaos Orb, Blessed Orb, Orb of Fusing, Regal Orb, Vaal Orb
-# - Generic: "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
+# - Generic: "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb" Catalyst "Awakener's Orb" "Ivory Watchstone"
 # - Top-tier shards
 # - Harbinger Orbs: "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb"
 # - Tier 4+ Essences & Remnants of Corruption
@@ -577,7 +589,7 @@ Show
   PlayEffect Red
 
 Show
-  BaseType "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
+  BaseType "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb" Catalyst "Awakener's Orb" "Ivory Watchstone"
   PlayAlertSoundPositional ShGeneral 250
   SetTextColor 255 0 0
   SetBorderColor 255 0 0
@@ -742,6 +754,8 @@ Show
 ################################################################################
 # Gems
 #
+# Awakened gems:
+# - Color: default BG, green border, default text, very large white hexagon minimap, white effect
 # Pickup only gems:
 # - Color: default BG, green border, default text, large white hexagon minimap, white effect
 # Gems with quality:
@@ -750,11 +764,21 @@ Show
 # - Color: default BG, red border, default text, small red hexagon minimap, red effect
 ################################################################################
 
+# Awakened gems are boss drops since 3.9 / Conquerors of the Atlas
+Show
+  Class Gem
+  BaseType Awakened
+  SetBorderColor 31 255 63
+  SetFontSize 45
+  PlayAlertSoundPositional 9 300
+  MinimapIcon 0 White Hexagon
+  PlayEffect White
+
 # Can't buy these gems, so highlight:
 # http://pathofexile.gamepedia.com/List_of_drop-only_gems
 Show
   Class Gem
-  BaseType "Empower" "Enlighten" "Enhance" "Detonate Mines" "Portal" "Added Chaos Damage" "Mirror Arrow" "Block Chance Reduction" "Vaal Breach"
+  BaseType "Empower" "Enlighten" "Enhance" "Portal" "Block Chance Reduction" "Vaal Breach"
   SetBorderColor 31 255 63
   SetFontSize 45
   PlayAlertSoundPositional 9 200
