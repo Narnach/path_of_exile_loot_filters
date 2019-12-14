@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 18 September 2019
+# Last updated on 14 December 2019
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -7,6 +7,14 @@
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 #
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
+#
+#
+# Note to self:
+# PlayEffect <Color> [Temp]
+# MinimapIcon <Size> <Color> <Shape>
+# - Size: 0 (largest), 1 (medium), 2 (small)
+# - Color: Red, Green, Blue, Brown, White, Yellow
+# - Shape: Circle, Diamond, Hexagon, Square, Star, Triangle
 
 ################################################################################
 # New League items in 3.8 / Blight League
@@ -525,7 +533,7 @@ Show
 #
 # These drop maybe once per map, and at least once every few maps.
 # - Announcer: Chaos Orb, Blessed Orb, Orb of Fusing, Regal Orb, Vaal Orb
-# - Generic: "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Cartographer's Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
+# - Generic: "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
 # - Top-tier shards
 # - Harbinger Orbs: "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb"
 # - Tier 4+ Essences & Remnants of Corruption
@@ -578,7 +586,7 @@ Show
   PlayEffect Red
 
 Show
-  BaseType "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Cartographer's Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
+  BaseType "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
   PlayAlertSoundPositional ShGeneral 250
   SetTextColor 255 0 0
   SetBorderColor 255 0 0
@@ -950,11 +958,11 @@ Show
 
 # These are the best of their kind
 Show
-  Class Staves Warstaff
+  Class Staves Warstaves
   BaseType "Lathi" "Maelström Staff" "Imperial Staff" "Eclipse Staff" "Judgement Staff"
   Rarity = Rare
 Show
-  Class Staves Warstaff
+  Class Staves Warstaves
   BaseType "Lathi" "Maelström Staff" "Imperial Staff" "Eclipse Staff" "Judgement Staff"
   Rarity = Normal
   Sockets >= 4
@@ -1050,7 +1058,7 @@ Show
   Rarity = Rare
   ItemLevel >= 68
   DropLevel >= 62
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaff Wands Axe Bow Dagger Shield Quiver
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaves Wands Axe Bow Dagger Shield Quiver
   SetBackgroundColor 0 0 0 63
   SetFontSize 28
 
@@ -1074,7 +1082,7 @@ Show
 
 Hide
   ItemLevel >= 68
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaff Wands Axe Bow Dagger Shield Quiver
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaves Wands Axe Bow Dagger Shield Quiver
   SetBackgroundColor 0 0 0 63
   SetFontSize 18
 
@@ -1161,7 +1169,7 @@ Show
 
 # Max 4+ sockets
 Show
-  Class Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet
+  Class Sword Axe Mace Bow Staves Warstaves Glove Boot Armour Helmet
   LinkedSockets >= 4
   DropLevel >= 62
   SetBorderColor 255 255 255
@@ -1192,7 +1200,7 @@ Hide
 
 # Manually hide what is not explicitly shown
 Hide
-  Class Amulet Ring Belt Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Quiver Glove Boot Armour Helmet Shield Sceptre
+  Class Amulet Ring Belt Claw Dagger Wand Sword Axe Mace Bow Staves Warstaves Quiver Glove Boot Armour Helmet Shield Sceptre
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 

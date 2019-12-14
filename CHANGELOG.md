@@ -2,6 +2,7 @@
 
 * 14 December 2019
   * Maps: highlight map-specific base items with a blue beam
+  * All: Compatibility update with 3.9 (renamed Warstaff to Warstaves, Sextant lost the Cartographer's bit)
 * 18 September 2019
   * All: highlight Vermillion Ring, Cerulean Ring and Convoking Wand, new item base types
 * 8 September 2019

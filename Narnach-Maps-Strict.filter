@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 18 September 2019
+# Last updated on 14 December 2019
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -535,7 +535,7 @@ Show
 #
 # These drop maybe once per map, and at least once every few maps.
 # - Announcer: Chaos Orb, Blessed Orb, Orb of Fusing, Regal Orb, Vaal Orb
-# - Generic: "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Cartographer's Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
+# - Generic: "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
 # - Top-tier shards
 # - Harbinger Orbs: "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb"
 # - Tier 4+ Essences & Remnants of Corruption
@@ -588,7 +588,7 @@ Show
   PlayEffect Red
 
 Show
-  BaseType "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Cartographer's Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
+  BaseType "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb"
   PlayAlertSoundPositional ShGeneral 250
   SetTextColor 255 0 0
   SetBorderColor 255 0 0
@@ -913,7 +913,7 @@ Show
   Rarity = Rare
 
 Show
-  Class Staves Warstaff
+  Class Staves Warstaves
   # These are the best of their kind
   BaseType "Lathi" "Maelström Staff" "Imperial Staff" "Eclipse Staff" "Judgement Staff"
   Rarity = Rare
@@ -974,19 +974,19 @@ Show
   Rarity = Rare
   ItemLevel >= 68
   DropLevel >= 62
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaff Wands Axe Bow Dagger Shield Quiver
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaves Wands Axe Bow Dagger Shield Quiver
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
 Hide
   ItemLevel >= 68
   DropLevel >= 60
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaff Wands Axe Bow Dagger Shield Quiver
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaves Wands Axe Bow Dagger Shield Quiver
   SetFontSize 24
 
 Hide
   ItemLevel >= 68
-  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaff Wands Axe Bow Dagger Shield Quiver
+  Class Armour Glove Boot Helmet Claw Mace Sceptre Sword Staves Warstaves Wands Axe Bow Dagger Shield Quiver
   SetBackgroundColor 0 0 0 63
   SetFontSize 16
 
@@ -1068,7 +1068,7 @@ Show
 
 # Max 4+ sockets
 Show
-  Class Sword Axe Mace Bow Staves Warstaff Glove Boot Armour Helmet
+  Class Sword Axe Mace Bow Staves Warstaves Glove Boot Armour Helmet
   LinkedSockets >= 4
   DropLevel >= 62
   SetBorderColor 255 255 255
@@ -1100,7 +1100,7 @@ Hide
 
 # Manually hide what is not explicitly shown
 Hide
-  Class Amulet Ring Belt Claw Dagger Wand Sword Axe Mace Bow Staves Warstaff Quiver Glove Boot Armour Helmet Shield Sceptre
+  Class Amulet Ring Belt Claw Dagger Wand Sword Axe Mace Bow Staves Warstaves Quiver Glove Boot Armour Helmet Shield Sceptre
   SetBackgroundColor 0 0 0 63
   SetFontSize 24
 
