@@ -41,7 +41,9 @@ Show
   BaseType "Vermillion Ring" "Cerulean Ring" "Convoking Wand"
   SetFontSize 40
   SetBorderColor 127 255 255
-  PlayAlertSoundPositional 4 300
+  PlayAlertSoundPositional 2 250
+  PlayEffect Blue
+  MinimapIcon 2 Blue Star
 
 ################################################################################
 # New League items in 3.7 / Legion League

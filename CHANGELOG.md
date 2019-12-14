@@ -1,5 +1,7 @@
 # Changelog
 
+* 14 December 2019
+  * Maps: highlight map-specific base items with a blue beam
 * 18 September 2019
   * All: highlight Vermillion Ring, Cerulean Ring and Convoking Wand, new item base types
 * 8 September 2019
