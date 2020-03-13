@@ -17,6 +17,8 @@ Each loot filter traditionally had its own changelog listed near the top, but I'
 
 ## How to use these filters
 
+There's always a copy of the latest filters on [my profile](https://www.pathofexile.com/account/view-profile/narnach/item-filters) on the Path of Exile website.
+
 If you only want a single filter, then simply copy the Raw text of the filter (follow the links above) and store it in a file in this directory:
 
 `C:\Users\<USERNAME>\Documents\My Games\Path of Exile\`
