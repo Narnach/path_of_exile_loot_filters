@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps
-# Last updated on 14 December 2019
+# Last updated on 13 March 2020
 #
 # This filter is useful when you have finished the campaigns and started running maps and other high level content. Low level items are not shown, but you will still see white base items that can serve as crafting bases. When you start getting annoyed that too many items are dropping in your maps, you might be ready for the Maps-Strict version of this filter.
 #
@@ -15,6 +15,49 @@
 # - Size: 0 (largest), 1 (medium), 2 (small)
 # - Color: Red, Green, Blue, Brown, White, Yellow
 # - Shape: Circle, Diamond, Hexagon, Square, Star, Triangle
+
+################################################################################
+# New League items in 3.10 / Delirium League
+################################################################################
+
+Show
+  Class "Stackable Currency"
+  BaseType "Delirium Orb"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Grey Raindrop
+  PlayEffect Grey
+
+# Simulacrum splinter & full map
+Show
+  Class "Stackable Currency"
+  BaseType "Simulacrum Splinter"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 1 Grey Star
+  PlayEffect Grey Temp
+Show
+  Class "Map Fragment"
+  BaseType "Simulacrum"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Grey Star
+  PlayEffect Grey
+
+# Cluster Jewels
+Show
+  Class Jewel
+  BaseType "Cluster Jewel"
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 8 200
+  MinimapIcon 2 Red Star
+  PlayEffect Red Temp
 
 ################################################################################
 # New League items in 3.9 / Metamorph League / Conquerors of the Atlas expansion

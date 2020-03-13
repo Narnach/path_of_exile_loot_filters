@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 14 December 2019
+# Last updated on 13 March 2020
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -7,6 +7,49 @@
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 #
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
+
+################################################################################
+# New League items in 3.10 / Delirium League
+################################################################################
+
+Show
+  Class "Stackable Currency"
+  BaseType "Delirium Orb"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Grey Raindrop
+  PlayEffect Grey
+
+# Simulacrum splinter & full map
+Show
+  Class "Stackable Currency"
+  BaseType "Simulacrum Splinter"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 1 Grey Star
+  PlayEffect Grey Temp
+Show
+  Class "Map Fragment"
+  BaseType "Simulacrum"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Grey Star
+  PlayEffect Grey
+
+# Cluster Jewels
+Show
+  Class Jewel
+  BaseType "Cluster Jewel"
+  SetBorderColor 255 0 255
+  PlayAlertSoundPositional 8 200
+  MinimapIcon 2 Red Star
+  PlayEffect Red Temp
 
 ################################################################################
 # New League items in 3.9 / Metamorph League / Conquerors of the Atlas expansion

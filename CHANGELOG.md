@@ -1,5 +1,7 @@
 # Changelog
 
+* 13 March 2020
+  * All: Compatibility update with 3.10, Delirium League. Cluster Jewels, Simulacrum / splinters, Delerium Orb
 * 14 December 2019
   * Maps: highlight map-specific base items with a blue beam
   * All: Compatibility update with 3.9 (renamed Warstaff to Warstaves, Sextant lost the Cartographer's bit)
