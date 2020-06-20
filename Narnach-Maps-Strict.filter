@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Maps (Strict version)
-# Last updated on 13 March 2020
+# Last updated on 20 June 2020
 #
 # Focus: show as little as possible. Useful once you have good gear and are at least running yellow maps. Might save you during Breaches or other situations that generate a lot of loot.
 #
@@ -7,6 +7,66 @@
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 #
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
+
+################################################################################
+# New League items in 3.11 / Harvest League
+################################################################################
+
+# New currency introduced. No clue what it does yet, so highlight it as a league item for now. Maybe sort it into regular currency slots later on, depending on rarity and usefulness. Sound and color is based on Oils.
+Show
+  Class "Stackable Currency"
+  BaseType "Infused Engineer's Orb" "Time-light Scroll" "Fragmentation Scroll" "Deregulation Scroll" "Electroshock Scroll" "Haemocombustion Scroll" "Specularity Scroll" "Facetor's Lens"
+  SetBackgroundColor 32 64 0
+  SetBorderColor 255 0 255
+  SetTextColor 255 100 0
+  SetFontSize 42
+  PlayAlertSoundPositional 2 250
+  MinimapIcon 2 Red Star
+  PlayEffect Red
+
+# New map fragments
+Show
+  Class "Map Fragment"
+  BaseType "Tribute to the Goddess" "Gift to the Goddess" "Dedication to the Goddess"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 1 Orange Star
+  PlayEffect Orange
+
+# T1
+Show
+  Class "Harvest Seed"
+  BaseType "Grain"
+  SetBorderColor 0 127 0
+  PlayAlertSoundPositional 8 200
+  MinimapIcon 2 Green Diamond
+  PlayEffect Green
+# T2
+Show
+  Class "Harvest Seed"
+  BaseType "Seed"
+  SetBorderColor 32 192 32
+  PlayAlertSoundPositional 8 220
+  MinimapIcon 1 Green Diamond
+  PlayEffect Green
+# T3
+Show
+  Class "Harvest Seed"
+  BaseType "Bulb"
+  SetBorderColor 64 224 64
+  PlayAlertSoundPositional 8 270
+  MinimapIcon 0 Green Diamond
+  PlayEffect Green
+# T4
+Show
+  Class "Harvest Seed"
+  BaseType "Wild Thornfruit" "Vivid Scalefruit" "Primal Blisterfruit"
+  SetBorderColor 96 255 96
+  PlayAlertSoundPositional 8 300
+  MinimapIcon 0 Green Diamond
+  PlayEffect Green
 
 ################################################################################
 # New League items in 3.10 / Delirium League

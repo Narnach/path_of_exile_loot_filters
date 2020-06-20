@@ -1,5 +1,7 @@
 # Changelog
 
+* 20 June 2020
+  * All: Compatibility update with 3.11, Harvest League. New currency, goddess offerings, harvest seeds.
 * 13 March 2020
   * All: Compatibility update with 3.10, Delirium League. Cluster Jewels, Simulacrum / splinters, Delerium Orb
 * 14 December 2019
