@@ -1,5 +1,8 @@
 # Changelog
 
+* 19 September 2020
+  * All: Compatibility update with 3.12, Hesit League. New alternate quality gems, replica relics, experimental base types and Heist-specific currency and league items.
+  * Leveling: apply some old Harvest colors
 * 20 June 2020
   * All: Compatibility update with 3.11, Harvest League. New currency, goddess offerings, harvest seeds.
 * 13 March 2020

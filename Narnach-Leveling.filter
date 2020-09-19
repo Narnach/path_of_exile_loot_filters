@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 20 June 2020
+# Last updated on 19 September 2020
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -7,6 +7,71 @@
 # Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
 #
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
+
+################################################################################
+# New League items in 3.12 / Heist League
+################################################################################
+
+# New currency introduced. No clue what it does yet, so highlight it as a league item for now. Maybe sort it into regular currency slots later on, depending on rarity and usefulness. Sound and color is based on Oils.
+Show
+  Class "Stackable Currency"
+  BaseType "Prime Regrading Lens" "Secondary Regrading Lens" "Tempering Orb" "Tailoring Orb" "Rogue's Marker"
+  SetBackgroundColor 32 64 0
+  SetBorderColor 255 0 255
+  SetTextColor 255 100 0
+  SetFontSize 42
+  PlayAlertSoundPositional 2 250
+  MinimapIcon 2 Red Star
+  PlayEffect Red
+
+# New items lot with league specific bonuses
+Show
+  Class "Trinket"
+  SetBackgroundColor 32 64 0
+  SetBorderColor 255 0 255
+  SetTextColor 255 100 0
+  SetFontSize 42
+  PlayAlertSoundPositional 2 250
+  MinimapIcon 2 Red Star
+  PlayEffect Red
+
+# League-specific items
+Show
+  Class Contract Blueprint Heist
+  SetBackgroundColor 32 64 0
+  SetBorderColor 255 0 255
+  SetTextColor 255 100 0
+  SetFontSize 42
+  PlayAlertSoundPositional 2 250
+  MinimapIcon 2 Red Star
+  PlayEffect Red
+
+# Colors of quest items
+Show
+  Class "Heist Target"
+  SetFontSize 45
+  SetBorderColor 0 255 0
+  PlayAlertSoundPositional 8 150
+  MinimapIcon 0 Green Circle
+  PlayEffect Green
+
+# Experimental Base Types. Highlight border.
+# If they are very common, apply the Continue so normal rules for show/hiding them will apply
+Show
+  BaseType "Assembler Wand" "Congregator Wand" "Accumulator Wand" "Hollowpoint Dagger" "Pressurised Dagger" "Pneumatic Dagger" "Flickerflame Blade" "Flashfire Blade" "Infernal Blade" "Shadow Fangs" "Malign Fangs" "Void Fangs" "Maltreatment Axe" "Disapprobation Axe" "Psychotic Axe" "Fickle Spiritblade" "Capricious Spiritblade" "Anarchic Spiritblade" "Flare Mace" "Crack Mace" "Boom Mace" "Oscillating Sceptre" "Stabilising Sceptre" "Alternating Sceptre" "Hedron Bow" "Foundry Bow" "Solarine Bow" "Transformer Staff" "Reciprocation Staff" "Battery Staff" "Capacity Rod" "Potentiality Rod" "Eventuality Rod" "Prime Cleaver" "Honed Cleaver" "Apex Cleaver" "Rebuking Blade" "Blasting Blade" "Banishing Blade" "Blunt Force Condenser" "Crushing Force Magnifier" "Impact Force Propagator" "Exhausting Spirit Shield" "Subsuming Spirit Shield" "Transfer-attuned Spirit Shield" "Endothermic Buckler" "Polar Buckler" "Cold-attuned Buckler" "Exothermic Tower Shield" "Magmatic Tower Shield" "Heat-attuned Tower Shield" "Micro-Distillery Belt" "Mechalarm Belt" "Astrolabe Amulet" "Simplex Amulet" "Cogwork Ring" "Geodesic Ring"
+  SetBorderColor 127 0 127
+  # Continue
+
+# Alternate quality gems will stand out this way
+Show
+  AlternateQuality True
+  SetBorderColor 192 0 192
+
+# Replicate uniques
+Show
+  Replica True
+  SetBorderColor 127 0 127
+
 
 ################################################################################
 # New League items in 3.11 / Harvest League
@@ -35,6 +100,26 @@ Show
   MinimapIcon 1 Orange Star
   PlayEffect Orange
 
+# Seed types: determine background color, continues to be shown by T1-4.
+Show
+  Class "Harvest Seed"
+  BaseType "Wild"
+  SetBackgroundColor 127 0 127
+  PlayEffect Purple
+  Continue
+Show
+  Class "Harvest Seed"
+  BaseType "Vivid"
+  SetBackgroundColor 127 127 0
+  PlayEffect Yellow
+  Continue
+Show
+  Class "Harvest Seed"
+  BaseType "Primal"
+  SetBackgroundColor 0 127 127
+  PlayEffect Cyan
+  Continue
+
 # T1
 Show
   Class "Harvest Seed"
@@ -42,7 +127,6 @@ Show
   SetBorderColor 0 127 0
   PlayAlertSoundPositional 8 200
   MinimapIcon 2 Green Diamond
-  PlayEffect Green
 # T2
 Show
   Class "Harvest Seed"
@@ -50,7 +134,6 @@ Show
   SetBorderColor 32 192 32
   PlayAlertSoundPositional 8 220
   MinimapIcon 1 Green Diamond
-  PlayEffect Green
 # T3
 Show
   Class "Harvest Seed"
@@ -58,7 +141,6 @@ Show
   SetBorderColor 64 224 64
   PlayAlertSoundPositional 8 270
   MinimapIcon 0 Green Diamond
-  PlayEffect Green
 # T4
 Show
   Class "Harvest Seed"
@@ -66,7 +148,6 @@ Show
   SetBorderColor 96 255 96
   PlayAlertSoundPositional 8 300
   MinimapIcon 0 Green Diamond
-  PlayEffect Green
 
 ################################################################################
 # New League items in 3.10 / Delirium League
@@ -80,8 +161,6 @@ Show
   SetBorderColor 255 0 0
   SetFontSize 42
   MinimapIcon 1 Grey Raindrop
-  PlayEffect Grey
-
 # Simulacrum splinter & full map
 Show
   Class "Stackable Currency"
