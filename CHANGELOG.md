@@ -1,5 +1,7 @@
 # Changelog
 
+* 15 January 2021
+  * Leveling: applied QoL changes from Heist league: contracts have different color, all Atlas influence items have a highlight, large Chromatic items are hidden after level 45, non-quality Gems stop showing once you can buy them (level 30, 45)
 * 19 September 2020
   * All: Compatibility update with 3.12, Hesit League. New alternate quality gems, replica relics, experimental base types and Heist-specific currency and league items.
   * Leveling: apply some old Harvest colors

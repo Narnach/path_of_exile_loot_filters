@@ -1,5 +1,5 @@
 # Narnach's Loot filter for Leveling
-# Last updated on 19 September 2020
+# Last updated on 15 January 2021
 #
 # This filter shows items that are appropriate for the area where they drop, and as such contains a lot of rules to cover the leveling curve. While leveling this is great, but once you hit maps I encourage you to switch to the Maps or Maps-Strict versions of this filter.
 #
@@ -37,10 +37,20 @@ Show
 
 # League-specific items
 Show
-  Class Contract Blueprint Heist
+  Class Blueprint Heist
   SetBackgroundColor 32 64 0
   SetBorderColor 255 0 255
   SetTextColor 255 100 0
+  SetFontSize 42
+  PlayAlertSoundPositional 2 250
+  MinimapIcon 2 Red Star
+  PlayEffect Red
+
+# Craftable league items
+Show
+  Class Contract
+  SetBackgroundColor 32 64 0
+  SetBorderColor 255 0 255
   SetFontSize 42
   PlayAlertSoundPositional 2 250
   MinimapIcon 2 Red Star
@@ -477,6 +487,49 @@ Show
   MinimapIcon 0 Blue Star
   PlayEffect Blue
 
+# Influenced items
+Show
+  HasInfluence Shaper
+  SetFontSize 42
+  SetBackgroundColor 135 0 220 255
+  PlayAlertSoundPositional 5 300
+  MinimapIcon 0 Blue Star
+  PlayEffect Blue
+Show
+  HasInfluence Elder
+  SetFontSize 42
+  SetBackgroundColor 135 0 220 255
+  PlayAlertSoundPositional 5 300
+  MinimapIcon 0 Blue Star
+  PlayEffect Blue
+Show
+  HasInfluence Crusader
+  SetFontSize 42
+  SetBackgroundColor 135 0 220 255
+  PlayAlertSoundPositional 5 300
+  MinimapIcon 0 Blue Star
+  PlayEffect Blue
+Show
+  HasInfluence Hunter
+  SetFontSize 42
+  SetBackgroundColor 135 0 220 255
+  PlayAlertSoundPositional 5 300
+  MinimapIcon 0 Blue Star
+  PlayEffect Blue
+Show
+  HasInfluence Redeemer
+  SetFontSize 42
+  SetBackgroundColor 135 0 220 255
+  PlayAlertSoundPositional 5 300
+  MinimapIcon 0 Blue Star
+  PlayEffect Blue
+Show
+  HasInfluence Warlord
+  SetFontSize 42
+  SetBackgroundColor 135 0 220 255
+  PlayAlertSoundPositional 5 300
+  MinimapIcon 0 Blue Star
+  PlayEffect Blue
 
 ################################################################################
 # League specific items for 3.0 / Harbinger League
@@ -657,23 +710,25 @@ Show
     SetBorderColor 127 255 0
     SetBackgroundColor 0 0 0 63
 
-# "Chromatic" recipe items for larger items should not stand out as much at higher levels, because those items are huge and not worth it while mapping.
-Show
-    SocketGroup RGB
-    ItemLevel >= 60
-    Height = 4
-    Width = 2
-    SetBorderColor 0 255 0
-    SetBackgroundColor 0 168 0 63
-
-# "Chromatic" recipe items not previously highlighted.
+# Chromatic items should have a green border
 Show
     SocketGroup RGB
     SetBorderColor 0 255 0
+    Continue
+# "Chromatic" recipe items with at most a 3x2 size
+Show
+    SocketGroup RGB
     SetFontSize 40
+    Height < 4
     PlayAlertSoundPositional 9 150
     MinimapIcon 2 Green Circle
     PlayEffect Green Temp
+# "Chromatic" recipe items for larger items stop showing in part 2 of the campaign
+Show
+    SocketGroup RGB
+    ItemLevel <= 45
+    Height = 4
+    SetBackgroundColor 0 168 0 63
 
 ################################################################################
 # Top Tier Currency
@@ -985,35 +1040,45 @@ Show
   MinimapIcon 2 Red Hexagon
   PlayEffect Red
 
-# Costs: Scroll of Wisdom
+
+# Costs: Scroll of Wisdom. Can be bought from Library
 Show
   Class Gem
   DropLevel <= 4
+  AreaLevel <= 30
   SetBorderColor 63 63 63
 
-# Costs: Orb of Transmutation
+# Costs: Orb of Transmutation. Can be bought from Library
 Show
   Class Gem
   DropLevel <= 12
+  AreaLevel <= 30
   SetBorderColor 127 127 127
 
-# Costs: Orb of Alteration
+# Costs: Orb of Alteration. Can be bought from Library
 Show
   Class Gem
   DropLevel <= 24
+  AreaLevel <= 30
   SetBorderColor 63 63 127
 
-# Costs: Orb of Chance
+# Costs: Orb of Chance. Can be bought in Act 6
 Show
   Class Gem
   DropLevel <= 34
+  AreaLevel <= 45
   SetBorderColor 255 215 127
 
-# Costs: Orb of Alchemy
+# Costs: Orb of Alchemy. Can be bought in Act 6
 Show
   Class Gem
   DropLevel > 34
+  AreaLevel <= 45
   SetBorderColor 255 215 0
+
+# Hide those we don't care about anymore
+Hide
+  Class Gem
 
 ################################################################################
 # Maps: highlight the different tiers, and play sounds for yellow and red ones
