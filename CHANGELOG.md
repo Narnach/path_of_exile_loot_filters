@@ -1,5 +1,7 @@
 # Changelog
 
+* 16 January 2021
+  * All: applied Ritual / Echoes of the Atlas changes.
 * 15 January 2021
   * Leveling: applied QoL changes from Heist league: contracts have different color, all Atlas influence items have a highlight, large Chromatic items are hidden after level 45, non-quality Gems stop showing once you can buy them (level 30, 45)
 * 19 September 2020

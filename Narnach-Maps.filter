@@ -9,6 +9,96 @@
 # A good place to hide items you don't want for your character is in the CUSTOM section below.
 
 ################################################################################
+# New League items in 3.13 / Ritual League / Echoes of the Atlas
+################################################################################
+
+Show
+  Class "Stackable Currency"
+  BaseType "Orb of Unmaking" "Maven's Orb" "Ritual Splinter" "Ritual Vessel" "Crescent Splinter"
+  SetBackgroundColor 32 64 0
+  SetBorderColor 255 0 255
+  SetTextColor 255 100 0
+  SetFontSize 42
+  PlayAlertSoundPositional 2 250
+  MinimapIcon 2 Red Star
+  PlayEffect Red
+
+# Craftable Watchstones: Chromium / Platinum / Titanium <area name> Watchstone
+Show
+  Class "Atlas Region Upgrade Item"
+  BaseType "Chromium"
+  SetBackgroundColor 32 64 0
+  SetBorderColor 200 0 200
+  SetTextColor 200 100 0
+  SetFontSize 40
+  PlayAlertSoundPositional 2 250
+  MinimapIcon 2 Red Star
+  PlayEffect Red
+Show
+  Class "Atlas Region Upgrade Item"
+  BaseType "Platinum"
+  SetBackgroundColor 32 64 0
+  SetBorderColor 222 0 222
+  SetTextColor 222 100 0
+  SetFontSize 42
+  PlayAlertSoundPositional 2 275
+  MinimapIcon 1 Red Star
+  PlayEffect Red
+Show
+  Class "Atlas Region Upgrade Item"
+  BaseType "Titanium"
+  SetBackgroundColor 32 64 0
+  SetBorderColor 255 0 255
+  SetTextColor 255 100 0
+  SetFontSize 45
+  PlayAlertSoundPositional 2 300
+  MinimapIcon 0 Red Star
+  PlayEffect Red
+
+# Tradeable items for maps
+Show
+  Class "Map Fragment"
+  BaseType "The Maven's Writ" "Blood-filled Vessel"
+  PlayAlertSoundPositional 8 200
+  SetTextColor 255 0 0
+  SetBorderColor 255 0 0
+  SetFontSize 42
+  MinimapIcon 0 Red Star
+  PlayEffect Red
+
+# Maven quest items to fight 3/4/5/6 foes. 10-foe version is the tradeable Maven's Writ.
+Show
+  Class "Misc Map Items"
+  BaseType "Maven's Invitation"
+  SetBorderColor 0 255 0
+  SetTextColor 0 255 0
+  SetFontSize 45
+  PlayAlertSoundPositional 2 300
+  MinimapIcon 0 Green Star
+  PlayEffect Green
+
+# Ritual item base types
+# We don't know how rare they will be, so for now they will always get highlighted and we'll tweak it afterwards.
+Show
+  Class Boots
+  BaseType "Dreamquest Slippers" "Cloudwhisper Boots" "Brimstone Treads" "Nightwind Slippers" "Windbreak Boots" "Darksteel Treads" "Duskwalk Slippers" "Stormrider Boots" "Basemetal Treads"
+  SetBorderColor 0 255 255
+  MinimapIcon 2 Cyan Square
+  PlayEffect Cyan Temp
+Show
+  Class Gloves
+  BaseType "Debilitation Gauntlets" "Gruelling Gauntlets" "Taxing Gauntlets" "Sinistral Gloves" "Southswing Gloves" "Gauche Gloves" "Nexus Gloves" "Aetherwind Gloves" "Leyline Gloves"
+  SetBorderColor 0 255 255
+  MinimapIcon 2 Cyan Square
+  PlayEffect Cyan Temp
+Show
+  Class Helmets
+  BaseType "Blizzard Crown" "Winter Crown" "Gale Crown" "Archdemon Crown" "Demon Crown" "Imp Crown" "Atonement Mask" "Penitent Mask" "Sorrow Mask"
+  SetBorderColor 0 255 255
+  MinimapIcon 2 Cyan Square
+  PlayEffect Cyan Temp
+
+################################################################################
 # New League items in 3.12 / Heist League
 ################################################################################
 
@@ -98,39 +188,6 @@ Show
   SetFontSize 42
   MinimapIcon 1 Orange Star
   PlayEffect Orange
-
-# T1
-Show
-  Class "Harvest Seed"
-  BaseType "Grain"
-  SetBorderColor 0 127 0
-  PlayAlertSoundPositional 8 200
-  MinimapIcon 2 Green Diamond
-  PlayEffect Green
-# T2
-Show
-  Class "Harvest Seed"
-  BaseType "Seed"
-  SetBorderColor 32 192 32
-  PlayAlertSoundPositional 8 220
-  MinimapIcon 1 Green Diamond
-  PlayEffect Green
-# T3
-Show
-  Class "Harvest Seed"
-  BaseType "Bulb"
-  SetBorderColor 64 224 64
-  PlayAlertSoundPositional 8 270
-  MinimapIcon 0 Green Diamond
-  PlayEffect Green
-# T4
-Show
-  Class "Harvest Seed"
-  BaseType "Wild Thornfruit" "Vivid Scalefruit" "Primal Blisterfruit"
-  SetBorderColor 96 255 96
-  PlayAlertSoundPositional 8 300
-  MinimapIcon 0 Green Diamond
-  PlayEffect Green
 
 ################################################################################
 # New League items in 3.10 / Delirium League
