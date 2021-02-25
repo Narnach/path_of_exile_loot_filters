@@ -1,0 +1,2109 @@
+# Narnach's Unified SSF Loot filter
+# =================================
+#
+# Last updated on 11 February 2021
+#
+# This filter aims to unify my leveling and maps filters. The "Continue" filter rule should help to make it more compact as well.
+#
+# TODO: Start generating large parts of this because it's tedious as hell to do so manually.
+#
+# This loot filter has its home here: https://github.com/Narnach/path_of_exile_loot_filters
+# Remember to check it out for updates (especially at the start of a league), or for other loot filters (such as one for Leveling, Maps and a Strict version).
+#
+# A good place to hide items you don't want for your character is in the CUSTOM section below.
+
+
+
+################################################################################
+# Highlights orthogonal to core factors to show/hide items
+# These are enough to colorize an item, but not to actually decide to show or hide it
+# Everything must "Continue"
+# Last one wins, so most important/rare ones go last
+################################################################################
+
+# Catch-all: mark *all* items as unfiltered.
+# This means we can use Continue filters afterwards to setup new "defaults",
+# which we can then override or use non-COntinue filters to actually make a decision.
+Show
+  MinimapIcon 0 Red Kite
+  PlayEffect Red Temp
+  SetFontSize 45
+  Continue
+
+### RGB / Chromatic items
+# They all get a green color + beam
+Show
+  SocketGroup RGB
+  SetBorderColor 0 255 0
+  SetBackgroundColor 0 168 0 127
+  MinimapIcon 2 Green Pentagon
+  PlayEffect Green Temp
+  SetFontSize 35
+  Continue
+
+### Corruption
+# Is it corrupted?
+Show
+  Corrupted True
+  SetBorderColor 127 0 0
+  MinimapIcon 2 Brown Pentagon
+  PlayEffect Brown Temp
+  SetFontSize 35
+  Continue
+# Having actual corrupted modifiers is much more special than only being corrupted
+Show
+  CorruptedMods >= 1
+  SetBorderColor 255 0 0
+  MinimapIcon 2 Brown Pentagon
+  PlayEffect Brown Temp
+  SetFontSize 40
+  Continue
+
+# Currency of all sorts has a golden background
+Show
+  Class Currency
+  SetBackgroundColor 63 48 0 192
+  Continue
+
+################################################################################
+# Baseline items to always show
+#
+# These items are divided into tiers which mirror item rarity:
+# - Top tier have orange/gold outlines, beams and map icons. You see them rarely.
+# - High tier have yellow outlines and show up every few areas if you're lucky.
+# - Medium tier have blue outlines are drop a few times each area.
+# - Low tier has white outlines and drop frequently each area.
+# - Trash tier has no outline because they are too plentiful to waste your attention.
+#
+# In maps you're assumed to have a decent supply of lower tier currency,
+# so they are down-shifted in appearance. Part 2 of the story down-shifts some items as well.
+#
+# Most items in lower tiers are mentioned by name, so new additions are automatically
+# added in high tiers until they get downshifted if common enough.
+################################################################################
+
+################################################################################
+# Maps
+################################################################################
+# Unique: top tier
+# Relevance tier
+# TX: high tier in AreaLevel < X (tier upgrade)
+# TX: mid tier in same tier (same tier)
+# TX: low tier in tier + 1 (downgrade white in yellow, yellow in red)
+# TX: trash tier in tier + 2 (white maps in red maps)
+#
+# Relevance tier high/mid/low = beam color + minimap + fontsize + sound + border color
+# Map tier = background color
+# Rarity = text color
+
+# Map Fragment is textually a subset of Map, so it needs to go before.
+# Sacrifice pieces
+Show
+  Class "Map Fragment"
+  BaseType "Sacrifice at"
+  SetFontSize 40
+  SetBorderColor 255 127 0
+  SetBackgroundColor 127 64 0
+  SetTextColor 255 127 0
+  PlayAlertSound 3 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+# Scarabs
+Show
+  Class "Map Fragment"
+  BaseType Scarab
+  SetBorderColor 255 63 127
+  SetTextColor 255 63 127
+  SetBackgroundColor 255 192 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Raindrop
+  PlayEffect Pink
+# Catch-all map fragments
+Show
+  Class "Map Fragment"
+  SetFontSize 40
+  SetBorderColor 255 255 0
+  PlayAlertSound 3 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+
+# Maps: unique, top-tier
+Show
+  Class Map
+  Rarity Unique
+  SetBorderColor 160 80 0
+  SetTextColor 160 80 0
+  SetBackgroundColor 195 165 127
+  SetFontSize 45
+  MinimapIcon 0 Orange Circle
+  PlayAlertSound 4 300
+  PlayEffect Orange
+  # No Continue
+
+## Rarity
+Show
+  Class Map
+  Rarity Normal
+  SetTextColor 255 255 255
+  Continue
+Show
+  Class Map
+  Rarity Magic
+  SetTextColor 0 0 255
+  Continue
+Show
+  Class Map
+  Rarity Rare
+  SetTextColor 255 255 0
+  Continue
+
+## Defaults for each map tier
+# Red maps
+Show
+  Class Map
+  SetBackgroundColor 127 0 0 192
+  Continue
+
+# Yellow maps
+Show
+  Class Map
+  MapTier <= 10
+  SetBackgroundColor 222 222 127 192
+  Continue
+
+# White maps
+Show
+  Class Map
+  MapTier <= 5
+  SetBackgroundColor 255 255 255 192
+  Continue
+
+## Tier upgrades
+# T1
+Show
+  Class Map
+  MapTier 1
+  AreaLevel < 68
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T2
+Show
+  Class Map
+  MapTier 2
+  AreaLevel < 69
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T3
+Show
+  Class Map
+  MapTier 3
+  AreaLevel < 70
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T4
+Show
+  Class Map
+  MapTier 4
+  AreaLevel < 71
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T5
+Show
+  Class Map
+  MapTier 5
+  AreaLevel < 72
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T6
+Show
+  Class Map
+  MapTier 6
+  AreaLevel < 73
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T7
+Show
+  Class Map
+  MapTier 7
+  AreaLevel < 74
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T8
+Show
+  Class Map
+  MapTier 8
+  AreaLevel < 75
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T9
+Show
+  Class Map
+  MapTier 9
+  AreaLevel < 76
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T10
+Show
+  Class Map
+  MapTier 10
+  AreaLevel < 77
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T11
+Show
+  Class Map
+  MapTier 11
+  AreaLevel < 78
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T12
+Show
+  Class Map
+  MapTier 12
+  AreaLevel < 79
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T13
+Show
+  Class Map
+  MapTier 13
+  AreaLevel < 80
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T14
+Show
+  Class Map
+  MapTier 14
+  AreaLevel < 81
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T15
+Show
+  Class Map
+  MapTier 15
+  AreaLevel < 82
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T16
+Show
+  Class Map
+  MapTier 16
+  AreaLevel < 83
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+# T17+ (future proof catch-all)
+Show
+  Class Map
+  MapTier >= 17
+  AreaLevel < 84
+  SetBorderColor 255 0 0
+  SetFontSize 40
+  MinimapIcon 0 Red Circle
+  PlayAlertSound 3 275
+  PlayEffect Red
+
+## White maps in each map tier
+# White maps in white maps
+Show
+  Class Map
+  MapTier <= 5
+  AreaLevel <= 72
+  SetBorderColor 255 255 127
+  SetFontSize 35
+  MinimapIcon 1 Yellow Circle
+  PlayAlertSound 3 250
+  PlayEffect Yellow
+# White maps in yellow maps
+Show
+  Class Map
+  MapTier <= 5
+  AreaLevel <= 77
+  SetBorderColor 255 255 255
+  SetFontSize 32
+  MinimapIcon 2 Blue Circle
+  PlayAlertSound 3 225
+  PlayEffect Blue
+# White maps in red maps
+Show
+  Class Map
+  MapTier <= 5
+  AreaLevel > 77
+  SetBorderColor 127 127 127
+  SetFontSize 30
+  MinimapIcon -1
+  PlayAlertSound 3 200
+  PlayEffect White Temp
+
+## Yellow maps in each map tier
+# Yellow maps in white maps: caught via tier upgrades above
+# Yellow maps in yellow maps
+Show
+  Class Map
+  MapTier <= 10
+  AreaLevel <= 77
+  SetBorderColor 255 255 127
+  SetFontSize 35
+  MinimapIcon 1 Yellow Circle
+  PlayAlertSound 3 250
+  PlayEffect Yellow
+# Yellow maps in red maps
+Show
+  Class Map
+  MapTier <= 10
+  AreaLevel > 77
+  SetBorderColor 255 255 255
+  SetFontSize 32
+  MinimapIcon 2 Blue Circle
+  PlayAlertSound 3 225
+  PlayEffect Blue
+
+## Red maps in each map tier
+# Red maps in white maps: caught via tier upgrades above
+# Red maps in yellow maps: caught via tier upgrades above
+# Red maps in red maps
+Show
+  Class Map
+  MapTier >= 11
+  AreaLevel > 77
+  SetBorderColor 255 255 127
+  SetFontSize 35
+  MinimapIcon 1 Yellow Circle
+  PlayAlertSound 3 250
+  PlayEffect Yellow
+
+
+################################################################################
+### Trash tier items: you pick it up when it's next to you
+### These are common enough to drop more than 10x per map
+### Size 30 text + no map icon + no sound + no beam effect
+### Primary color: grey (127 127 127)
+################################################################################
+
+## Currency: Scrolls
+# In maps these are so plentiful they should not stand out
+Show
+  Class Currency
+  BaseType "Portal Scroll" "Scroll of Wisdom"
+  AreaLevel >= 68
+  SetFontSize 30
+  MinimapIcon -1
+  PlayAlertSound None
+  PlayEffect None
+# In Part 2 of the story they can be de-emphasized a bit.
+Show
+  Class Currency
+  BaseType "Portal Scroll" "Scroll of Wisdom"
+  AreaLevel >= 45
+  SetFontSize 32
+  MinimapIcon -1
+  PlayAlertSound None
+  PlayEffect None
+
+################################################################################
+### Low tier items: you pick it up when it's on your screen
+### These items are common enough to drop 2-10x per map
+### Effect: Size 35 text + no map icon + no sound + temp beam effect
+### Primary color: white (255 255 255)
+################################################################################
+
+# "Chromatic" recipe items for larger items stop showing in part 2 of the campaign
+# This can be overridden by other properties, such as 6-links or good rares/craft bases
+Hide
+  SocketGroup RGB
+  ItemLevel > 45
+  Height = 4
+  Width = 2
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+
+# Scrolls in Part 1 can stand out a bit; you still need them a lot
+Show
+  Class Currency
+  BaseType "Portal Scroll" "Scroll of Wisdom"
+  SetFontSize 35
+  SetBorderColor 255 255 255
+  MinimapIcon -1
+  PlayEffect White Temp
+# Low tier currency up to Orb of Alteration: de-emphasize in Part 2
+Show
+  Class Currency
+  BaseType "Orb of Transmutation" "Orb of Alteration" "Blacksmith's Whetstone" "Orb of Augmentation" "Armourer's Scrap"
+  AreaLevel >= 45
+  SetFontSize 35
+  SetBorderColor 255 255 255
+  MinimapIcon -1
+  PlayEffect White Temp
+# Low tier shards
+Show
+  Class Currency
+  BaseType "Transmutation Shard" "Alteration Shard" "Alchemy Shard"
+  SetFontSize 35
+  SetBorderColor 255 255 255
+  MinimapIcon -1
+  PlayEffect White Temp
+
+# Magic Jewels: Continue because of Abyss/Cluster jewels later on
+Show
+  Class Jewel
+  Rarity < Rare
+  SetFontSize 35
+  SetBorderColor 255 255 255
+  MinimapIcon -1
+  PlayEffect White Temp
+  Continue
+
+# Superior Quality gems: ideally you turn these into quality currency
+Show
+  Class Gem Flask
+  Quality >= 1
+  SetFontSize 35
+  SetBorderColor 127 255 255
+  SetBackgroundColor 32 63 63
+  MinimapIcon 2 White Triangle
+  PlayEffect White Temp
+  Continue
+
+
+################################################################################
+### Mid tier items: you'd walk a few screens to pick it up
+### Rarity: you see these once per 1-2 maps (on average)
+### Effect: Size 38 text + size 2 map icon + positional sound 250 + beam effect
+### Primary color: blue (0 0 255)
+################################################################################
+
+
+## Map / area specific base items (2-tone boots, convoking wand, steel ring, etc)
+Show
+  BaseType "Steel Ring" "Opal Ring" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Crystal Belt" "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  MinimapIcon 2 Cyan Star
+  PlayEffect Cyan Temp
+  PlayAlertSoundPositional 5 250
+
+
+## Map-influenced items
+Show
+  HasInfluence Shaper
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  SetBackgroundColor 0 63 63
+  MinimapIcon 2 Cyan Star
+  PlayEffect Cyan
+  PlayAlertSoundPositional 5 250
+Show
+  ShaperItem True
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  SetBackgroundColor 0 63 63
+  MinimapIcon 2 Cyan Star
+  PlayEffect Cyan
+  PlayAlertSoundPositional 5 250
+Show
+  HasInfluence Elder
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  SetBackgroundColor 0 63 63
+  MinimapIcon 2 Cyan Star
+  PlayEffect Cyan
+  PlayAlertSoundPositional 5 250
+Show
+  ElderItem True
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  SetBackgroundColor 0 63 63
+  MinimapIcon 2 Cyan Star
+  PlayEffect Cyan
+  PlayAlertSoundPositional 5 250
+Show
+  HasInfluence Crusader
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  SetBackgroundColor 0 63 63
+  MinimapIcon 2 Cyan Star
+  PlayEffect Cyan
+  PlayAlertSoundPositional 5 250
+Show
+  HasInfluence Hunter
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  SetBackgroundColor 0 63 63
+  MinimapIcon 2 Cyan Star
+  PlayEffect Cyan
+  PlayAlertSoundPositional 5 250
+Show
+  HasInfluence Redeemer
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  SetBackgroundColor 0 63 63
+  MinimapIcon 2 Cyan Star
+  PlayEffect Cyan
+  PlayAlertSoundPositional 5 250
+Show
+  HasInfluence Warlord
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  SetBackgroundColor 0 63 63
+  MinimapIcon 2 Cyan Star
+  PlayEffect Cyan
+  PlayAlertSoundPositional 5 250
+
+
+## 6-socket items, links <= 4 (orb fodder)
+Show
+  Sockets >= 6
+  LinkedSockets <= 4
+  Rarity < Unique
+  SetBorderColor 200 200 255
+  SetBackgroundColor 100 100 150
+  SetFontSize 38
+  MinimapIcon 2 Blue Pentagon
+  PlayAlertSoundPositional 3 250
+  PlayEffect Blue
+
+# Divination Cards: common (drops most maps/many areas) or poor reward
+Show
+  Class Card
+  BaseType "Lantador's Lost Love" "Rain of Chaos" "Her Mask" "The Carrion Crow" "The King's Blade" "The Metalsmith's Gift"
+  SetBorderColor 100 100 200
+  SetFontSize 38
+  MinimapIcon 2 Blue Square
+  PlayAlertSoundPositional 3 250
+  PlayEffect Blue
+
+# "Chromatic" recipe items with at most a 3x2 size
+Show
+  SocketGroup RGB
+  Sockets < 6
+  Height < 4
+  SetFontSize 38
+  MinimapIcon 2 Green Circle
+  PlayAlertSoundPositional 9 150
+  PlayEffect Green
+
+# Currency: pre-maps low tier (armour scraps, whetstones, transmutes)
+Show
+  Class Currency
+  BaseType "Orb of Transmutation" "Orb of Alteration" "Blacksmith's Whetstone" "Orb of Augmentation" "Armourer's Scrap"
+  AreaLevel < 68
+  SetFontSize 38
+  SetBorderColor 127 127 255
+  SetTextColor 127 127 255
+  SetBackgroundColor 64 64 127 192
+  MinimapIcon 2 Blue Star
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+# Currency: always mid tier
+Show
+  Class Currency
+  BaseType Splinter "Chromatic Orb" "Perandus Coin" "Rogue's Marker" "Silver Coin"
+  SetFontSize 38
+  SetBorderColor 127 127 255
+  SetTextColor 127 127 255
+  SetBackgroundColor 64 64 127 192
+  MinimapIcon 2 Blue Star
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+# Mid-tier shards
+Show
+  Class Currency
+  BaseType "Chaos Shard" "Regal Shard" "Engineer's Shard"
+  SetFontSize 38
+  SetBorderColor 127 127 255
+  SetTextColor 127 127 255
+  SetBackgroundColor 64 64 127 192
+  MinimapIcon 2 Blue Star
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+
+# Oils
+# 0.5c in value
+Show
+  Class Currency
+  BaseType "Sepia Oil" "Clear Oil" "Verdant Oil" "Amber Oil"
+  AreaLevel >= 68
+  SetFontSize 36
+  SetBorderColor 168 168 255
+  SetTextColor 168 168 255
+  SetBackgroundColor 64 64 127 192
+  MinimapIcon 2 Blue Star
+  PlayAlertSoundPositional 9 225
+  PlayEffect Blue
+# 1c in value
+Show
+  Class Currency
+  BaseType "Violet Oil" "Teal Oil" "Indigo Oil" "Azure Oil"
+  AreaLevel >= 68
+  SetFontSize 37
+  SetBorderColor 127 127 255
+  SetTextColor 127 127 255
+  SetBackgroundColor 64 64 127 192
+  MinimapIcon 2 Blue Star
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+# 3c in value
+Show
+  Class Currency
+  BaseType "Crimson Oil" "Black Oil"
+  SetFontSize 38
+  SetBorderColor 255 255 0
+  SetTextColor 255 255 0
+  SetBackgroundColor 127 127 0 192
+  MinimapIcon 1 Yellow Star
+  PlayAlertSoundPositional ShGeneral 275
+  PlayEffect Yellow
+# Most expensive oils: Opalescent, Silver, Golden
+Show
+  Class Currency
+  BaseType Oil
+  SetFontSize 40
+  SetBorderColor 255 168 0
+  SetTextColor 255 168 0
+  SetBackgroundColor 127 64 0 255
+  MinimapIcon 0 Orange Star
+  PlayAlertSoundPositional ShGeneral 300
+  PlayEffect Orange
+
+# Essences: fall through to rare drop while it's the highest tier, show blue after
+Show
+  Class Currency
+  BaseType Essence
+  SetFontSize 35
+  SetBorderColor 127 127 255
+  SetTextColor 127 127 255
+  SetBackgroundColor 64 64 127 192
+  MinimapIcon 2 Blue Star
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+  Continue
+Show
+  Class Currency
+  BaseType "Whispering Essence"
+  AreaLevel >= 12
+Show
+  Class Currency
+  BaseType "Muttering Essence"
+  AreaLevel >= 30
+Show
+  Class Currency
+  BaseType "Weeping Essence"
+  AreaLevel >= 48
+Show
+  Class Currency
+  BaseType "Wailing Essence"
+  AreaLevel >= 68
+
+# Currency: mid tier from Part 2
+Show
+  Class Currency
+  BaseType "Orb of Chance" "Jeweller's Orb"
+  AreaLevel >= 45
+  SetFontSize 38
+  SetBorderColor 127 127 255
+  SetTextColor 127 127 255
+  SetBackgroundColor 64 64 127 192
+  MinimapIcon 2 Blue Star
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+# Currency: maps mid tier (most currency up to Orb of Alchemy, high-tier fragments)
+Show
+  Class Currency
+  BaseType "Glassblower's Bauble"
+  AreaLevel >= 68
+  SetFontSize 38
+  SetBorderColor 127 127 255
+  SetTextColor 127 127 255
+  SetBackgroundColor 64 64 127 192
+  MinimapIcon 2 Blue Star
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+
+# Superior Quality gems: ideally you turn these into quality currency
+Show
+  Class Gem Flask
+  Quality >= 10
+  SetFontSize 38
+  SetBorderColor 127 255 255
+  SetBackgroundColor 64 127 127
+  MinimapIcon 2 Blue Triangle
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+  Continue
+# Drop-only gems
+# Vaal Gems
+Show
+  Class Gem
+  BaseType "Vaal"
+  SetFontSize 38
+  MinimapIcon 2 Brown Triangle
+  PlayAlertSoundPositional 9 250
+  PlayEffect Brown
+
+# Can't buy these gems, so highlight:
+# http://pathofexile.gamepedia.com/List_of_drop-only_gems
+Show
+  Class Gem
+  BaseType "Empower" "Enlighten" "Enhance" "Portal" "Block Chance Reduction" "Vaal Breach"
+  SetFontSize 38
+  SetBorderColor 127 127 255
+  MinimapIcon 2 Blue Triangle
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+
+# Jewels: Continue because of Abyss/Cluster jewels later on
+Show
+  Class Jewel
+  Rarity Rare
+  SetFontSize 38
+  SetBorderColor 127 127 255
+  MinimapIcon 2 Blue Triangle
+  PlayAlertSoundPositional 9 250
+  PlayEffect Blue
+  Continue
+
+################################################################################
+### High tier items: you'd walk across half the map to pick it up
+### Rarity: you hope to see these maps every 2 to 10 maps
+### Effect: Size 40  text + size 1 map icon + sound 250 + beam effect
+### Primary color: yellow (255 255 0)
+################################################################################
+
+## 6-socket items, links = 5 (useful 5-link)
+Show
+  Sockets >= 6
+  LinkedSockets = 5
+  Rarity < Unique
+  SetFontSize 40
+  SetBorderColor 255 255 127
+  SetBackgroundColor 127 127 63 127
+  PlayAlertSound 3 250
+  MinimapIcon 1 Yellow Pentagon
+  PlayEffect Yellow
+
+# Divination Cards: rare/catch-all (demote to common if it's too common)
+Show
+  Class Card
+  SetBorderColor 200 200 100
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Yellow Square
+  PlayEffect Yellow
+Show
+  Class Currency
+  BaseType "Stacked Deck"
+  SetBorderColor 200 200 100
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Yellow Square
+  PlayEffect Yellow
+
+## Regular uniques: armour, weapons, jewelry
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Belt Ring Amulet
+  Rarity >= Unique
+  SetFontSize 40
+  SetBorderColor 255 127 0
+  PlayAlertSound 3 250
+  MinimapIcon 1 Yellow Circle
+  PlayEffect Yellow
+
+# Currency: upshifted pre-maps maps mid tier
+Show
+  Class Currency
+  BaseType "Orb of Alchemy" "Orb of Chance" "Jeweller's Orb" "Cartographer's Chisel" "Glassblower's Bauble" "Perandus Coin" "Rogue's Marker"
+  SetFontSize 40
+  SetBorderColor 255 255 0
+  SetTextColor 255 255 0
+  SetBackgroundColor 127 127 0 192
+  PlayAlertSound ShGeneral 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+# Currency: high tier (most currency up to regal orb, high-tier fragments)
+Show
+  Class Currency
+  BaseType Shard Essence "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb" Catalyst "Awakener's Orb" Watchstone "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb" "Exalted Shard" "Mirror Shard"
+  SetFontSize 40
+  SetBorderColor 255 255 0
+  SetTextColor 255 255 0
+  SetBackgroundColor 127 127 0 192
+  PlayAlertSound ShGeneral 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+Show
+  Class Currency
+  BaseType "Blessed Orb"
+  SetFontSize 40
+  SetBorderColor 255 255 0
+  SetTextColor 255 255 0
+  SetBackgroundColor 127 127 0 192
+  PlayAlertSound ShBlessed 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+Show
+  Class Currency
+  BaseType "Chaos Orb"
+  SetFontSize 40
+  SetBorderColor 255 255 0
+  SetTextColor 255 255 0
+  SetBackgroundColor 127 127 0 192
+  PlayAlertSound ShChaos 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+Show
+  Class Currency
+  BaseType "Orb of Fusing"
+  SetFontSize 40
+  SetBorderColor 255 255 0
+  SetTextColor 255 255 0
+  SetBackgroundColor 127 127 0 192
+  PlayAlertSound ShFusing 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+Show
+  Class Currency
+  BaseType "Regal Orb"
+  SetFontSize 40
+  SetBorderColor 255 255 0
+  SetTextColor 255 255 0
+  SetBackgroundColor 127 127 0 192
+  PlayAlertSound ShRegal 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+Show
+  Class Currency
+  BaseType "Vaal Orb"
+  SetFontSize 40
+  SetBorderColor 255 129 0
+  SetTextColor 255 129 0
+  SetBackgroundColor 127 127 0 192
+  PlayAlertSound ShVaal 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+# Higher tier essences & remnants
+Show
+  Class Currency
+  BaseType Essence "Remnant of Corruption"
+  SetFontSize 40
+  SetBorderColor 255 129 0
+  SetBackgroundColor 127 64 0 255
+  PlayAlertSound ShGeneral 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+
+### League-specific items
+
+## Current League
+# Ritual
+Show
+  BaseType "Ritual Splinter" "Ritual Vessel"
+  SetBorderColor 168 32 255
+  SetBackgroundColor 168 32 255 64
+  SetFontSize 40
+  MinimapIcon 1 Purple Pentagon
+  PlayAlertSound 3 250
+  PlayEffect Purple
+# Ritual item base types
+# We don't know how rare they will be, so for now they will always get highlighted and we'll tweak it afterwards.
+Show
+  Class Boots
+  BaseType "Dreamquest Slippers" "Cloudwhisper Boots" "Brimstone Treads" "Nightwind Slippers" "Windbreak Boots" "Darksteel Treads" "Duskwalk Slippers" "Stormrider Boots" "Basemetal Treads"
+  SetBorderColor 168 32 255
+  SetBackgroundColor 168 32 255 64
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Purple Hexagon
+  PlayEffect Purple
+Show
+  Class Gloves
+  BaseType "Debilitation Gauntlets" "Gruelling Gauntlets" "Taxing Gauntlets" "Sinistral Gloves" "Southswing Gloves" "Gauche Gloves" "Nexus Gloves" "Aetherwind Gloves" "Leyline Gloves"
+  SetBorderColor 168 32 255
+  SetBackgroundColor 168 32 255 64
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Purple Hexagon
+  PlayEffect Purple
+Show
+  Class Helmets
+  BaseType "Blizzard Crown" "Winter Crown" "Gale Crown" "Archdemon Crown" "Demon Crown" "Imp Crown" "Atonement Mask" "Penitent Mask" "Sorrow Mask"
+  SetBorderColor 168 32 255
+  SetBackgroundColor 168 32 255 64
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Purple Hexagon
+  PlayEffect Purple
+
+## Previous Leagues
+
+## Heist
+# Target is a must-grab quest-like item
+Show
+  Class "Heist Target"
+  SetBorderColor 0 255 0
+  SetTextColor 0 255 0
+  SetBackgroundColor 0 63 0
+  SetFontSize 45
+  PlayAlertSound 10 300
+  MinimapIcon 0 Green Pentagon
+  PlayEffect Green
+# Heist drops
+Show
+  Class Heist Trinket Blueprint Contract
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Pentagon
+  PlayEffect Pink
+# Heist currency
+Show
+  BaseType "Assembler Wand" "Congregator Wand" "Accumulator Wand" "Hollowpoint Dagger" "Pressurised Dagger" "Pneumatic Dagger" "Flickerflame Blade" "Flashfire Blade" "Infernal Blade" "Shadow Fangs" "Malign Fangs" "Void Fangs" "Maltreatment Axe" "Disapprobation Axe" "Psychotic Axe" "Fickle Spiritblade" "Capricious Spiritblade" "Anarchic Spiritblade" "Flare Mace" "Crack Mace" "Boom Mace" "Oscillating Sceptre" "Stabilising Sceptre" "Alternating Sceptre" "Hedron Bow" "Foundry Bow" "Solarine Bow" "Transformer Staff" "Reciprocation Staff" "Battery Staff" "Capacity Rod" "Potentiality Rod" "Eventuality Rod" "Prime Cleaver" "Honed Cleaver" "Apex Cleaver" "Rebuking Blade" "Blasting Blade" "Banishing Blade" "Blunt Force Condenser" "Crushing Force Magnifier" "Impact Force Propagator" "Exhausting Spirit Shield" "Subsuming Spirit Shield" "Transfer-attuned Spirit Shield" "Endothermic Buckler" "Polar Buckler" "Cold-attuned Buckler" "Exothermic Tower Shield" "Magmatic Tower Shield" "Heat-attuned Tower Shield" "Micro-Distillery Belt" "Mechalarm Belt" "Astrolabe Amulet" "Simplex Amulet" "Cogwork Ring" "Geodesic Ring"
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Pentagon
+  PlayEffect Pink
+
+# Dilirium
+Show
+  Class Jewel
+  BaseType "Cluster Jewel"
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Triangle
+  PlayEffect Pink
+
+# Abyss
+Show
+  Class Abyss
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Triangle
+  PlayEffect Pink
+Show
+  Class Belt
+  BaseType "Stygian Vise"
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Triangle
+  PlayEffect Pink
+# Abyss Socket items
+Show
+  SocketGroup A
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Pentagon
+  PlayEffect Pink
+
+
+## Delve
+# Fossils & Resonators
+Show
+  Class Currency
+  BaseType Fossil Resonator
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Triangle
+  PlayEffect Pink
+# Delve Socket items
+Show
+  SocketGroup D
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Pentagon
+  PlayEffect Pink
+
+
+## Incursion
+# Covers Stone of Passage and Flashpowder Keg
+Show
+  Class Incursion
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetTextColor 0 0 0
+  SetFontSize 45
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Triangle
+  PlayEffect Pink
+# Covers all the "Vial of X" items
+Show
+  Class "Stackable Currency"
+  BaseType "Vial of"
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Triangle
+  PlayEffect Pink
+# Incursion-specific item affixes, should only drop from the Omnitect
+Show
+  HasExplicitMod "Tacati's" "Citaqualotl's" "Matatl's" "Topotante's" "Xopec's" "Guatelitzi's" "of Tacati" "of Citaqualotl" "of Matatl" "of Puhuarte" "of Guatelitzi"
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 63 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Triangle
+  PlayEffect Pink
+
+## Talisman
+Show
+  Class Amulet
+  BaseType Talisman
+  SetBackgroundColor 255 127 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Diamond
+  PlayEffect Pink
+
+
+## Prophecy
+Show
+  Class Currency
+  BaseType Prophecy
+  SetBorderColor 255 0 255
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Purple Circle
+  PlayEffect Purple
+
+
+# Betrayal
+# Scarabs are up at Map Fragment
+# Veiled items
+Show
+  HasExplicitMod "Veiled" "Leo's Veiled" "Catarina's Veiled" "Elreon's Veiled" "Vorici's Veiled" "Haku's Veiled" "Tora's Veiled" "Vagan's Veiled" "Guff's Veiled" "It That Fled's Veiled" "Gravicius' Veiled" "Korell's Veiled" "Rin's Veiled" "of the Veil" "of Janus' Veil" "of Hillock's Veil" "of Jorgin's Veil" "of Cameria's Veil" "of Aisling's Veil" "of Riker's Veil"
+  SetBorderColor 255 63 127
+  SetBackgroundColor 255 127 127 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Pentagon
+  PlayEffect Pink
+
+
+## Synthesis
+# Fractured Items
+Show
+  FracturedItem True
+  SetBorderColor 255 63 127
+  SetBackgroundColor 127 255 255 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Pentagon
+  PlayEffect Pink
+# Synthesised Items
+Show
+  SynthesisedItem True
+  SetBorderColor 255 63 127
+  SetBackgroundColor 127 255 255 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Pentagon
+  PlayEffect Pink
+
+# Item has enchants? (Filter is new this league)
+Show
+  AnyEnchantment True
+  SetBorderColor 255 63 127
+  SetBackgroundColor 127 255 255 192
+  SetFontSize 40
+  PlayAlertSound 3 250
+  MinimapIcon 1 Pink Pentagon
+  PlayEffect Pink
+
+
+################################################################################
+### Top tier items: you'd walk across the entire map to pick it up
+### Rarity: expect these less than once per 10 maps
+### Effect: Size 45 text + size 2 map icon + sound 300 + beam effect
+### Primary color: gold/orange (255 168 0)
+################################################################################
+
+# Rare uniques: flasks, jewels, other
+Show
+  Rarity >= Unique
+  SetBorderColor 255 168 0
+  SetFontSize 45
+  MinimapIcon 0 Orange Pentagon
+  PlayAlertSound 4 300
+  PlayEffect Orange
+
+## 6-link items
+Show
+  LinkedSockets >= 6
+  SetBorderColor 255 168 0
+  SetFontSize 45
+  MinimapIcon 0 Orange Pentagon
+  PlayAlertSound 4 300
+  PlayEffect Orange
+
+## Quest items
+Show
+  Class Quest
+  SetBorderColor 0 255 0
+  SetFontSize 45
+  MinimapIcon 0 Green Circle
+  PlayAlertSound 10 300
+  PlayEffect Green
+Show
+  Class "Labyrinth Trinket"
+  SetBorderColor 0 255 0
+  SetTextColor 0 255 0
+  SetFontSize 45
+  MinimapIcon 0 Green Circle
+  PlayAlertSound 10 300
+  PlayEffect Green
+Show
+  BaseType "Treasure Key"
+  SetBorderColor 0 255 0
+  SetTextColor 0 255 0
+  SetFontSize 45
+  MinimapIcon 0 Green Circle
+  PlayAlertSound 10 300
+  PlayEffect Green
+
+
+## Alternate Quality gems
+Show
+  Class Gem
+  AlternateQuality True
+  SetBorderColor 255 168 0
+  SetFontSize 45
+  MinimapIcon 0 Orange Triangle
+  PlayAlertSound 4 300
+  PlayEffect Orange
+
+## Awakened gems
+Show
+  Class Gem
+  BaseType "Awakened"
+  SetBorderColor 255 168 0
+  SetFontSize 45
+  MinimapIcon 0 Orange Triangle
+  PlayAlertSound 4 300
+  PlayEffect Orange
+
+
+## Currency: top tier (blessed orb to mirror)
+# Currency: high tier named
+Show
+  Class Currency
+  BaseType "Mirror of Kalandra"
+  SetFontSize 45
+  SetBorderColor 255 168 0
+  SetBackgroundColor 127 64 0 255
+  MinimapIcon 0 Orange Star
+  PlayAlertSound ShMirror 300
+  PlayEffect Orange
+Show
+  Class Currency
+  BaseType "Exalted Orb"
+  SetFontSize 45
+  SetBorderColor 255 168 0
+  SetBackgroundColor 127 64 0 255
+  MinimapIcon 0 Orange Star
+  PlayAlertSound ShExalted 300
+  PlayEffect Orange
+Show
+  Class Currency
+  BaseType "Divine Orb"
+  SetFontSize 45
+  SetBorderColor 255 168 0
+  SetBackgroundColor 127 64 0 255
+  MinimapIcon 0 Orange Star
+  PlayAlertSound ShDivine 300
+  PlayEffect Orange
+# Currency: high tier fallback
+Show
+  Class Currency
+  SetFontSize 45
+  SetBorderColor 255 0 0
+  SetBackgroundColor 127 64 0 255
+  SetTextColor 255 0 0
+  MinimapIcon 0 Orange Star
+  PlayAlertSound ShGeneral 300
+  PlayEffect Orange
+
+
+################################################################################
+# Always shows: apply Continues
+################################################################################
+
+# Gems with quality should always be shown
+Show
+  Class Gem
+  Quality >= 1
+
+# Utility flasks with quality always show
+Show
+  Class "Utility Flask"
+  Quality >= 1
+# Regular flasks always show with 10+ quality
+Show
+  Class Flask
+  Quality >= 10
+# Regular flasks with 1-9 quality only show before maps
+Show
+  Class Flask
+  Quality >= 1
+  AreaLevel < 68
+
+# Jewels
+Show
+  Class Jewel
+
+################################################################################
+# Custom
+# All rules above should help all builds.
+# Gear is personal for each build, so those rules can be tweaked here.
+# Afterwards, a default leveling curve is applied to the rest of the items.
+################################################################################
+
+################################################################################
+# Leveling curve
+################################################################################
+
+### Buyable gems
+# Act 1-3 gems until level 30 (Library)
+# Act 4 gems until level 45 (Act 6)
+
+# Costs: Scroll of Wisdom. Can be bought from Library
+Show
+  Class Gem
+  DropLevel <= 4
+  AreaLevel <= 30
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+
+# Costs: Orb of Transmutation. Can be bought from Library
+Show
+  Class Gem
+  DropLevel <= 12
+  AreaLevel <= 30
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+
+# Costs: Orb of Alteration. Can be bought from Library
+Show
+  Class Gem
+  DropLevel <= 24
+  AreaLevel <= 30
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+
+# Costs: Orb of Chance. Can be bought in Act 6
+Show
+  Class Gem
+  DropLevel > 24
+  DropLevel <= 34
+  AreaLevel <= 45
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+
+# Costs: Orb of Alchemy. Can be bought in Act 6
+Show
+  Class Gem
+  DropLevel > 34
+  AreaLevel <= 45
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+
+# Gems with a level should always be shown
+Show
+  Class Gem
+  GemLevel > 1
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+
+# Hide those we don't care about anymore
+Hide
+  Class Gem
+  SetFontSize 25
+  MinimapIcon -1
+  PlayEffect None
+
+
+### Flasks: Leveling progression, show top-tier in white maps, fade in yellow maps, hide in red
+
+# Disable map/beam effect for flasks by default
+Show
+  Class Flask
+  MinimapIcon -1
+  PlayEffect None
+  SetBackgroundColor 16 48 48
+  Continue
+
+# Utility flasks are uncommon and useful, but at some point you have enough
+# Due to quality Flasks always showing, you still see them occasionally even in red maps
+# Show with beam in Part 1
+Show
+  Class "Utility Flasks"
+  AreaLevel < 45
+  SetBorderColor 0 255 255
+  SetFontSize 35
+  PlayEffect Cyan
+# Show without beam in Part 2
+Show
+  Class "Utility Flasks"
+  AreaLevel < 68
+  SetBorderColor 0 255 255
+  SetFontSize 35
+  PlayEffect Cyan Temp
+# Show in white maps without highlight
+Show
+  Class "Utility Flasks"
+  AreaLevel <= 72
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+# Yellow maps: fade background
+Show
+  Class "Utility Flasks"
+  AreaLevel <= 77
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+# Red maps: hide
+Hide
+  Class "Utility Flasks"
+  AreaLevel > 77
+  SetBorderColor 0 255 255
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+
+# Non-utility flasks
+# TODO: At each level show T1 normally, fade T2, hide T3+
+Show
+  Class Flask
+  DropLevel <= 1
+  ItemLevel < 6
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Flask
+  DropLevel >= 3
+  ItemLevel < 12
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Flask
+  DropLevel >= 6
+  ItemLevel < 18
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Flask
+  DropLevel >= 12
+  ItemLevel < 24
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Flask
+  DropLevel >= 18
+  ItemLevel < 30
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Flask
+  DropLevel >= 24
+  ItemLevel < 30
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Flask
+  DropLevel >= 30
+  ItemLevel < 46
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Flask
+  DropLevel >= 36
+  ItemLevel < 42
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Flask
+  DropLevel >= 42
+  ItemLevel < 54
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+# A couple tiers of flasks stand out between level 42 and 60
+Show
+  Class Flask
+  BaseType "Hallowed Life Flask" "Sanctified Mana Flask" "Hallowed Mana Flask"
+  ItemLevel < 60
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+# Top-tier flasks. Regular show pre-maps
+Show
+  Class Flask
+  BaseType "Divine Life Flask" "Eternal Life Flask" "Divine Mana Flask" "Eternal Mana Flask"
+  AreaLevel < 68
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+# Top-tier flasks. Fade until white maps (then hide)
+Show
+  Class Flask
+  BaseType "Divine Life Flask" "Eternal Life Flask" "Divine Mana Flask" "Eternal Mana Flask"
+  AreaLevel < 68
+  SetFontSize 30
+  MinimapIcon -1
+  SetBackgroundColor 0 0 0 63
+  PlayEffect None
+# Low level flasks, or poor stats
+Hide
+  Class Flask
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 25
+  MinimapIcon -1
+  PlayEffect None
+
+# Normal/magic items are crafting bases, but when corrupted they are useless.
+Hide
+  Class Ring Amulet Belt Quiver Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Corrupted True
+  Rarity < Rare
+  SetFontSize 25
+  MinimapIcon -1
+  PlayEffect None
+
+### Jewelry: always show in acts 1/2, hide magic from act 3, fade normal from act 6
+Show
+  Class Ring Amulet Belt
+  SetBackgroundColor 48 48 0
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+Show
+  Class Quiver
+  SetBackgroundColor 48 24 0
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+# This is the only Quiver which is strictly worse than other quivers
+Hide
+  Rarity < Rare
+  Class Quiver
+  BaseType "Serrated Arrow Quiver"
+  SetFontSize 25
+  AreaLevel >= 28
+
+Hide
+  Class Ring Amulet Belt Quiver
+  Rarity Magic
+  AreaLevel >= 23
+  SetFontSize 25
+Show
+  Class Ring Amulet Belt Quiver
+  Rarity Normal
+  AreaLevel >= 45
+  AreaLevel < 68
+  SetBackgroundColor 0 0 0 192
+  SetFontSize 30
+# In maps fade normal jewelry
+Show
+  Class Ring Amulet Belt Quiver
+  Rarity Normal
+  AreaLevel >= 68
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 30
+Show
+  Class Ring Amulet Belt Quiver
+  SetFontSize 35
+
+
+### Armour & Weapons: hide normal/magic items with droplevels older than 10 levels
+# TODO: Proper curves based on item succession using T1/T2/T3 per class
+# Campaign shows T1-3
+# White & yellow maps show T1-2
+# Red maps only show T1
+# Helmet, Gloves, Boots: 4 socket potential around level 25
+# Armour, bow, staves, 2-handers: 4/5/6 socket potential
+
+## Tower shields: the curve is broken, with a few shields being better than higher level ones
+# 287 armour. There are a bunch of shields of higher level with less armour than this one, so you're going to see this as the only shield in act 4 and 5.
+Show
+  Class Shield
+  BaseType "Reinforced Tower Shield"
+  ItemLevel < 47
+  Rarity Normal Rare
+  LinkedSockets = 3
+  SetBorderColor 255 255 255
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Shield
+  BaseType "Reinforced Tower Shield"
+  Sockets = 3
+  ItemLevel < 47
+  Rarity Normal Rare
+  SetFontSize 30
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+# 481 armour. Another shield that has to last for a while before you get a small upgrade.
+Show
+  Class Shield
+  BaseType "Girded Tower Shield"
+  LinkedSockets = 3
+  ItemLevel < 64
+  Rarity Normal Rare
+  SetBorderColor 255 255 255
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Shield
+  BaseType "Girded Tower Shield"
+  Sockets = 3
+  ItemLevel < 64
+  Rarity Normal Rare
+  SetFontSize 30
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+# 632 armour, better than the next tier so this is the endgame armour shield.
+Show
+  Class Shield
+  BaseType "Colossal Tower Shield"
+  Rarity Normal Rare
+  LinkedSockets = 3
+  SetBorderColor 255 255 255
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Shield
+  BaseType "Colossal Tower Shield"
+  Rarity Normal
+  Sockets = 3
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Shield
+  BaseType "Colossal Tower Shield"
+  Rarity Rare
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+
+# TODO: Proper curves based on item succession and T1/2/3 grouping
+# Show 10-14 levels of items
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 5
+  AreaLevel >= 15
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 10
+  AreaLevel >= 20
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 15
+  AreaLevel >= 25
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 20
+  AreaLevel >= 30
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 25
+  AreaLevel >= 35
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 30
+  AreaLevel >= 40
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 35
+  AreaLevel >= 45
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 40
+  AreaLevel >= 50
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 45
+  AreaLevel >= 55
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 50
+  AreaLevel >= 60
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel <= 55
+  AreaLevel >= 65
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+# White maps
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel < 60
+  AreaLevel >= 68
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+# Yellow maps
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel < 65
+  AreaLevel >= 73
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+# Red maps
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Normal Magic
+  DropLevel < 68
+  AreaLevel >= 78
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+
+### Rares: show more than normal/magic because a lower base with good mods is still very good
+# 11-15 level gap in Part 1
+# Campaign: T1-4 base highlights
+# White maps: T1-3 base highlights
+# Yellow maps: T1-3 base highlights
+# Red maps: T1-2 base highlights
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 15
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 20
+  DropLevel >= 5
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 25
+  DropLevel >= 10
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 30
+  DropLevel >= 15
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 35
+  DropLevel >= 20
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 40
+  DropLevel >= 25
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 44
+  DropLevel >= 30
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+# 12-17 level gap in Part 2
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 50
+  DropLevel >= 33
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 55
+  DropLevel >= 38
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 62
+  DropLevel >= 45
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  AreaLevel <= 67
+  DropLevel >= 50
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+# White maps: 13-17 levels of base items
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  DropLevel >= 55
+  AreaLevel >= 68
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+# Yellow maps: 13-17 levels of base items
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  DropLevel >= 60
+  AreaLevel >= 73
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+# Red maps: 13+ levels of base items
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Rare
+  DropLevel >= 65
+  AreaLevel >= 78
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+
+### Socketables
+# All socketables
+# Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+# TODO: 5 linked sockets = cyan border
+# TODO: max 3/4 linked sockets = cyan/white mix border
+# TODO: 5 unlinked sockets = cyan/white mix border
+# TODO: max 3/4 total sockets = white border
+# TODO: less than 3/4 sockets = tier downgrade, fade
+
+## Max/good enough number of linked sockets: white border
+
+### 5-socket items
+Show
+  Class Armour Bow Staves "Two Hand"
+  Sockets = 5
+  SetBorderColor 200 255 255
+  SetBackgroundColor 0 32 32
+  SetFontSize 45
+  #MinimapIcon 2 Cyan Square
+  MinimapIcon -1
+  PlayEffect Cyan Temp
+
+### Good/max amount of linked sockets
+# 6 is max sockets
+Show
+  Class Armour Bow Staves "Two Hand"
+  LinkedSockets >= 4
+  SetBorderColor 255 255 255
+  SetFontSize 40
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+# 4 is max sockets
+Show
+  Class Helmet Gloves Boots
+  LinkedSockets >= 4
+  SetBorderColor 255 255 255
+  SetFontSize 40
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+# 3 is max sockets until level 25
+Show
+  Class Armour Bow Staves "Two Hand" Helmet Gloves Boots
+  LinkedSockets >= 3
+  ItemLevel < 25
+  SetBorderColor 255 255 255
+  SetFontSize 40
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+# 3 is max sockets
+Show
+  Class Shield Claw Dagger Sceptre "One Hand" Wand
+  LinkedSockets >= 3
+  SetBorderColor 255 255 255
+  SetFontSize 40
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+
+## Max/good enough number of sockets: light grey border
+# 6 is max sockets
+Show
+  Class Armour Bow Staves "Two Hand"
+  Sockets >= 4
+  LinkedSockets < 4
+  SetBorderColor 127 127 127
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+# 4 is max sockets
+Show
+  Class Helmet Gloves Boots
+  Sockets >= 4
+  LinkedSockets < 4
+  SetBorderColor 127 127 127
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+# 3 is max sockets
+Show
+  Class Shield Claw Dagger Sceptre "One Hand" Wand
+  Sockets >= 3
+  LinkedSockets < 3
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+  Continue
+
+# Part 1: show all outdated rares as faded
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  AreaLevel < 45
+  Rarity Rare
+  SetBackgroundColor 0 0 0 63
+  SetFontSize 25
+  MinimapIcon -1
+  PlayEffect None
+
+
+# Act 1: having 3 Sockets is king, having less is acceptable
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  AreaLevel <= 12
+  LinkedSockets >= 3
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+
+# From act 2: don't bother with less than 3 sockets
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  AreaLevel > 13
+  Sockets < 3
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+
+# From Act 3: don't bother with less than 4 sockets where possible
+Hide
+  Class Armour Helmet Gloves Boots Bow Staves "Two Hand"
+  AreaLevel >= 25
+  Sockets < 4
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+# From Part 2: don't bother with less than 3 linked sockets when that's the max
+Hide
+  Class "One Hand" Shield Claw Dagger Sceptre Wand
+  AreaLevel >= 41
+  LinkedSockets < 3
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+## Magic items from Act 4 forward: too much noise
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Rarity Magic
+  AreaLevel >= 33
+  Sockets <= 4
+  SetFontSize 25
+  MinimapIcon -1
+  PlayEffect None
+
+# Before maps: show all with 3+ sockets
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  AreaLevel < 68
+  Sockets >= 3
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+
+# Maps: show all with max 3 sockets
+Show
+  Class Shield Claw Dagger Sceptre "One Hand" Wand
+  AreaLevel >= 68
+  Sockets >= 3
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+# Maps: show all with max 4+ sockets
+Show
+  Class Armour Bow Staves "Two Hand" Helmet Gloves Boots
+  AreaLevel >= 68
+  Sockets >= 4
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+
+# Catch-all: fade what we have not explicitly shown
+Hide
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None

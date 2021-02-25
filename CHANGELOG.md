@@ -1,5 +1,7 @@
 # Changelog
 
+* 25 February 2021
+  * SSF: Introduced a new loot filter as "stable": the SSF filter. This one is unified to work for both leveling and maps. It gets stricter after certain thresholds: level 4, act 1, act 3, act 5, white/yellow/red maps. Highlighting is based on the needs of a SSF player, so early on you want 3 sockets on any item, then 3 linked sockets, then 4 sockets, then 4 linked (end of act 4). Once you hit maps, care about decent crafting bases (T1 bases) but rares for T1-3 bases are all still fine to ID and enhance via crafting. Currency follows a similar curve: you want everything in act 1, then slowly you get lazier about low-tier currency such as scrolls, then transmutes and even alterations.
 * 16 January 2021
   * All: applied Ritual / Echoes of the Atlas changes.
 * 15 January 2021
