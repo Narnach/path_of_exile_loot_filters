@@ -2019,6 +2019,35 @@ Show
   PlayEffect None
   Continue
 
+###
+# We've shown modern rares
+# We've hidden too-old normal/magic items
+# We've shown good-socketed items (decent crafting bases)
+# Now it's time to gradually hide more of the "meh" items.
+# Also: show quality items despite sockets.
+
+# Quality on bases might help a bit?
+Show
+  Quality >= 20
+  SetBorderColor 0 255 255
+  SetBackgroundColor 0 255 255 64
+  SetFontSize 40
+  MinimapIcon -1
+  PlayEffect Cyan Temp
+Show
+  Quality >= 10
+  SetBorderColor 0 255 255
+  SetBackgroundColor 0 255 255 16
+  SetFontSize 35
+  MinimapIcon -1
+  PlayEffect Cyan Temp
+Show
+  Quality >= 1
+  SetBorderColor 0 127 127
+  SetFontSize 30
+  MinimapIcon -1
+  PlayEffect None
+
 # Part 1: show all outdated rares as faded
 Show
   Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
