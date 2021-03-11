@@ -1,7 +1,7 @@
 # Narnach's Unified SSF Loot filter
 # =================================
 #
-# Last updated on 11 February 2021
+# Last updated on 11 March 2021
 #
 # This filter aims to unify my leveling and maps filters. The "Continue" filter rule should help to make it more compact as well.
 #
@@ -2099,6 +2099,27 @@ Show
   SetFontSize 30
   MinimapIcon -1
   PlayEffect None
+
+# Twilight Strand through Mud Flats: show normal items as faded rather than hide
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  AreaLevel <= 4
+  Rarity Normal
+  SetFontSize 25
+  SetBackgroundColor 0 0 0 63
+  MinimapIcon -1
+  PlayEffect None
+
+# Twilight Strand through Mud Flats: show magic items
+Show
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  AreaLevel <= 4
+  Rarity Magic
+  SetFontSize 25
+  MinimapIcon -1
+  PlayEffect None
+
+
 
 # Catch-all: fade what we have not explicitly shown
 Hide
