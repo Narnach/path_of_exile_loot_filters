@@ -2043,12 +2043,7 @@ Show
   SetFontSize 35
   MinimapIcon -1
   PlayEffect Cyan Temp
-Show
-  Quality >= 1
-  SetBorderColor 0 127 127
-  SetFontSize 30
-  MinimapIcon -1
-  PlayEffect None
+  Continue
 
 # Part 1: show all outdated rares as faded
 Show
