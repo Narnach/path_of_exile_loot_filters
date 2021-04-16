@@ -1,5 +1,7 @@
 # Changelog
 
+* 16 April 2021
+  * SSF: start de-emphasizing jewelry at level 30 instead of 45
 * 11 March 2021
   * SSF: show more items as faded on area level 1-4 to help new characters
   * SSF: show relevant items with quality (highlight tiers 20+, 10+, 1+)

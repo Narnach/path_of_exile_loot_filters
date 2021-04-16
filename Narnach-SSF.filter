@@ -1,7 +1,7 @@
 # Narnach's Unified SSF Loot filter
 # =================================
 #
-# Last updated on 11 March 2021
+# Last updated on 16 April 2021
 #
 # This filter aims to unify my leveling and maps filters. The "Continue" filter rule should help to make it more compact as well.
 #
@@ -1575,10 +1575,11 @@ Hide
   Rarity Magic
   AreaLevel >= 23
   SetFontSize 25
+# From Act 4 de-emphasize jewelry crafting bases
 Show
   Class Ring Amulet Belt Quiver
   Rarity Normal
-  AreaLevel >= 45
+  AreaLevel >= 30
   AreaLevel < 68
   SetBackgroundColor 0 0 0 192
   SetFontSize 30
@@ -2027,6 +2028,7 @@ Show
 # Also: show quality items despite sockets.
 
 # Quality on bases might help a bit?
+# I've removed quality < 10 because I honestly did not care and found drops to become noisy.
 Show
   Quality >= 20
   SetBorderColor 0 255 255
