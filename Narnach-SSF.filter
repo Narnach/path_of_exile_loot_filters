@@ -120,8 +120,32 @@ Show
   MinimapIcon 1 Pink Raindrop
   PlayEffect Pink
 # Catch-all map fragments
+# Includes 3.14's Sacred Blossom
 Show
   Class "Map Fragment"
+  SetFontSize 40
+  SetBorderColor 255 255 0
+  PlayAlertSound 3 250
+  MinimapIcon 1 Yellow Star
+  PlayEffect Yellow
+
+# Top-tier rarity
+Show
+  Class "Misc Map Item"
+  BaseType "Reliquary Key", "Vaal Reliquary Key"
+  SetBorderColor 160 80 0
+  SetTextColor 160 80 0
+  SetBackgroundColor 195 165 127
+  SetFontSize 45
+  MinimapIcon 0 Orange Star
+  PlayAlertSound 4 300
+  PlayEffect Orange
+# Regular rarity
+# Includes:
+# Chronicle of Atzoatl
+# Inscribed Ultimatum
+Show
+  Class "Misc Map Item"
   SetFontSize 40
   SetBorderColor 255 255 0
   PlayAlertSound 3 250
@@ -523,9 +547,9 @@ Show
 ################################################################################
 
 
-## Map / area specific base items (2-tone boots, convoking wand, steel ring, etc)
+## Map / area specific base items
 Show
-  BaseType "Steel Ring" "Opal Ring" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Crystal Belt" "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves"
+  BaseType "Steel Ring" "Opal Ring" "Blue Pearl Amulet" "Marble Amulet" "Vanguard Belt" "Crystal Belt" "Bone Helmet" "Two-Toned Boots" "Spiked Gloves" "Gripped Gloves" "Fingerless Silk Gloves" "Convoking Wand" "Seaglass Amulet" "Blessed Boots" "Apothecary's Gloves" "Artillery Quiver" "Iolite Ring"
   SetFontSize 38
   SetBorderColor 127 255 255
   MinimapIcon 2 Cyan Star
@@ -703,7 +727,8 @@ Show
   MinimapIcon 1 Yellow Star
   PlayAlertSoundPositional ShGeneral 275
   PlayEffect Yellow
-# Most expensive oils: Opalescent, Silver, Golden
+# Most expensive oils: Opalescent, Silver, Golden.
+# Includes the Tainted Oil added in 3.14
 Show
   Class Currency
   BaseType Oil
@@ -890,6 +915,7 @@ Show
   PlayAlertSound ShBlessed 250
   MinimapIcon 1 Yellow Star
   PlayEffect Yellow
+# Should also include the Veiled Chaos Orb
 Show
   Class Currency
   BaseType "Chaos Orb"
@@ -944,15 +970,25 @@ Show
 ### League-specific items
 
 ## Current League
+# Ultimatum
+Show
+  BaseType "Grasping Mail"
+  SetBorderColor 168 32 255
+  SetBackgroundColor 168 32 255 64
+  SetFontSize 40
+  MinimapIcon 1 Purple Hexagon
+  PlayAlertSound 3 250
+  PlayEffect Purple
+
 # Ritual
 Show
   BaseType "Ritual Splinter" "Ritual Vessel"
   SetBorderColor 168 32 255
   SetBackgroundColor 168 32 255 64
   SetFontSize 40
-  MinimapIcon 1 Purple Pentagon
+  MinimapIcon 1 Pink Pentagon
   PlayAlertSound 3 250
-  PlayEffect Purple
+  PlayEffect Pink
 # Ritual item base types
 # We don't know how rare they will be, so for now they will always get highlighted and we'll tweak it afterwards.
 Show
@@ -962,8 +998,8 @@ Show
   SetBackgroundColor 168 32 255 64
   SetFontSize 40
   PlayAlertSound 3 250
-  MinimapIcon 1 Purple Hexagon
-  PlayEffect Purple
+  MinimapIcon 1 Pink Hexagon
+  PlayEffect Pink
 Show
   Class Gloves
   BaseType "Debilitation Gauntlets" "Gruelling Gauntlets" "Taxing Gauntlets" "Sinistral Gloves" "Southswing Gloves" "Gauche Gloves" "Nexus Gloves" "Aetherwind Gloves" "Leyline Gloves"
@@ -971,8 +1007,8 @@ Show
   SetBackgroundColor 168 32 255 64
   SetFontSize 40
   PlayAlertSound 3 250
-  MinimapIcon 1 Purple Hexagon
-  PlayEffect Purple
+  MinimapIcon 1 Pink Hexagon
+  PlayEffect Pink
 Show
   Class Helmets
   BaseType "Blizzard Crown" "Winter Crown" "Gale Crown" "Archdemon Crown" "Demon Crown" "Imp Crown" "Atonement Mask" "Penitent Mask" "Sorrow Mask"
@@ -980,8 +1016,8 @@ Show
   SetBackgroundColor 168 32 255 64
   SetFontSize 40
   PlayAlertSound 3 250
-  MinimapIcon 1 Purple Hexagon
-  PlayEffect Purple
+  MinimapIcon 1 Pink Hexagon
+  PlayEffect Pink
 
 ## Previous Leagues
 
