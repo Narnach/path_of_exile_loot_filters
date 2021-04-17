@@ -1,5 +1,7 @@
 # Changelog
 
+* 17 April 2021
+  * SSF: stop highlighting jewelry with a different background color, it's too distracting
 * 16 April 2021
   * SSF: start de-emphasizing jewelry at level 30 instead of 45
   * SSF: items with 1-9 quality are no longer auto shown; 10-19 gets the highlight, but still follows display rules
