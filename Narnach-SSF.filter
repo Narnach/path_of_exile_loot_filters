@@ -1,7 +1,7 @@
 # Narnach's Unified SSF Loot filter
 # =================================
 #
-# Last updated on 17 April 2021
+# Last updated on 23 July 2021
 #
 # This filter aims to unify my leveling and maps filters. The "Continue" filter rule should help to make it more compact as well.
 #
@@ -897,7 +897,7 @@ Show
 # Currency: high tier (most currency up to regal orb, high-tier fragments)
 Show
   Class Currency
-  BaseType Shard Essence "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb" Catalyst "Awakener's Orb" Watchstone "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb" "Exalted Shard" "Mirror Shard"
+  BaseType Shard Essence "Orb of Scouring" "Gemcutter's Prism" "Orb of Regret" "Sextant" "Cartographer's Seal" "Eternal Orb" "Unshaping Orb" Catalyst "Awakener's Orb" Watchstone "Harbinger's Orb" "Orb of Horizons" "Ancient Orb" "Orb of Binding" "Orb of Annulment" "Engineer's Orb" "Exalted Shard" "Mirror Shard" "Enkindling Orb" "Instilling Orb"
   SetFontSize 40
   SetBorderColor 255 255 0
   SetTextColor 255 255 0
@@ -970,15 +970,58 @@ Show
 ### League-specific items
 
 ## Current League
+# Expedition
+# More common currencies
+Show
+  Class "Stackable Currency"
+  BaseType "Exotic Coinage" "Scrap Metal" "Astragali" "Burial Medallion" "Lesser Broken Circle Artifact" "Common Broken Circle Artifact" "Lesser Black Scythe Artifact" "Common Black Scythe Artifact" "Lesser Order Artifact" "Common Order Artifact" "Lesser Sun Artifact" "Common Sun Artifact"
+  SetBorderColor 255 32 255
+  SetBackgroundColor 255 32 255 64
+  SetFontSize 35
+  MinimapIcon 1 Purple Pentagon
+  PlayAlertSound 3 250
+  PlayEffect Purple
+# Rarer currencies
+Show
+  Class "Stackable Currency"
+  BaseType "Greater Broken Circle Artifact" "Grand Broken Circle Artifact" "Greater Black Scythe Artifact" "Grand Black Scythe Artifact" "Greater Order Artifact" "Grand Order Artifact" "Greater Sun Artifact" "Grand Sun Artifact"
+  SetBorderColor 255 32 255
+  SetBackgroundColor 255 32 255 64
+  SetFontSize 40
+  MinimapIcon 0 Purple Pentagon
+  PlayAlertSound 3 300
+  PlayEffect Purple
+# Other
+Show
+  Class "Expedition Logbook"
+  BaseType "Expedition Logbook"
+  SetBorderColor 255 32 255
+  SetBackgroundColor 255 32 255 64
+  SetFontSize 40
+  MinimapIcon 0 Purple Square
+  PlayAlertSound 3 300
+  PlayEffect Purple
+# Ward bases; assume they will be relatively rare, otherwise this gets a Continue to apply other rules afterwards.
+Show
+  BaseType "Runic Helm" "Runic Crest" "Runic Crown" "Runic Greaves" "Runic Sollerets" "Runic Sabatons" "Runic Gloves" "Runic Gages" "Runic Gauntlets"
+  SetBorderColor 255 32 255
+  SetBackgroundColor 255 32 255 64
+  SetFontSize 40
+  MinimapIcon 0 Purple Hexagon
+  PlayAlertSound 3 300
+  PlayEffect Purple
+
+
+
 # Ultimatum
 Show
   BaseType "Grasping Mail"
   SetBorderColor 168 32 255
   SetBackgroundColor 168 32 255 64
   SetFontSize 40
-  MinimapIcon 1 Purple Hexagon
+  MinimapIcon 1 Pink Hexagon
   PlayAlertSound 3 250
-  PlayEffect Purple
+  PlayEffect Pink
 
 # Ritual
 Show

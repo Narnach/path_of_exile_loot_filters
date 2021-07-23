@@ -1,5 +1,7 @@
 # Changelog
 
+* 23 July 2021
+  * SSF: beta 3.15 compatibility update. Add all new items as league-specific (purple highlight), change Ultimatum to "old league" highlight (pink) and add new Flask-related currencies at Chaos Orb equivalent tier (high rarity). No changes seem required to account for new gems and flasks.
 * 17 April 2021
   * SSF: stop highlighting jewelry with a different background color, it's too distracting
 * 16 April 2021
