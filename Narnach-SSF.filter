@@ -1,7 +1,7 @@
 # Narnach's Unified SSF Loot filter
 # =================================
 #
-# Last updated on 23 July 2021
+# Last updated on 24 July 2021
 #
 # This filter aims to unify my leveling and maps filters. The "Continue" filter rule should help to make it more compact as well.
 #
@@ -875,7 +875,7 @@ Show
 
 ## Regular uniques: armour, weapons, jewelry
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Belt Ring Amulet
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Belt Ring Amulet Warstaves
   Rarity >= Unique
   SetFontSize 40
   SetBorderColor 255 127 0
@@ -974,7 +974,7 @@ Show
 # More common currencies
 Show
   Class "Stackable Currency"
-  BaseType "Exotic Coinage" "Scrap Metal" "Astragali" "Burial Medallion" "Lesser Broken Circle Artifact" "Common Broken Circle Artifact" "Lesser Black Scythe Artifact" "Common Black Scythe Artifact" "Lesser Order Artifact" "Common Order Artifact" "Lesser Sun Artifact" "Common Sun Artifact"
+  BaseType "Exotic Coinage" "Scrap Metal" "Burial Medallion" "Lesser Broken Circle Artifact" "Common Broken Circle Artifact" "Lesser Black Scythe Artifact" "Common Black Scythe Artifact" "Lesser Order Artifact" "Common Order Artifact" "Lesser Sun Artifact" "Common Sun Artifact"
   SetBorderColor 255 32 255
   SetBackgroundColor 255 32 255 64
   SetFontSize 35
@@ -984,9 +984,9 @@ Show
 # Rarer currencies
 Show
   Class "Stackable Currency"
-  BaseType "Greater Broken Circle Artifact" "Grand Broken Circle Artifact" "Greater Black Scythe Artifact" "Grand Black Scythe Artifact" "Greater Order Artifact" "Grand Order Artifact" "Greater Sun Artifact" "Grand Sun Artifact"
+  BaseType "Astragali" "Greater Broken Circle Artifact" "Grand Broken Circle Artifact" "Greater Black Scythe Artifact" "Grand Black Scythe Artifact" "Greater Order Artifact" "Grand Order Artifact" "Greater Sun Artifact" "Grand Sun Artifact"
   SetBorderColor 255 32 255
-  SetBackgroundColor 255 32 255 64
+  SetBackgroundColor 127 32 127
   SetFontSize 40
   MinimapIcon 0 Purple Pentagon
   PlayAlertSound 3 300
@@ -1621,7 +1621,7 @@ Hide
 
 # Normal/magic items are crafting bases, but when corrupted they are useless.
 Hide
-  Class Ring Amulet Belt Quiver Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Ring Amulet Belt Quiver Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Corrupted True
   Rarity < Rare
   SetFontSize 25
@@ -1754,7 +1754,7 @@ Show
 # TODO: Proper curves based on item succession and T1/2/3 grouping
 # Show 10-14 levels of items
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 5
   AreaLevel >= 15
@@ -1763,7 +1763,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 10
   AreaLevel >= 20
@@ -1772,7 +1772,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 15
   AreaLevel >= 25
@@ -1781,7 +1781,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 20
   AreaLevel >= 30
@@ -1790,7 +1790,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 25
   AreaLevel >= 35
@@ -1799,7 +1799,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 30
   AreaLevel >= 40
@@ -1808,7 +1808,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 35
   AreaLevel >= 45
@@ -1817,7 +1817,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 40
   AreaLevel >= 50
@@ -1826,7 +1826,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 45
   AreaLevel >= 55
@@ -1835,7 +1835,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 50
   AreaLevel >= 60
@@ -1844,7 +1844,7 @@ Hide
   MinimapIcon -1
   PlayEffect None
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel <= 55
   AreaLevel >= 65
@@ -1854,7 +1854,7 @@ Hide
   PlayEffect None
 # White maps
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel < 60
   AreaLevel >= 68
@@ -1864,7 +1864,7 @@ Hide
   PlayEffect None
 # Yellow maps
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel < 65
   AreaLevel >= 73
@@ -1874,7 +1874,7 @@ Hide
   PlayEffect None
 # Red maps
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Normal Magic
   DropLevel < 68
   AreaLevel >= 78
@@ -1890,14 +1890,14 @@ Hide
 # Yellow maps: T1-3 base highlights
 # Red maps: T1-2 base highlights
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 15
   SetFontSize 35
   MinimapIcon -1
   PlayEffect None
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 20
   DropLevel >= 5
@@ -1905,7 +1905,7 @@ Show
   MinimapIcon -1
   PlayEffect None
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 25
   DropLevel >= 10
@@ -1913,7 +1913,7 @@ Show
   MinimapIcon -1
   PlayEffect None
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 30
   DropLevel >= 15
@@ -1921,7 +1921,7 @@ Show
   MinimapIcon -1
   PlayEffect None
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 35
   DropLevel >= 20
@@ -1929,7 +1929,7 @@ Show
   MinimapIcon -1
   PlayEffect None
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 40
   DropLevel >= 25
@@ -1937,7 +1937,7 @@ Show
   MinimapIcon -1
   PlayEffect None
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 44
   DropLevel >= 30
@@ -1946,7 +1946,7 @@ Show
   PlayEffect None
 # 12-17 level gap in Part 2
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 50
   DropLevel >= 33
@@ -1954,7 +1954,7 @@ Show
   MinimapIcon -1
   PlayEffect None
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 55
   DropLevel >= 38
@@ -1962,7 +1962,7 @@ Show
   MinimapIcon -1
   PlayEffect None
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 62
   DropLevel >= 45
@@ -1970,7 +1970,7 @@ Show
   MinimapIcon -1
   PlayEffect None
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   AreaLevel <= 67
   DropLevel >= 50
@@ -1979,7 +1979,7 @@ Show
   PlayEffect None
 # White maps: 13-17 levels of base items
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   DropLevel >= 55
   AreaLevel >= 68
@@ -1988,7 +1988,7 @@ Show
   PlayEffect None
 # Yellow maps: 13-17 levels of base items
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   DropLevel >= 60
   AreaLevel >= 73
@@ -1997,7 +1997,7 @@ Show
   PlayEffect None
 # Red maps: 13+ levels of base items
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Rare
   DropLevel >= 65
   AreaLevel >= 78
@@ -2018,7 +2018,7 @@ Show
 
 ### 5-socket items
 Show
-  Class Armour Bow Staves "Two Hand"
+  Class Armour Bow Staves "Two Hand" Warstaves
   Sockets = 5
   SetBorderColor 200 255 255
   SetBackgroundColor 0 32 32
@@ -2030,7 +2030,7 @@ Show
 ### Good/max amount of linked sockets
 # 6 is max sockets
 Show
-  Class Armour Bow Staves "Two Hand"
+  Class Armour Bow Staves "Two Hand" Warstaves
   LinkedSockets >= 4
   SetBorderColor 255 255 255
   SetFontSize 40
@@ -2048,7 +2048,7 @@ Show
   Continue
 # 3 is max sockets until level 25
 Show
-  Class Armour Bow Staves "Two Hand" Helmet Gloves Boots
+  Class Armour Bow Staves "Two Hand" Helmet Gloves Boots Warstaves
   LinkedSockets >= 3
   ItemLevel < 25
   SetBorderColor 255 255 255
@@ -2069,7 +2069,7 @@ Show
 ## Max/good enough number of sockets: light grey border
 # 6 is max sockets
 Show
-  Class Armour Bow Staves "Two Hand"
+  Class Armour Bow Staves "Two Hand" Warstaves
   Sockets >= 4
   LinkedSockets < 4
   SetBorderColor 127 127 127
@@ -2124,7 +2124,7 @@ Show
 
 # Part 1: show all outdated rares as faded
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   AreaLevel < 45
   Rarity Rare
   SetBackgroundColor 0 0 0 63
@@ -2135,7 +2135,7 @@ Show
 
 # Act 1: having 3 Sockets is king, having less is acceptable
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   AreaLevel <= 12
   LinkedSockets >= 3
   SetFontSize 30
@@ -2144,8 +2144,8 @@ Show
 
 # From act 2: don't bother with less than 3 sockets
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
-  AreaLevel > 13
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
+  AreaLevel >= 13
   Sockets < 3
   SetFontSize 30
   MinimapIcon -1
@@ -2153,7 +2153,7 @@ Hide
 
 # From Act 3: don't bother with less than 4 sockets where possible
 Hide
-  Class Armour Helmet Gloves Boots Bow Staves "Two Hand"
+  Class Armour Helmet Gloves Boots Bow Staves "Two Hand" Warstaves
   AreaLevel >= 25
   Sockets < 4
   SetFontSize 30
@@ -2169,7 +2169,7 @@ Hide
   PlayEffect None
 ## Magic items from Act 4 forward: too much noise
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   Rarity Magic
   AreaLevel >= 33
   Sockets <= 4
@@ -2179,7 +2179,7 @@ Hide
 
 # Before maps: show all with 3+ sockets
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   AreaLevel < 68
   Sockets >= 3
   SetFontSize 30
@@ -2196,7 +2196,7 @@ Show
   PlayEffect None
 # Maps: show all with max 4+ sockets
 Show
-  Class Armour Bow Staves "Two Hand" Helmet Gloves Boots
+  Class Armour Bow Staves "Two Hand" Helmet Gloves Boots Warstaves
   AreaLevel >= 68
   Sockets >= 4
   SetFontSize 30
@@ -2205,7 +2205,7 @@ Show
 
 # Twilight Strand through Mud Flats: show normal items as faded rather than hide
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   AreaLevel <= 4
   Rarity Normal
   SetFontSize 25
@@ -2215,7 +2215,7 @@ Show
 
 # Twilight Strand through Mud Flats: show magic items
 Show
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   AreaLevel <= 4
   Rarity Magic
   SetFontSize 25
@@ -2226,7 +2226,7 @@ Show
 
 # Catch-all: fade what we have not explicitly shown
 Hide
-  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand
+  Class Armour Helmet Gloves Boots Shield Sword Axe Mace Claw Dagger Bow Sceptre Staves Wand Warstaves
   SetFontSize 25
   SetBackgroundColor 0 0 0 63
   MinimapIcon -1
