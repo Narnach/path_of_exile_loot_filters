@@ -1,7 +1,7 @@
 # Narnach's Unified SSF Loot filter
 # =================================
 #
-# Last updated on 24 July 2021
+# Last updated on 25 July 2021
 #
 # This filter aims to unify my leveling and maps filters. The "Continue" filter rule should help to make it more compact as well.
 #
@@ -971,23 +971,62 @@ Show
 
 ## Current League
 # Expedition
-# More common currencies
+# Artifacts get a border color for each type, with a regular currency background and purple beam for all
 Show
   Class "Stackable Currency"
-  BaseType "Lesser Broken Circle Artifact" "Common Broken Circle Artifact" "Lesser Black Scythe Artifact" "Common Black Scythe Artifact" "Lesser Order Artifact" "Common Order Artifact" "Lesser Sun Artifact" "Common Sun Artifact"
-  SetBorderColor 255 32 255
-  SetBackgroundColor 255 32 255 64
+  BaseType "Broken Circle Artifact"
+  SetBorderColor 127 32 255
+  Continue
+Show
+  Class "Stackable Currency"
+  BaseType "Black Scythe Artifact"
+  SetBorderColor 32 32 32
+  Continue
+Show
+  Class "Stackable Currency"
+  BaseType "Order Artifact"
+  SetBorderColor 32 255 192
+  Continue
+Show
+  Class "Stackable Currency"
+  BaseType "Sun Artifact"
+  SetBorderColor 255 127 32
+  Continue
+# Most common currencies Lesser & Common
+Show
+  Class "Stackable Currency"
+  BaseType "Lesser Broken Circle Artifact" "Lesser Black Scythe Artifact" "Lesser Order Artifact" "Lesser Sun Artifact"
   SetFontSize 35
+  MinimapIcon 2 Purple Pentagon
+  PlayAlertSound 3 200
+  PlayEffect Purple Temp
+Show
+  Class "Stackable Currency"
+  BaseType "Common Broken Circle Artifact" "Common Black Scythe Artifact" "Common Order Artifact" "Common Sun Artifact"
+  SetFontSize 38
+  MinimapIcon 2 Purple Pentagon
+  PlayAlertSound 3 225
+  PlayEffect Purple Temp
+# Rarer currencies: "shuffle" currencies and Greater
+Show
+  Class "Stackable Currency"
+  BaseType "Scrap Metal" "Burial Medallion" "Exotic Coinage" "Astragali"
+  SetFontSize 40
   MinimapIcon 1 Purple Pentagon
   PlayAlertSound 3 250
   PlayEffect Purple
-# Rarer currencies
 Show
   Class "Stackable Currency"
-  BaseType "Scrap Metal" "Burial Medallion" "Exotic Coinage" "Astragali" "Greater Broken Circle Artifact" "Grand Broken Circle Artifact" "Greater Black Scythe Artifact" "Grand Black Scythe Artifact" "Greater Order Artifact" "Grand Order Artifact" "Greater Sun Artifact" "Grand Sun Artifact"
-  SetBorderColor 255 32 255
-  SetBackgroundColor 127 32 127
-  SetFontSize 40
+  BaseType "Greater Broken Circle Artifact" "Greater Black Scythe Artifact" "Greater Order Artifact" "Greater Sun Artifact"
+  SetFontSize 42
+  MinimapIcon 1 Purple Pentagon
+  PlayAlertSound 3 275
+  PlayEffect Purple
+# Rarest currencies: Grand
+Show
+  Class "Stackable Currency"
+  BaseType "Grand Broken Circle Artifact" "Grand Black Scythe Artifact" "Grand Order Artifact" "Grand Sun Artifact"
+  SetFontSize 45
   MinimapIcon 0 Purple Pentagon
   PlayAlertSound 3 300
   PlayEffect Purple
@@ -1010,8 +1049,6 @@ Show
   MinimapIcon 0 Purple Hexagon
   PlayAlertSound 3 300
   PlayEffect Purple
-
-
 
 # Ultimatum
 Show

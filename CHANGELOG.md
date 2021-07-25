@@ -2,6 +2,7 @@
 
 * 25 July 2021
   * SSF: all Expedition "reset" currencies are marked as rare currency
+  * SSF: recolorize Expedition currency
 * 24 July 2021
   * SSF: added Warstaves everywhere Staves are referenced (they are not included otherwise)
 * 23 July 2021
