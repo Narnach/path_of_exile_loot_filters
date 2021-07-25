@@ -974,7 +974,7 @@ Show
 # More common currencies
 Show
   Class "Stackable Currency"
-  BaseType "Exotic Coinage" "Scrap Metal" "Burial Medallion" "Lesser Broken Circle Artifact" "Common Broken Circle Artifact" "Lesser Black Scythe Artifact" "Common Black Scythe Artifact" "Lesser Order Artifact" "Common Order Artifact" "Lesser Sun Artifact" "Common Sun Artifact"
+  BaseType "Lesser Broken Circle Artifact" "Common Broken Circle Artifact" "Lesser Black Scythe Artifact" "Common Black Scythe Artifact" "Lesser Order Artifact" "Common Order Artifact" "Lesser Sun Artifact" "Common Sun Artifact"
   SetBorderColor 255 32 255
   SetBackgroundColor 255 32 255 64
   SetFontSize 35
@@ -984,7 +984,7 @@ Show
 # Rarer currencies
 Show
   Class "Stackable Currency"
-  BaseType "Astragali" "Greater Broken Circle Artifact" "Grand Broken Circle Artifact" "Greater Black Scythe Artifact" "Grand Black Scythe Artifact" "Greater Order Artifact" "Grand Order Artifact" "Greater Sun Artifact" "Grand Sun Artifact"
+  BaseType "Scrap Metal" "Burial Medallion" "Exotic Coinage" "Astragali" "Greater Broken Circle Artifact" "Grand Broken Circle Artifact" "Greater Black Scythe Artifact" "Grand Black Scythe Artifact" "Greater Order Artifact" "Grand Order Artifact" "Greater Sun Artifact" "Grand Sun Artifact"
   SetBorderColor 255 32 255
   SetBackgroundColor 127 32 127
   SetFontSize 40
