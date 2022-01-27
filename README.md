@@ -1,3 +1,9 @@
+# This filter is retired
+
+I've decided to retire this loot filter. I'm no longer as active in PoE as I was in the past when I still made YouTube content, and I find it increasingly less motivating to keep this filter up-to-date.
+
+I recommend you have a look at [Filterblade](https://www.filterblade.xyz/) which is an excellent way to customize Neversink's filters to your liking.
+
 # Narnach's Loot filters for Path of Exile
 
 (Last major patch update: 3.15 / Expedition League)
